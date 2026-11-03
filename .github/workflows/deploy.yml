@@ -1,0 +1,62 @@
+name: Build and deploy website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Optimize images (WebP, responsive sizes)
+        run: |
+          (npm install --no-save --no-audit --no-fund sharp && node optimize-images.js) > /tmp/optimize.log 2>&1 || echo "OPTIMIZE FAILED (exit $?)" >> /tmp/optimize.log
+          { echo "== node $(node -v) / npm $(npm -v)"; cat /tmp/optimize.log; echo "== site/img"; ls -la site/img; } > site/build-info.txt
+          tail -20 site/build-info.txt
+      - name: Build pages
+        run: |
+          node build.js
+          echo "== picture elements in index.html: $(grep -c '<picture>' site/index.html)" >> site/build-info.txt
+          echo "== webp files: $(ls site/img/*.webp | wc -l)" >> site/build-info.txt
+      - name: Add self-hosted fonts (Manrope)
+        run: |
+          npm install --no-save --no-audit --no-fund @fontsource-variable/manrope
+          mkdir -p site/fonts
+          cp node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2 site/fonts/
+          cp node_modules/@fontsource-variable/manrope/files/manrope-latin-ext-wght-normal.woff2 site/fonts/
+          ls -la site/fonts
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Notify search engines via IndexNow (Bing, Yandex, …)
+        continue-on-error: true
+        run: |
+          sleep 60
+          curl -sS -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d '{"host":"thirty-three.ch","key":"92455364d20c20e6f61716b20a9827ec","keyLocation":"https://thirty-three.ch/92455364d20c20e6f61716b20a9827ec.txt","urlList":["https://thirty-three.ch/","https://thirty-three.ch/en/"]}' \
+            -w '\nIndexNow HTTP %{http_code}\n'
