@@ -40,6 +40,8 @@ jobs:
           cp node_modules/@fontsource-variable/manrope/files/manrope-latin-ext-wght-normal.woff2 site/fonts/
           ls -la site/fonts
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
