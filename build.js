@@ -185,7 +185,7 @@ function page(lang) {
   // images -> site files
   for (const [blob, name] of Object.entries(IMG)) body = body.split(blob).join('/img/' + name + '.jpg');
   // map: consent-gated iframe
-  body = body.replace(/<div class="map"><span>([^<]*)<\/span>(<a class="btn"[^>]*>[^<]*<\/a>)<\/div>/, (mm, label, link) =>
+  body = body.replace(/<div class="map"><span>([^<]*)<\/span>(<a class="(?:btn|txtlink)"[^>]*>[^<]*<\/a>)<\/div>/, (mm, label, link) =>
     `<div class="map" id="map-box" data-src="https://www.google.com/maps?q=Sch%C3%B6nenstrasse+33,+8803+R%C3%BCschlikon&amp;z=16&amp;output=embed"><span>${esc(m.mapConsent)} <a href="#" class="consent-open" style="color:#1c1b19">${esc(m.consentSettings)}</a></span>${link.replace('class="btn"', 'class="txtlink"')}</div>`);
   // enquiry form: real form with hint and honeypot
   body = body.replace('<form>', '<form id="enquiry" novalidate="novalidate">').replace('<form >', '<form id="enquiry" novalidate="novalidate">');
