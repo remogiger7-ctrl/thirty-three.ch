@@ -108,7 +108,7 @@ css += `
 *{min-width:0}
 picture{display:block}
 .lang{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
-.map-frame{width:100%;aspect-ratio:5/2;border:0;display:block}
+.map-frame{width:100%;aspect-ratio:5/2;border:0;display:block}@media (max-width:900px){.map-frame{aspect-ratio:3/2}}
 .mob .langs a{border-bottom:1px solid transparent}.mob .langs a.lang-on{border-bottom-color:var(--bronze)}
 #form-hint{font-size:var(--f-small);line-height:1.5;margin-top:var(--s2);color:var(--d-ink2);min-height:1.5em}#form-hint.err{color:#f3f2ef}#form-hint.err::before{content:"Hinweis: "}html[lang=en] #form-hint.err::before{content:"Note: "}html[lang=it] #form-hint.err::before{content:"Nota: "}
 .hp{position:absolute;left:-9999px;top:-9999px}

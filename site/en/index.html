@@ -40,7 +40,7 @@
 <style>
 :root{
 --bg:#f3f2ef;--ink:#1c1b19;--ink2:#4a4744;--ink3:#6f6a64;--line:#e2dfd8;--bronze:#8c6a3f;--link:#7a5a33;
---dark:#22262a;--d-ink:#f3f2ef;--d-ink2:#c9c6c0;--d-ink3:#9a9790;--d-line:rgba(243,242,239,.15);--field:#ffffff;--d-field:rgba(243,242,239,.06);--map:#e4e1db;
+--dark:#22262a;--d-ink:#f3f2ef;--d-ink2:#c9c6c0;--d-ink3:#9a9790;--d-line:rgba(243,242,239,.15);--field:#ffffff;--d-field:rgba(243,242,239,.06);--map:#e4e1db;--tint:#ebe8e2;--tint-line:#d6d2ca;
 --serif:"Cormorant Garamond",Georgia,serif;--sans:Inter,system-ui,sans-serif;
 --f-display:56px;--f-title:40px;--f-sub:24px;--f-lead:18px;--f-text:16px;--f-ui:15px;--f-small:13px;--f-eyebrow:12px;
 --s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:48px;--s6:64px;--s7:96px;--s8:128px;
@@ -106,6 +106,15 @@ section[id],details[id]{scroll-margin-top:var(--hdr)}
 .fact{padding:var(--s3) 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column}
 .fact dt{font-size:var(--f-small);line-height:1.5;color:var(--ink3)}
 .fact dd{margin:auto 0 0;padding-top:4px;font-size:var(--f-lead);line-height:1.4;font-weight:500}
+.tint{background:var(--tint)}
+.tint .fact,.tint .price{border-color:var(--tint-line)}
+.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gut)}
+.price{display:flex;flex-direction:column;padding:var(--s3) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.price dt{font-size:var(--f-small);line-height:1.5;color:var(--ink3)}
+.price dd{margin:auto 0 0;padding-top:var(--s1);font:400 var(--f-title)/1.1 var(--serif);font-variant-numeric:lining-nums;color:var(--ink)}
+.price.sum dt{color:var(--ink);font-weight:600}
+.prices+.facts{margin-top:0}
+.facts+.g{margin-top:var(--s5)}
 .fold{border-bottom:1px solid var(--line)}
 .fold summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:var(--s3);padding:var(--s3) 0}
 .fold summary::-webkit-details-marker{display:none}
@@ -180,6 +189,8 @@ textarea.input{min-height:144px;resize:vertical}
 @media (max-width:900px){
 .g{grid-template-columns:minmax(0,1fr);row-gap:var(--s4)}
 .c-title,.c-body,.c-third,.c-half-a,.c-half-b,.hero-text,.hero-img{grid-column:1/-1}
+.prices{column-gap:var(--s3)}
+.map{aspect-ratio:3/2}
 .c-title .t-title{margin-top:0}
 .hero{padding-top:0}
 .hero-img{order:-1;margin:0 calc(-1 * var(--edge))}
@@ -193,7 +204,7 @@ textarea.input{min-height:144px;resize:vertical}
 .burger{display:block}
 .step{grid-template-columns:var(--s3) minmax(0,1fr)}.steps{grid-template-columns:minmax(0,1fr)}
 }
-@media (max-width:600px){.hdr-cta{display:none}.facts{grid-template-columns:minmax(0,1fr)}.rows-stack .row{grid-template-columns:minmax(0,1fr);row-gap:4px}.rows-stack .row>span:first-child{font-size:var(--f-small);color:var(--ink3)}.rows-stack .row>span:last-child{text-align:left}}
+@media (max-width:600px){.hdr-cta{display:none}.facts,.prices{grid-template-columns:minmax(0,1fr)}.price+.price{border-top:0}.rows-stack .row{grid-template-columns:minmax(0,1fr);row-gap:4px}.rows-stack .row>span:first-child{font-size:var(--f-small);color:var(--ink3)}.rows-stack .row>span:last-child{text-align:left}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2")}
@@ -202,7 +213,7 @@ textarea.input{min-height:144px;resize:vertical}
 *{min-width:0}
 picture{display:block}
 .lang{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
-.map-frame{width:100%;aspect-ratio:5/2;border:0;display:block}
+.map-frame{width:100%;aspect-ratio:5/2;border:0;display:block}@media (max-width:900px){.map-frame{aspect-ratio:3/2}}
 .mob .langs a{border-bottom:1px solid transparent}.mob .langs a.lang-on{border-bottom-color:var(--bronze)}
 #form-hint{font-size:var(--f-small);line-height:1.5;margin-top:var(--s2);color:var(--d-ink2);min-height:1.5em}#form-hint.err{color:#f3f2ef}#form-hint.err::before{content:"Hinweis: "}html[lang=en] #form-hint.err::before{content:"Note: "}html[lang=it] #form-hint.err::before{content:"Nota: "}
 .hp{position:absolute;left:-9999px;top:-9999px}
@@ -409,34 +420,39 @@ picture{display:block}
 </section>
 
 <!-- KONDITIONEN -->
-<section id="konditionen" class="sec flush">
+<section id="konditionen" class="sec tint">
 <div class="wrap">
 <div class="g">
 <div class="c-title"><h2 class="t-title">Rent and terms</h2></div>
-<div class="c-body stack-l">
-<p class="t-lead">First occupancy, garage space included, open-ended lease – rent and deposit at a glance.</p>
-<div>
-<ul class="rows rows-stack">
-
-<li class="row "><span>Apartment, per month</span><span>CHF 4'980</span></li>
-
-<li class="row "><span>Garage space (part of the apartment), per month</span><span>CHF 200</span></li>
-
-<li class="row sum"><span>Total, excluding utilities</span><span>CHF 5'180</span></li>
-
-<li class="row "><span>Deposit</span><span>CHF 12'000</span></li>
-
-<li class="row "><span>Move-in</span><span>15 January or 1 February 2027</span></li>
-
-<li class="row "><span>Lease</span><span>open-ended</span></li>
-
-<li class="row "><span>Furnishing</span><span>unfurnished</span></li>
-
-<li class="row "><span>Use</span><span>non-smoking, no subletting</span></li>
-
-</ul>
-<p class="t-small mt3 measure">Rent is paid monthly in advance. Utilities are paid as a monthly advance; the amount is stated in the lease. The deposit goes into a rental deposit account in your name; a deposit insurance is possible instead. Notice period: three months, to the end of March, June or September. Details under “Frequently asked questions”.</p>
+<div class="c-body"><p class="t-lead">First occupancy, garage space included, open-ended lease – rent and deposit at a glance.</p></div>
 </div>
+<dl class="prices mt6">
+
+<div class="price "><dt>Apartment, per month</dt><dd>CHF 4'980</dd></div>
+
+<div class="price "><dt>Garage space, per month</dt><dd>CHF 200</dd></div>
+
+<div class="price sum"><dt>Total per month, excluding utilities</dt><dd>CHF 5'180</dd></div>
+
+</dl>
+<dl class="facts">
+
+<div class="fact"><dt>Utilities</dt><dd>monthly advance, amount stated in the lease</dd></div>
+
+<div class="fact"><dt>Deposit</dt><dd>CHF 12'000</dd></div>
+
+<div class="fact"><dt>Move-in</dt><dd>15 January or 1 February 2027</dd></div>
+
+<div class="fact"><dt>Lease</dt><dd>open-ended</dd></div>
+
+<div class="fact"><dt>Furnishing</dt><dd>unfurnished</dd></div>
+
+<div class="fact"><dt>Use</dt><dd>non-smoking, no subletting</dd></div>
+
+</dl>
+<div class="g">
+<div class="c-body stack-l">
+<p class="t-small measure">The garage space is part of the apartment. Rent is paid monthly in advance. The deposit goes into a rental deposit account in your name; a deposit insurance is possible instead. Notice period: three months, to the end of March, June or September. Details under “Frequently asked questions”.</p>
 <div><a class="btn" href="#interesse">Enquire</a></div>
 </div>
 </div>

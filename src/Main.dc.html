@@ -20,7 +20,7 @@
 <style>
 :root{
 --bg:#f3f2ef;--ink:#1c1b19;--ink2:#4a4744;--ink3:#6f6a64;--line:#e2dfd8;--bronze:#8c6a3f;--link:#7a5a33;
---dark:#22262a;--d-ink:#f3f2ef;--d-ink2:#c9c6c0;--d-ink3:#9a9790;--d-line:rgba(243,242,239,.15);--field:#ffffff;--d-field:rgba(243,242,239,.06);--map:#e4e1db;
+--dark:#22262a;--d-ink:#f3f2ef;--d-ink2:#c9c6c0;--d-ink3:#9a9790;--d-line:rgba(243,242,239,.15);--field:#ffffff;--d-field:rgba(243,242,239,.06);--map:#e4e1db;--tint:#ebe8e2;--tint-line:#d6d2ca;
 --serif:"Cormorant Garamond",Georgia,serif;--sans:Inter,system-ui,sans-serif;
 --f-display:56px;--f-title:40px;--f-sub:24px;--f-lead:18px;--f-text:16px;--f-ui:15px;--f-small:13px;--f-eyebrow:12px;
 --s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:48px;--s6:64px;--s7:96px;--s8:128px;
@@ -86,6 +86,15 @@ section[id],details[id]{scroll-margin-top:var(--hdr)}
 .fact{padding:var(--s3) 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column}
 .fact dt{font-size:var(--f-small);line-height:1.5;color:var(--ink3)}
 .fact dd{margin:auto 0 0;padding-top:4px;font-size:var(--f-lead);line-height:1.4;font-weight:500}
+.tint{background:var(--tint)}
+.tint .fact,.tint .price{border-color:var(--tint-line)}
+.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gut)}
+.price{display:flex;flex-direction:column;padding:var(--s3) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.price dt{font-size:var(--f-small);line-height:1.5;color:var(--ink3)}
+.price dd{margin:auto 0 0;padding-top:var(--s1);font:400 var(--f-title)/1.1 var(--serif);font-variant-numeric:lining-nums;color:var(--ink)}
+.price.sum dt{color:var(--ink);font-weight:600}
+.prices+.facts{margin-top:0}
+.facts+.g{margin-top:var(--s5)}
 .fold{border-bottom:1px solid var(--line)}
 .fold summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:var(--s3);padding:var(--s3) 0}
 .fold summary::-webkit-details-marker{display:none}
@@ -160,6 +169,8 @@ textarea.input{min-height:144px;resize:vertical}
 @media (max-width:900px){
 .g{grid-template-columns:minmax(0,1fr);row-gap:var(--s4)}
 .c-title,.c-body,.c-third,.c-half-a,.c-half-b,.hero-text,.hero-img{grid-column:1/-1}
+.prices{column-gap:var(--s3)}
+.map{aspect-ratio:3/2}
 .c-title .t-title{margin-top:0}
 .hero{padding-top:0}
 .hero-img{order:-1;margin:0 calc(-1 * var(--edge))}
@@ -173,7 +184,7 @@ textarea.input{min-height:144px;resize:vertical}
 .burger{display:block}
 .step{grid-template-columns:var(--s3) minmax(0,1fr)}.steps{grid-template-columns:minmax(0,1fr)}
 }
-@media (max-width:600px){.hdr-cta{display:none}.facts{grid-template-columns:minmax(0,1fr)}.rows-stack .row{grid-template-columns:minmax(0,1fr);row-gap:4px}.rows-stack .row>span:first-child{font-size:var(--f-small);color:var(--ink3)}.rows-stack .row>span:last-child{text-align:left}}
+@media (max-width:600px){.hdr-cta{display:none}.facts,.prices{grid-template-columns:minmax(0,1fr)}.price+.price{border-top:0}.rows-stack .row{grid-template-columns:minmax(0,1fr);row-gap:4px}.rows-stack .row>span:first-child{font-size:var(--f-small);color:var(--ink3)}.rows-stack .row>span:last-child{text-align:left}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </helmet>
@@ -328,20 +339,25 @@ textarea.input{min-height:144px;resize:vertical}
 </section>
 
 <!-- KONDITIONEN -->
-<section id="konditionen" class="sec flush">
+<section id="konditionen" class="sec tint">
 <div class="wrap">
 <div class="g">
 <div class="c-title"><h2 class="t-title">{{t.priceTitle}}</h2></div>
-<div class="c-body stack-l">
-<p class="t-lead">{{t.priceLead}}</p>
-<div>
-<ul class="rows rows-stack">
-<sc-for list="{{t.priceRows}}" as="r" hint-placeholder-count="8">
-<li class="row {{r.c}}"><span>{{r.n}}</span><span>{{r.v}}</span></li>
-</sc-for>
-</ul>
-<p class="t-small mt3 measure">{{t.priceNote}}</p>
+<div class="c-body"><p class="t-lead">{{t.priceLead}}</p></div>
 </div>
+<dl class="prices mt6">
+<sc-for list="{{t.priceMain}}" as="r" hint-placeholder-count="3">
+<div class="price {{r.c}}"><dt>{{r.n}}</dt><dd>{{r.v}}</dd></div>
+</sc-for>
+</dl>
+<dl class="facts">
+<sc-for list="{{t.priceTerms}}" as="x" hint-placeholder-count="6">
+<div class="fact"><dt>{{x.n}}</dt><dd>{{x.v}}</dd></div>
+</sc-for>
+</dl>
+<div class="g">
+<div class="c-body stack-l">
+<p class="t-small measure">{{t.priceNote}}</p>
 <div><a class="btn" href="#interesse">{{t.cta}}</a></div>
 </div>
 </div>
@@ -480,8 +496,9 @@ class Component extends DCLogic {
         mapPh: 'Die Karte wird angezeigt, sobald Sie Cookies akzeptieren.', addrMap: 'In Google Maps öffnen',
         priceTitle: 'Mietzins und Konditionen',
         priceLead: 'Erstbezug, Garagenplatz inbegriffen, unbefristet – Mietzins und Kaution auf einen Blick.',
-        priceRows: [{n:'Wohnung, pro Monat',v:'CHF 4\'980',c:''},{n:'Garagenplatz (fester Bestandteil der Wohnung), pro Monat',v:'CHF 200',c:''},{n:'Total, ohne Nebenkosten',v:'CHF 5\'180',c:'sum'},{n:'Kaution',v:'CHF 12\'000',c:''},{n:'Bezug',v:'15. Januar oder 1. Februar 2027',c:''},{n:'Mietdauer',v:'unbefristet',c:''},{n:'Möblierung',v:'unmöbliert',c:''},{n:'Nutzung',v:'Nichtraucherwohnung, keine Untermiete',c:''}],
-        priceNote: 'Der Mietzins ist monatlich im Voraus zahlbar. Nebenkosten akonto, der Betrag wird mit dem Mietvertrag bekannt gegeben. Kaution auf ein Mietkautionskonto auf Ihren Namen, alternativ Mietkautionsversicherung. Kündigungsfrist drei Monate auf Ende März, Juni und September. Details dazu unter «Häufige Fragen».',
+        priceMain: [{n:'Wohnung, pro Monat',v:'CHF 4\'980',c:''},{n:'Garagenplatz, pro Monat',v:'CHF 200',c:''},{n:'Total pro Monat, ohne Nebenkosten',v:'CHF 5\'180',c:'sum'}],
+        priceTerms: [{n:'Nebenkosten',v:'akonto, Betrag mit dem Mietvertrag'},{n:'Kaution',v:'CHF 12\'000'},{n:'Bezug',v:'15. Januar oder 1. Februar 2027'},{n:'Mietdauer',v:'unbefristet'},{n:'Möblierung',v:'unmöbliert'},{n:'Nutzung',v:'Nichtraucherwohnung, keine Untermiete'}],
+        priceNote: 'Der Garagenplatz ist fester Bestandteil der Wohnung. Der Mietzins ist monatlich im Voraus zahlbar. Kaution auf ein Mietkautionskonto auf Ihren Namen, alternativ Mietkautionsversicherung. Kündigungsfrist drei Monate auf Ende März, Juni und September. Details unter «Häufige Fragen».',
         bookTitle: 'Interesse anmelden',
         bookLead: 'Name und E-Mail genügen. Sie erhalten eine persönliche Antwort mit den Besichtigungsterminen – Unterlagen brauchen Sie dafür keine.',
         bookHowH: 'So geht es weiter',
@@ -557,8 +574,9 @@ class Component extends DCLogic {
         mapPh: 'The map is shown once you accept cookies.', addrMap: 'Open in Google Maps',
         priceTitle: 'Rent and terms',
         priceLead: 'First occupancy, garage space included, open-ended lease – rent and deposit at a glance.',
-        priceRows: [{n:'Apartment, per month',v:'CHF 4\'980',c:''},{n:'Garage space (part of the apartment), per month',v:'CHF 200',c:''},{n:'Total, excluding utilities',v:'CHF 5\'180',c:'sum'},{n:'Deposit',v:'CHF 12\'000',c:''},{n:'Move-in',v:'15 January or 1 February 2027',c:''},{n:'Lease',v:'open-ended',c:''},{n:'Furnishing',v:'unfurnished',c:''},{n:'Use',v:'non-smoking, no subletting',c:''}],
-        priceNote: 'Rent is paid monthly in advance. Utilities are paid as a monthly advance; the amount is stated in the lease. The deposit goes into a rental deposit account in your name; a deposit insurance is possible instead. Notice period: three months, to the end of March, June or September. Details under “Frequently asked questions”.',
+        priceMain: [{n:'Apartment, per month',v:'CHF 4\'980',c:''},{n:'Garage space, per month',v:'CHF 200',c:''},{n:'Total per month, excluding utilities',v:'CHF 5\'180',c:'sum'}],
+        priceTerms: [{n:'Utilities',v:'monthly advance, amount stated in the lease'},{n:'Deposit',v:'CHF 12\'000'},{n:'Move-in',v:'15 January or 1 February 2027'},{n:'Lease',v:'open-ended'},{n:'Furnishing',v:'unfurnished'},{n:'Use',v:'non-smoking, no subletting'}],
+        priceNote: 'The garage space is part of the apartment. Rent is paid monthly in advance. The deposit goes into a rental deposit account in your name; a deposit insurance is possible instead. Notice period: three months, to the end of March, June or September. Details under “Frequently asked questions”.',
         bookTitle: 'Enquire',
         bookLead: 'Name and e-mail are enough. You will receive a personal reply with the viewing dates – no documents are needed at this stage.',
         bookHowH: 'What happens next',
@@ -634,8 +652,9 @@ class Component extends DCLogic {
         mapPh: 'La mappa viene mostrata non appena accettate i cookie.', addrMap: 'Apri in Google Maps',
         priceTitle: 'Canone e condizioni',
         priceLead: 'Prima occupazione, posto auto incluso, contratto a tempo indeterminato – canone e deposito a colpo d\'occhio.',
-        priceRows: [{n:'Appartamento, al mese',v:'CHF 4\'980',c:''},{n:'Posto auto (abbinato all\'appartamento), al mese',v:'CHF 200',c:''},{n:'Totale, spese escluse',v:'CHF 5\'180',c:'sum'},{n:'Deposito di garanzia (cauzione)',v:'CHF 12\'000',c:''},{n:'Disponibile dal',v:'15 gennaio o 1° febbraio 2027',c:''},{n:'Contratto',v:'a tempo indeterminato',c:''},{n:'Arredamento',v:'non arredato',c:''},{n:'Uso',v:'non fumatori, nessuna sublocazione',c:''}],
-        priceNote: 'Il canone si paga mensilmente in anticipo. Spese accessorie in acconto; l\'importo è indicato nel contratto. Il deposito va su un conto di garanzia a vostro nome; in alternativa è possibile un\'assicurazione cauzionale. Preavviso di disdetta: tre mesi per fine marzo, giugno o settembre. Dettagli nelle «Domande frequenti».',
+        priceMain: [{n:'Appartamento, al mese',v:'CHF 4\'980',c:''},{n:'Posto auto, al mese',v:'CHF 200',c:''},{n:'Totale al mese, spese escluse',v:'CHF 5\'180',c:'sum'}],
+        priceTerms: [{n:'Spese accessorie',v:'acconto mensile, importo nel contratto'},{n:'Deposito di garanzia',v:'CHF 12\'000'},{n:'Disponibile dal',v:'15 gennaio o 1° febbraio 2027'},{n:'Contratto',v:'a tempo indeterminato'},{n:'Arredamento',v:'non arredato'},{n:'Uso',v:'non fumatori, nessuna sublocazione'}],
+        priceNote: 'Il posto auto è abbinato all\'appartamento. Il canone si paga mensilmente in anticipo. Il deposito va su un conto di garanzia a vostro nome; in alternativa è possibile un\'assicurazione cauzionale. Preavviso di disdetta: tre mesi per fine marzo, giugno o settembre. Dettagli nelle «Domande frequenti».',
         bookTitle: 'Segnalate il vostro interesse',
         bookLead: 'Bastano nome ed e-mail. Riceverete una risposta personale con le date delle visite – per ora non servono documenti.',
         bookHowH: 'I prossimi passi',
