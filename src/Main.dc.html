@@ -175,27 +175,13 @@ details.legal-d[open] summary{color:#1c1b19}
 <h2 class="h2" style="margin:0">{{t.aptTitle}}</h2>
 <p class="lead">{{t.aptLead}}</p>
 </div>
-<div class="two" style="margin-top:64px">
-<div>
-<h3 class="h3">{{t.aptRoomsH}}</h3>
-<ul>
-<sc-for list="{{t.aptRooms}}" as="x" hint-placeholder-count="4">
-<li class="row"><span>{{x.n}}</span><span>{{x.v}}</span></li>
-</sc-for>
-<li class="sub">{{t.aptOtherH}}</li>
-<sc-for list="{{t.aptOther}}" as="x" hint-placeholder-count="5">
-<li class="row"><span>{{x}}</span></li>
-</sc-for>
-</ul>
-</div>
-<div>
-<h3 class="h3">{{t.aptMoreH}}</h3>
-<ul class="plain">
-<sc-for list="{{t.aptMore}}" as="x" hint-placeholder-count="8">
+<div class="side" style="margin-top:64px">
+<h3 class="h3" style="margin:0">{{t.aptMoreH}}</h3>
+<ul class="plain two" style="gap:0 48px">
+<sc-for list="{{t.aptMore}}" as="x" hint-placeholder-count="7">
 <li>{{x}}</li>
 </sc-for>
 </ul>
-</div>
 </div>
 </div>
 </section>
@@ -374,9 +360,6 @@ class Component extends DCLogic {
         aptLead: 'Der Wohn- und Essbereich mit offener Küche misst 36.6 m² und führt auf den gedeckten Balkon. Dazu zwei Zimmer, ein Bad mit Wanne und WC sowie ein zweites Bad mit Dusche und WC, Réduit und Keller. Der Lift hält direkt in der Wohnung.',
         altLiving: 'Visualisierung: Wohnbereich mit Zugang zum Balkon, 3.5-Zimmer-Wohnung THIRTY THREE in Rüschlikon',
         capLiving: 'Wohnbereich mit Balkonzugang – unverbindliche Visualisierung; Möblierung beispielhaft, die Wohnung wird unmöbliert vermietet.',
-        aptRoomsH: 'Räume und Flächen',
-        aptRooms: [{n:'Wohnen, Essen, Küche',v:'36.6 m²'},{n:'Korridor',v:'10.2 m²'},{n:'Balkon, gedeckt',v:'13.5 m²'},{n:'Keller',v:'13.1 m²'}],
-        aptOtherH: 'Weitere Räume', aptOther: ['Zimmer 1 mit Einbauschrank', 'Zimmer 2', 'Bad mit Wanne und WC', 'Zweites Bad mit Dusche und WC', 'Réduit'],
         aptMoreH: 'Dazu gehört',
         aptMore: ['Lift direkt in die Wohnung – stufenlos, auch für Kinderwagen und Rollstuhl', 'Eigener Waschturm in der Wohnung', 'Garagenplatz', 'Glasfaseranschluss', 'Elektrische Storen in allen Räumen', 'Erdsonden-Wärmepumpe – im Sommer kühlen die Erdsonden die Räume sanft', 'Photovoltaikanlage auf dem Dach'],
         fitTitle: 'Gebaut im Standard einer Eigentumswohnung',
@@ -454,9 +437,6 @@ class Component extends DCLogic {
         aptLead: 'The living and dining area with open kitchen measures 36.6 m² and leads onto the covered balcony. There are two bedrooms, two bathrooms – one with a tub, one with a shower, each with a toilet – a storage room and a cellar. The lift stops directly inside the apartment.',
         altLiving: 'Rendering: living area with access to the balcony, 3.5-room apartment THIRTY THREE in Rüschlikon',
         capLiving: 'Living area with balcony access – artist\'s impression; furniture shown for illustration only, the apartment is let unfurnished.',
-        aptRoomsH: 'Rooms and areas',
-        aptRooms: [{n:'Living, dining, kitchen',v:'36.6 m²'},{n:'Hallway',v:'10.2 m²'},{n:'Balcony, covered',v:'13.5 m²'},{n:'Cellar',v:'13.1 m²'}],
-        aptOtherH: 'Further rooms', aptOther: ['Bedroom 1 with built-in wardrobe', 'Bedroom 2', 'Bathroom with tub and toilet', 'Second bathroom with shower and toilet', 'Storage room'],
         aptMoreH: 'What\'s included',
         aptMore: ['Lift directly into the apartment – step-free, for prams and wheelchairs', 'Own washer and dryer in the apartment', 'Garage space', 'Fibre-optic connection', 'Electric blinds in every room', 'Geothermal heat pump – the ground probes provide gentle passive cooling in summer', 'Photovoltaic system on the roof'],
         fitTitle: 'Built to the standard of an owner-occupied home',
@@ -534,9 +514,6 @@ class Component extends DCLogic {
         aptLead: 'La zona giorno con cucina aperta misura 36,6 m² e si apre sul balcone coperto. Completano l\'appartamento due camere, un bagno con vasca e WC, un secondo bagno con doccia e WC, ripostiglio e cantina. L\'ascensore si ferma direttamente nell\'appartamento.',
         altLiving: 'Rendering: zona giorno con accesso al balcone, appartamento di 3,5 locali THIRTY THREE a Rüschlikon',
         capLiving: 'Zona giorno con accesso al balcone – rendering non vincolante; arredi indicativi, l\'appartamento è affittato non arredato.',
-        aptRoomsH: 'Locali e superfici',
-        aptRooms: [{n:'Soggiorno, pranzo, cucina',v:'36,6 m²'},{n:'Corridoio',v:'10,2 m²'},{n:'Balcone coperto',v:'13,5 m²'},{n:'Cantina',v:'13,1 m²'}],
-        aptOtherH: 'Altri locali', aptOther: ['Camera 1 con armadio a muro', 'Camera 2', 'Bagno con vasca e WC', 'Secondo bagno con doccia e WC', 'Ripostiglio'],
         aptMoreH: 'Incluso',
         aptMore: ['Ascensore direttamente nell\'appartamento – senza gradini, per passeggini e sedie a rotelle', 'Lavatrice e asciugatrice in appartamento', 'Posto auto', 'Collegamento in fibra ottica', 'Tapparelle elettriche in tutti i locali', 'Pompa di calore geotermica – d\'estate le sonde raffrescano gli ambienti in modo naturale', 'Impianto fotovoltaico sul tetto'],
         fitTitle: 'Costruito con lo standard di un\'abitazione di proprietà',
