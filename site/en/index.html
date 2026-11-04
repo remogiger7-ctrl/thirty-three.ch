@@ -52,7 +52,7 @@ a:focus-visible,button:focus-visible,.input:focus-visible,summary:focus-visible{
 .sec{padding:128px 0}
 .dark{background:#22262a;color:#f3f2ef}
 .muted{color:#4a4744}.dark .muted{color:#c9c6c0}
-.h1{font-size:64px;line-height:1.05}
+.h1{font-size:56px;line-height:1.05}.hero-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:56px;align-items:start}.hero-frame{margin:0}.hero-frame .img{aspect-ratio:auto;height:auto}
 .h1-sub{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;line-height:1.25;margin-top:14px;max-width:40ch}
 .h2{font-size:44px;margin-bottom:28px}
 .h3{font-size:24px;margin-bottom:18px}
@@ -126,13 +126,13 @@ details.legal-d[open] summary{color:#1c1b19}
 .legal strong{display:block;color:#1c1b19;margin:14px 0 2px;font-weight:600}
 .map{background:#e4e1db;aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#4a4744;font-size:15px;padding:24px;box-sizing:border-box;gap:14px}
 .dark .map{background:#2e3337;color:#c9c6c0}
-@media (max-width:900px){.sec{padding:72px 0}.wrap{padding:0 20px}.mob .lang{min-height:44px}.h1{font-size:38px}.h1-sub{font-size:23px}.h2{font-size:32px}#konditionen{padding-top:72px !important}.kv{grid-template-columns:repeat(1,minmax(0,1fr));gap:6px}.side,.two,.img7,.three{grid-template-columns:repeat(1,minmax(0,1fr));gap:40px}.navlinks,.langs-desk{display:none !important}.burger{display:block}.hero-frame{margin:0 -20px}.hero-cta{padding:10px 14px !important;font-size:13px !important}.hero-frame .img{aspect-ratio:auto;height:auto}.img-mob{margin:0 -20px}.img-mob .img{aspect-ratio:auto;height:auto}.cap-mob{padding:0 20px}.faq h3{font-size:20px}#top .h1{margin-top:56px}}
+@media (max-width:900px){.sec{padding:72px 0}.wrap{padding:0 20px}.mob .lang{min-height:44px}.h1{font-size:38px}.h1-sub{font-size:23px}.h2{font-size:32px}#konditionen{padding-top:72px !important}.kv{grid-template-columns:repeat(1,minmax(0,1fr));gap:6px}.side,.two,.img7,.three{grid-template-columns:repeat(1,minmax(0,1fr));gap:40px}.navlinks,.langs-desk{display:none !important}.burger{display:block}.hero-frame{margin:0 -20px}.hero-cta{padding:10px 14px !important;font-size:13px !important}.hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}.img-mob{margin:0 -20px}.img-mob .img{aspect-ratio:auto;height:auto}.cap-mob{padding:0 20px}.faq h3{font-size:20px}}
 .h1,.h2,.h3,.h1-sub,.faq h3{text-wrap:balance}.lead{text-wrap:pretty}
 .txtlink{text-underline-offset:3px;display:inline-block;padding:6px 0}
 section[id],details[id]{scroll-margin-top:80px}
-@media (min-width:600px) and (max-width:900px){.hero-frame .img{aspect-ratio:4/5}}
 @media (max-width:480px){.specs .row,#konditionen .row{flex-direction:column;align-items:flex-start;gap:2px}.specs .row span+span,#konditionen .row span+span{text-align:left;white-space:normal}.specs .row span:first-child,#konditionen .row span:first-child{font-size:13px;color:#6f6a64}}
 @media (max-width:420px){.hdr-cta{display:none}}
+@media (max-width:900px){.lake .img{aspect-ratio:4/3 !important;object-position:38% 60%}}
 
 @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2")}
 @font-face{font-family:Inter;font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format("woff2-variations")}
@@ -198,17 +198,16 @@ picture{display:block}
 <!-- HERO -->
 <section id="top" style="padding:40px 0 0">
 <div class="wrap">
+<div class="hero-grid">
 <figure class="hero-frame">
-<img class="img" src="/img/thirty-three-rueschlikon-haus.jpg" alt="Rendering of the new THIRTY THREE building at Schönenstrasse 33 in Rüschlikon" width="1121" height="1403" fetchpriority="high" style="object-position:center 36%">
+<img class="img" src="/img/thirty-three-rueschlikon-haus.jpg" alt="Rendering of the new THIRTY THREE building at Schönenstrasse 33 in Rüschlikon" width="1121" height="1403" fetchpriority="high">
 </figure>
-<h1 class="h1" style="margin-top:96px">3.5-room apartment in Rüschlikon</h1>
+<div class="hero-text">
+<h1 class="h1">3.5-room apartment in Rüschlikon</h1>
 <p class="h1-sub">A new build finished to owner-occupier standard, available to rent</p>
-<div class="two" style="margin-top:40px;align-items:start">
-<div>
-<p class="lead">Apartment 201 on the second floor of THIRTY THREE, a new building at Schönenstrasse 33: 100 m² with an open living and dining area, a covered balcony facing the lake side and two bathrooms. Move in from 15 January or 1 February 2027, open-ended lease. From Rüschlikon station it is 15 minutes to Zurich main station and around 30 minutes to the airport without changing; the lake is a ten-minute walk away.</p>
-<a class="btn" href="#interesse" style="margin-top:32px">Enquire</a>
-</div>
-<ul class="specs">
+<p class="lead" style="margin-top:28px">Apartment 201 on the second floor of THIRTY THREE, a new building at Schönenstrasse 33: 100 m² with an open living and dining area, a covered balcony facing the lake side and two bathrooms. Move in from 15 January or 1 February 2027, open-ended lease. From Rüschlikon station it is 15 minutes to Zurich main station and around 30 minutes to the airport without changing; the lake is a ten-minute walk away.</p>
+<a class="btn" href="#interesse" style="margin-top:28px">Enquire</a>
+<ul class="specs" style="margin-top:44px">
 
 <li class="row"><span>Rooms</span><span>3.5 (2 bedrooms + living/dining)</span></li>
 
@@ -225,6 +224,7 @@ picture{display:block}
 <li class="row"><span>Lease</span><span>open-ended</span></li>
 
 </ul>
+</div>
 </div>
 </div>
 </section>
@@ -294,10 +294,14 @@ picture{display:block}
 <!-- LAGE -->
 <section id="lage" class="sec">
 <div class="wrap">
+<figure class="img-mob lake" style="margin-bottom:64px">
+<img class="img" src="/img/thirty-three-rueschlikon-zuerichsee.jpg" alt="Lake Zurich with its western shore and the Alps in the background" width="2400" height="800" loading="lazy" style="aspect-ratio:3/1">
+<figcaption class="cap cap-mob">Lake Zurich – a ten-minute walk from the apartment</figcaption>
+</figure>
 <div class="side">
 <div>
-<h2 class="h2">Location in Rüschlikon</h2>
-<p class="lead">Rüschlikon's municipal tax multiplier is 75 % – one of the three lowest among the 160 municipalities in the canton of Zurich (the lower the multiplier, the lower your income tax). Station, lake and shops are within walking distance. Bus 165 runs into the city without changing, and from Rüschlikon station the S-Bahn reaches Zurich main station in 15 minutes.</p>
+<h2 class="h2">Rüschlikon on Lake Zurich</h2>
+<p class="lead">Live by the lake, work in the city: Rüschlikon lies on the western shore of Lake Zurich between Kilchberg and Thalwil, a few kilometres from Zurich. The lake is a ten-minute walk away, as are the station and the shops. Bus 165 runs into the city centre without changing, and from Rüschlikon station the S-Bahn reaches Zurich main station in 15 minutes. And at 75 %, the municipal tax multiplier is one of the three lowest among the 160 municipalities in the canton of Zurich – the lower the multiplier, the lower your income tax.</p>
 </div>
 <ul>
 <li class="sub">On foot</li>
@@ -332,7 +336,6 @@ picture{display:block}
 <div class="map" id="map-box" data-src="https://www.google.com/maps?q=Sch%C3%B6nenstrasse+33,+8803+R%C3%BCschlikon&amp;z=16&amp;output=embed"><span>The map is shown once you accept cookies. <a href="#" class="consent-open" style="color:#1c1b19">Cookie settings</a></span><a class="txtlink" href="https://www.google.com/maps/search/?api=1&amp;query=Sch%C3%B6nenstrasse+33%2C+8803+R%C3%BCschlikon" target="_blank" rel="noopener">Open in Google Maps</a></div>
 <div style="display:flex;flex-direction:column;justify-content:center;gap:24px">
 <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;line-height:1.2">Schönenstrasse 33<br>8803 Rüschlikon</p>
-<p class="muted" style="font-size:16px;max-width:44ch">Rüschlikon lies on the western shore of Lake Zurich between Kilchberg and Thalwil, a few kilometres south of the city of Zurich.</p>
 </div>
 </div>
 </div>

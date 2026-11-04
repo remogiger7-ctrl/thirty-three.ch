@@ -52,7 +52,7 @@ a:focus-visible,button:focus-visible,.input:focus-visible,summary:focus-visible{
 .sec{padding:128px 0}
 .dark{background:#22262a;color:#f3f2ef}
 .muted{color:#4a4744}.dark .muted{color:#c9c6c0}
-.h1{font-size:64px;line-height:1.05}
+.h1{font-size:56px;line-height:1.05}.hero-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:56px;align-items:start}.hero-frame{margin:0}.hero-frame .img{aspect-ratio:auto;height:auto}
 .h1-sub{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;line-height:1.25;margin-top:14px;max-width:40ch}
 .h2{font-size:44px;margin-bottom:28px}
 .h3{font-size:24px;margin-bottom:18px}
@@ -126,13 +126,13 @@ details.legal-d[open] summary{color:#1c1b19}
 .legal strong{display:block;color:#1c1b19;margin:14px 0 2px;font-weight:600}
 .map{background:#e4e1db;aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#4a4744;font-size:15px;padding:24px;box-sizing:border-box;gap:14px}
 .dark .map{background:#2e3337;color:#c9c6c0}
-@media (max-width:900px){.sec{padding:72px 0}.wrap{padding:0 20px}.mob .lang{min-height:44px}.h1{font-size:38px}.h1-sub{font-size:23px}.h2{font-size:32px}#konditionen{padding-top:72px !important}.kv{grid-template-columns:repeat(1,minmax(0,1fr));gap:6px}.side,.two,.img7,.three{grid-template-columns:repeat(1,minmax(0,1fr));gap:40px}.navlinks,.langs-desk{display:none !important}.burger{display:block}.hero-frame{margin:0 -20px}.hero-cta{padding:10px 14px !important;font-size:13px !important}.hero-frame .img{aspect-ratio:auto;height:auto}.img-mob{margin:0 -20px}.img-mob .img{aspect-ratio:auto;height:auto}.cap-mob{padding:0 20px}.faq h3{font-size:20px}#top .h1{margin-top:56px}}
+@media (max-width:900px){.sec{padding:72px 0}.wrap{padding:0 20px}.mob .lang{min-height:44px}.h1{font-size:38px}.h1-sub{font-size:23px}.h2{font-size:32px}#konditionen{padding-top:72px !important}.kv{grid-template-columns:repeat(1,minmax(0,1fr));gap:6px}.side,.two,.img7,.three{grid-template-columns:repeat(1,minmax(0,1fr));gap:40px}.navlinks,.langs-desk{display:none !important}.burger{display:block}.hero-frame{margin:0 -20px}.hero-cta{padding:10px 14px !important;font-size:13px !important}.hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}.img-mob{margin:0 -20px}.img-mob .img{aspect-ratio:auto;height:auto}.cap-mob{padding:0 20px}.faq h3{font-size:20px}}
 .h1,.h2,.h3,.h1-sub,.faq h3{text-wrap:balance}.lead{text-wrap:pretty}
 .txtlink{text-underline-offset:3px;display:inline-block;padding:6px 0}
 section[id],details[id]{scroll-margin-top:80px}
-@media (min-width:600px) and (max-width:900px){.hero-frame .img{aspect-ratio:4/5}}
 @media (max-width:480px){.specs .row,#konditionen .row{flex-direction:column;align-items:flex-start;gap:2px}.specs .row span+span,#konditionen .row span+span{text-align:left;white-space:normal}.specs .row span:first-child,#konditionen .row span:first-child{font-size:13px;color:#6f6a64}}
 @media (max-width:420px){.hdr-cta{display:none}}
+@media (max-width:900px){.lake .img{aspect-ratio:4/3 !important;object-position:38% 60%}}
 
 @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2")}
 @font-face{font-family:Inter;font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format("woff2-variations")}
@@ -198,17 +198,16 @@ picture{display:block}
 <!-- HERO -->
 <section id="top" style="padding:40px 0 0">
 <div class="wrap">
+<div class="hero-grid">
 <figure class="hero-frame">
-<img class="img" src="/img/thirty-three-rueschlikon-haus.jpg" alt="Visualisierung des Neubaus THIRTY THREE an der Schönenstrasse 33 in Rüschlikon" width="1121" height="1403" fetchpriority="high" style="object-position:center 36%">
+<img class="img" src="/img/thirty-three-rueschlikon-haus.jpg" alt="Visualisierung des Neubaus THIRTY THREE an der Schönenstrasse 33 in Rüschlikon" width="1121" height="1403" fetchpriority="high">
 </figure>
-<h1 class="h1" style="margin-top:96px">3.5-Zimmer-Wohnung in Rüschlikon</h1>
+<div class="hero-text">
+<h1 class="h1">3.5-Zimmer-Wohnung in Rüschlikon</h1>
 <p class="h1-sub">Neubau in Eigentumsqualität, zur Miete</p>
-<div class="two" style="margin-top:40px;align-items:start">
-<div>
-<p class="lead">Wohnung 201 im zweiten Stock des Neubaus THIRTY THREE an der Schönenstrasse 33: 100 m² mit offenem Wohn- und Essbereich, gedecktem Balkon zur Seeseite und zwei Bädern. Erstbezug ab 15. Januar oder 1. Februar 2027, unbefristet. Ab Bahnhof Rüschlikon in 15 Minuten zum Zürich HB, der Flughafen in rund 30 Minuten ohne Umsteigen, der See in zehn Gehminuten.</p>
-<a class="btn" href="#interesse" style="margin-top:32px">Interesse anmelden</a>
-</div>
-<ul class="specs">
+<p class="lead" style="margin-top:28px">Wohnung 201 im zweiten Stock des Neubaus THIRTY THREE an der Schönenstrasse 33: 100 m² mit offenem Wohn- und Essbereich, gedecktem Balkon zur Seeseite und zwei Bädern. Erstbezug ab 15. Januar oder 1. Februar 2027, unbefristet. Ab Bahnhof Rüschlikon in 15 Minuten zum Zürich HB, der Flughafen in rund 30 Minuten ohne Umsteigen, der See in zehn Gehminuten.</p>
+<a class="btn" href="#interesse" style="margin-top:28px">Interesse anmelden</a>
+<ul class="specs" style="margin-top:44px">
 
 <li class="row"><span>Zimmer</span><span>3.5</span></li>
 
@@ -225,6 +224,7 @@ picture{display:block}
 <li class="row"><span>Mietdauer</span><span>unbefristet</span></li>
 
 </ul>
+</div>
 </div>
 </div>
 </section>
@@ -294,10 +294,14 @@ picture{display:block}
 <!-- LAGE -->
 <section id="lage" class="sec">
 <div class="wrap">
+<figure class="img-mob lake" style="margin-bottom:64px">
+<img class="img" src="/img/thirty-three-rueschlikon-zuerichsee.jpg" alt="Der Zürichsee mit dem linken Seeufer, im Hintergrund die Alpen" width="2400" height="800" loading="lazy" style="aspect-ratio:3/1">
+<figcaption class="cap cap-mob">Der Zürichsee – zehn Gehminuten von der Wohnung</figcaption>
+</figure>
 <div class="side">
 <div>
-<h2 class="h2">Lage in Rüschlikon</h2>
-<p class="lead">Rüschlikon hat einen Gemeindesteuerfuss von 75 % – einen der drei tiefsten der 160 Gemeinden im Kanton Zürich. Bahnhof, See und Einkauf sind zu Fuss erreichbar. Der Bus 165 fährt ohne Umsteigen in die Stadt, die S-Bahn ab Bahnhof Rüschlikon in 15 Minuten zum Zürich HB.</p>
+<h2 class="h2">Rüschlikon am Zürichsee</h2>
+<p class="lead">Wohnen am See, arbeiten in der Stadt: Rüschlikon liegt am linken Ufer des Zürichsees zwischen Kilchberg und Thalwil, wenige Kilometer von Zürich. Der See ist in zehn Gehminuten erreicht, Bahnhof und Einkauf ebenso. Der Bus 165 fährt ohne Umsteigen ins Zentrum, die S-Bahn ab Bahnhof Rüschlikon in 15 Minuten zum Zürich HB. Und mit 75 % hat die Gemeinde einen der drei tiefsten Steuerfüsse der 160 Gemeinden im Kanton Zürich.</p>
 </div>
 <ul>
 <li class="sub">Zu Fuss</li>
@@ -332,7 +336,6 @@ picture{display:block}
 <div class="map" id="map-box" data-src="https://www.google.com/maps?q=Sch%C3%B6nenstrasse+33,+8803+R%C3%BCschlikon&amp;z=16&amp;output=embed"><span>Die Karte wird angezeigt, sobald Sie Cookies akzeptieren. <a href="#" class="consent-open" style="color:#1c1b19">Cookie-Einstellungen</a></span><a class="txtlink" href="https://www.google.com/maps/search/?api=1&amp;query=Sch%C3%B6nenstrasse+33%2C+8803+R%C3%BCschlikon" target="_blank" rel="noopener">In Google Maps öffnen</a></div>
 <div style="display:flex;flex-direction:column;justify-content:center;gap:24px">
 <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;line-height:1.2">Schönenstrasse 33<br>8803 Rüschlikon</p>
-<p class="muted" style="font-size:16px;max-width:44ch">Rüschlikon liegt am linken Zürichseeufer zwischen Kilchberg und Thalwil, wenige Kilometer südlich der Stadt Zürich.</p>
 </div>
 </div>
 </div>

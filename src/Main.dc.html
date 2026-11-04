@@ -32,7 +32,7 @@ a:focus-visible,button:focus-visible,.input:focus-visible,summary:focus-visible{
 .sec{padding:128px 0}
 .dark{background:#22262a;color:#f3f2ef}
 .muted{color:#4a4744}.dark .muted{color:#c9c6c0}
-.h1{font-size:64px;line-height:1.05}
+.h1{font-size:56px;line-height:1.05}.hero-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:56px;align-items:start}.hero-frame{margin:0}.hero-frame .img{aspect-ratio:auto;height:auto}
 .h1-sub{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;line-height:1.25;margin-top:14px;max-width:40ch}
 .h2{font-size:44px;margin-bottom:28px}
 .h3{font-size:24px;margin-bottom:18px}
@@ -106,13 +106,13 @@ details.legal-d[open] summary{color:#1c1b19}
 .legal strong{display:block;color:#1c1b19;margin:14px 0 2px;font-weight:600}
 .map{background:#e4e1db;aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#4a4744;font-size:15px;padding:24px;box-sizing:border-box;gap:14px}
 .dark .map{background:#2e3337;color:#c9c6c0}
-@media (max-width:900px){.sec{padding:72px 0}.wrap{padding:0 20px}.h1{font-size:38px}.h1-sub{font-size:23px}.h2{font-size:32px}#konditionen{padding-top:72px !important}.kv{grid-template-columns:repeat(1,minmax(0,1fr));gap:6px}.side,.two,.img7,.three{grid-template-columns:repeat(1,minmax(0,1fr));gap:40px}.navlinks,.langs-desk{display:none !important}.burger{display:block}.hero-frame{margin:0 -20px}.hero-cta{padding:10px 14px !important;font-size:13px !important}.hero-frame .img{aspect-ratio:auto;height:auto}.img-mob{margin:0 -20px}.img-mob .img{aspect-ratio:auto;height:auto}.cap-mob{padding:0 20px}.faq h3{font-size:20px}#top .h1{margin-top:56px}}
+@media (max-width:900px){.sec{padding:72px 0}.wrap{padding:0 20px}.h1{font-size:38px}.h1-sub{font-size:23px}.h2{font-size:32px}#konditionen{padding-top:72px !important}.kv{grid-template-columns:repeat(1,minmax(0,1fr));gap:6px}.side,.two,.img7,.three{grid-template-columns:repeat(1,minmax(0,1fr));gap:40px}.navlinks,.langs-desk{display:none !important}.burger{display:block}.hero-frame{margin:0 -20px}.hero-cta{padding:10px 14px !important;font-size:13px !important}.hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}.img-mob{margin:0 -20px}.img-mob .img{aspect-ratio:auto;height:auto}.cap-mob{padding:0 20px}.faq h3{font-size:20px}}
 .h1,.h2,.h3,.h1-sub,.faq h3{text-wrap:balance}.lead{text-wrap:pretty}
 .txtlink{text-underline-offset:3px;display:inline-block;padding:6px 0}
 section[id],details[id]{scroll-margin-top:80px}
-@media (min-width:600px) and (max-width:900px){.hero-frame .img{aspect-ratio:4/5}}
 @media (max-width:480px){.specs .row,#konditionen .row{flex-direction:column;align-items:flex-start;gap:2px}.specs .row span+span,#konditionen .row span+span{text-align:left;white-space:normal}.specs .row span:first-child,#konditionen .row span:first-child{font-size:13px;color:#6f6a64}}
 @media (max-width:420px){.hdr-cta{display:none}}
+@media (max-width:900px){.lake .img{aspect-ratio:4/3 !important;object-position:38% 60%}}
 </style>
 </helmet>
 
@@ -157,21 +157,21 @@ section[id],details[id]{scroll-margin-top:80px}
 <!-- HERO -->
 <section id="top" style="padding:40px 0 0">
 <div class="wrap">
+<div class="hero-grid">
 <figure class="hero-frame">
-<img class="img" src="/_blob/5fa2dc49f45751a1fb6ee638df78e13a" alt="{{t.altHero}}" width="1121" height="1403" fetchpriority="high" style="object-position:center 36%">
+<img class="img" src="/_blob/5fa2dc49f45751a1fb6ee638df78e13a" alt="{{t.altHero}}" width="1121" height="1403" fetchpriority="high">
 </figure>
-<h1 class="h1" style="margin-top:96px">{{t.heroTitle1}}</h1>
+<div class="hero-text">
+<h1 class="h1">{{t.heroTitle1}}</h1>
 <p class="h1-sub">{{t.heroTitle2}}</p>
-<div class="two" style="margin-top:40px;align-items:start">
-<div>
-<p class="lead">{{t.heroLead}}</p>
-<a class="btn" href="#interesse" style="margin-top:32px">{{t.cta}}</a>
-</div>
-<ul class="specs">
+<p class="lead" style="margin-top:28px">{{t.heroLead}}</p>
+<a class="btn" href="#interesse" style="margin-top:28px">{{t.cta}}</a>
+<ul class="specs" style="margin-top:44px">
 <sc-for list="{{t.specs}}" as="x" hint-placeholder-count="7">
 <li class="row"><span>{{x.n}}</span><span>{{x.v}}</span></li>
 </sc-for>
 </ul>
+</div>
 </div>
 </div>
 </section>
@@ -221,6 +221,10 @@ section[id],details[id]{scroll-margin-top:80px}
 <!-- LAGE -->
 <section id="lage" class="sec">
 <div class="wrap">
+<figure class="img-mob lake" style="margin-bottom:64px">
+<img class="img" src="/_blob/12647b98cefabc7b8d4c0a84f92358b9" alt="{{t.altLake}}" width="2400" height="800" loading="lazy" style="aspect-ratio:3/1">
+<figcaption class="cap cap-mob">{{t.capLake}}</figcaption>
+</figure>
 <div class="side">
 <div>
 <h2 class="h2">{{t.locTitle}}</h2>
@@ -245,7 +249,6 @@ section[id],details[id]{scroll-margin-top:80px}
 <div class="map"><span>{{t.mapPh}}</span><a class="txtlink" href="https://www.google.com/maps/search/?api=1&amp;query=Sch%C3%B6nenstrasse+33%2C+8803+R%C3%BCschlikon" target="_blank" rel="noopener">{{t.addrMap}}</a></div>
 <div style="display:flex;flex-direction:column;justify-content:center;gap:24px">
 <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;line-height:1.2">Schönenstrasse 33<br>8803 Rüschlikon</p>
-<p class="muted" style="font-size:16px;max-width:44ch">{{t.townText}}</p>
 </div>
 </div>
 </div>
@@ -381,14 +384,14 @@ class Component extends DCLogic {
           {h:'Haus', p:'Ein kleines Haus mit nur fünf Wohnungen. Handgefertigte Fassade mit vertikaler Struktur, Rundfenster im Giebel, gedeckte Balkone mit bronzefarbenem Geländer. Fertigstellung Dezember 2026 – Sie sind die ersten Bewohner.'},
           {h:'Energie', p:'Erdsonden-Wärmepumpe für Heizung und Warmwasser, im Sommer Freecooling (sanfte Kühlung über die Erdsonden), Photovoltaik auf dem Dach.'}
         ],
-        locTitle: 'Lage in Rüschlikon',
-        locLead: 'Rüschlikon hat einen Gemeindesteuerfuss von 75 % – einen der drei tiefsten der 160 Gemeinden im Kanton Zürich. Bahnhof, See und Einkauf sind zu Fuss erreichbar. Der Bus 165 fährt ohne Umsteigen in die Stadt, die S-Bahn ab Bahnhof Rüschlikon in 15 Minuten zum Zürich HB.',
+        locTitle: 'Rüschlikon am Zürichsee',
+        locLead: 'Wohnen am See, arbeiten in der Stadt: Rüschlikon liegt am linken Ufer des Zürichsees zwischen Kilchberg und Thalwil, wenige Kilometer von Zürich. Der See ist in zehn Gehminuten erreicht, Bahnhof und Einkauf ebenso. Der Bus 165 fährt ohne Umsteigen ins Zentrum, die S-Bahn ab Bahnhof Rüschlikon in 15 Minuten zum Zürich HB. Und mit 75 % hat die Gemeinde einen der drei tiefsten Steuerfüsse der 160 Gemeinden im Kanton Zürich.',
+        altLake: 'Der Zürichsee mit dem linken Seeufer, im Hintergrund die Alpen', capLake: 'Der Zürichsee – zehn Gehminuten von der Wohnung',
         locWalkH: 'Zu Fuss', locCommuteH: 'Nach Zürich', locDriveH: 'Mit dem Auto',
         locWalk: [{n:'Bushaltestelle Bus 165',v:'5 Min.'},{n:'Bahnhof Rüschlikon',v:'9 Min.'},{n:'Zürichsee',v:'10 Min.'},{n:'Coop Supermarkt',v:'10 Min.'}],
         locCommute: [{n:'Bus 165 direkt zum Bürkliplatz',s:'Stadtzentrum am See, alle 15–30 Minuten',v:'20 Min.'},{n:'S-Bahn S8/S24 zum Zürich HB',s:'alle 15 Minuten',v:'15 Min.'},{n:'S24 direkt zum Flughafen Zürich',s:'ohne Umsteigen',v:'ca. 30 Min.'}],
         locDrive: [{n:'Zürich Stadtzentrum',v:'10 Min.'},{n:'Einkaufszentrum Parkside mit Migros',v:'5 Min.'},{n:'Autobahnanschluss A3',v:'5 Min.'}],
         mapPh: 'Die Karte wird angezeigt, sobald Sie Cookies akzeptieren.', addrMap: 'In Google Maps öffnen',
-        townText: 'Rüschlikon liegt am linken Zürichseeufer zwischen Kilchberg und Thalwil, wenige Kilometer südlich der Stadt Zürich.',
         priceTitle: 'Mietzins und Konditionen',
         priceLead: 'Erstbezug, Garagenplatz inbegriffen, unbefristet – Mietzins und Kaution auf einen Blick.',
         priceRows: [{n:'Wohnung, pro Monat',v:'CHF 4\'980',c:''},{n:'Garagenplatz (fester Bestandteil der Wohnung), pro Monat',v:'CHF 200',c:''},{n:'Total, ohne Nebenkosten',v:'CHF 5\'180',c:'sum'},{n:'Kaution',v:'CHF 12\'000',c:''},{n:'Bezug',v:'15. Januar oder 1. Februar 2027',c:''},{n:'Mietdauer',v:'unbefristet',c:''},{n:'Möblierung',v:'unmöbliert',c:''},{n:'Nutzung',v:'Nichtraucherwohnung, keine Untermiete',c:''}],
@@ -458,14 +461,14 @@ class Component extends DCLogic {
           {h:'The building', p:'A small house with just five apartments. Handcrafted façade with vertical texture, round window in the gable, covered balconies with bronze-coloured railings. Completion in December 2026 – you will be the first residents.'},
           {h:'Energy', p:'Geothermal heat pump for heating and hot water, gentle free cooling via the ground probes in summer, photovoltaics on the roof.'}
         ],
-        locTitle: 'Location in Rüschlikon',
-        locLead: 'Rüschlikon\'s municipal tax multiplier is 75 % – one of the three lowest among the 160 municipalities in the canton of Zurich (the lower the multiplier, the lower your income tax). Station, lake and shops are within walking distance. Bus 165 runs into the city without changing, and from Rüschlikon station the S-Bahn reaches Zurich main station in 15 minutes.',
+        locTitle: 'Rüschlikon on Lake Zurich',
+        locLead: 'Live by the lake, work in the city: Rüschlikon lies on the western shore of Lake Zurich between Kilchberg and Thalwil, a few kilometres from Zurich. The lake is a ten-minute walk away, as are the station and the shops. Bus 165 runs into the city centre without changing, and from Rüschlikon station the S-Bahn reaches Zurich main station in 15 minutes. And at 75 %, the municipal tax multiplier is one of the three lowest among the 160 municipalities in the canton of Zurich – the lower the multiplier, the lower your income tax.',
+        altLake: 'Lake Zurich with its western shore and the Alps in the background', capLake: 'Lake Zurich – a ten-minute walk from the apartment',
         locWalkH: 'On foot', locCommuteH: 'To Zurich', locDriveH: 'By car',
         locWalk: [{n:'Bus stop, line 165',v:'5 min'},{n:'Rüschlikon railway station',v:'9 min'},{n:'Lake Zurich',v:'10 min'},{n:'Coop supermarket',v:'10 min'}],
         locCommute: [{n:'Bus 165 direct to Bürkliplatz',s:'city centre by the lake, every 15–30 minutes',v:'20 min'},{n:'S-Bahn (suburban train) S8/S24 to Zurich main station',s:'every 15 minutes',v:'15 min'},{n:'S24 direct to Zurich Airport',s:'no change',v:'approx. 30 min'}],
         locDrive: [{n:'Zurich city centre',v:'10 min'},{n:'Parkside shopping centre with Migros',v:'5 min'},{n:'Motorway A3',v:'5 min'}],
         mapPh: 'The map is shown once you accept cookies.', addrMap: 'Open in Google Maps',
-        townText: 'Rüschlikon lies on the western shore of Lake Zurich between Kilchberg and Thalwil, a few kilometres south of the city of Zurich.',
         priceTitle: 'Rent and terms',
         priceLead: 'First occupancy, garage space included, open-ended lease – rent and deposit at a glance.',
         priceRows: [{n:'Apartment, per month',v:'CHF 4\'980',c:''},{n:'Garage space (part of the apartment), per month',v:'CHF 200',c:''},{n:'Total, excluding utilities',v:'CHF 5\'180',c:'sum'},{n:'Deposit',v:'CHF 12\'000',c:''},{n:'Move-in',v:'15 January or 1 February 2027',c:''},{n:'Lease',v:'open-ended',c:''},{n:'Furnishing',v:'unfurnished',c:''},{n:'Use',v:'non-smoking, no subletting',c:''}],
@@ -535,14 +538,14 @@ class Component extends DCLogic {
           {h:'L\'edificio', p:'Una casa piccola, con soli cinque appartamenti. Facciata realizzata a mano con struttura verticale, finestra rotonda nel timpano, balconi coperti con ringhiere color bronzo. Completamento a dicembre 2026 – sarete i primi abitanti.'},
           {h:'Energia', p:'Pompa di calore geotermica per riscaldamento e acqua calda, raffrescamento passivo d\'estate, fotovoltaico sul tetto.'}
         ],
-        locTitle: 'La posizione a Rüschlikon',
-        locLead: 'Il moltiplicatore d\'imposta comunale di Rüschlikon è del 75 %, uno dei tre più bassi fra i 160 comuni del cantone di Zurigo (più è basso, meno imposte sul reddito si pagano). Stazione, lago e negozi sono raggiungibili a piedi. L\'autobus 165 porta in centro senza cambi; dalla stazione di Rüschlikon la S-Bahn arriva a Zurigo stazione centrale in 15 minuti.',
+        locTitle: 'Rüschlikon sul lago di Zurigo',
+        locLead: 'Vivere sul lago, lavorare in città: Rüschlikon si trova sulla riva occidentale del lago di Zurigo, tra Kilchberg e Thalwil, a pochi chilometri da Zurigo. Il lago è a dieci minuti a piedi, così come la stazione e i negozi. L\'autobus 165 porta in centro senza cambi; dalla stazione di Rüschlikon la S-Bahn arriva a Zurigo stazione centrale in 15 minuti. E con il 75 % il moltiplicatore d\'imposta comunale è uno dei tre più bassi fra i 160 comuni del cantone di Zurigo: più è basso, meno imposte si pagano.',
+        altLake: 'Il lago di Zurigo con la riva occidentale e le Alpi sullo sfondo', capLake: 'Il lago di Zurigo – a dieci minuti a piedi dall\'appartamento',
         locWalkH: 'A piedi', locCommuteH: 'Verso Zurigo', locDriveH: 'In auto',
         locWalk: [{n:'Fermata autobus 165',v:'5 min'},{n:'Stazione di Rüschlikon',v:'9 min'},{n:'Lago di Zurigo',v:'10 min'},{n:'Supermercato Coop',v:'10 min'}],
         locCommute: [{n:'Autobus 165 diretto a Bürkliplatz',s:'centro città sul lago, ogni 15–30 minuti',v:'20 min'},{n:'Treno suburbano S8/S24 per Zurigo stazione centrale (HB)',s:'ogni 15 minuti',v:'15 min'},{n:'S24 diretta all\'aeroporto di Zurigo',s:'senza cambi',v:'ca. 30 min'}],
         locDrive: [{n:'Centro di Zurigo',v:'10 min'},{n:'Centro commerciale Parkside con Migros',v:'5 min'},{n:'Autostrada A3',v:'5 min'}],
         mapPh: 'La mappa viene mostrata non appena accettate i cookie.', addrMap: 'Apri in Google Maps',
-        townText: 'Rüschlikon si trova sulla riva occidentale del lago di Zurigo, tra Kilchberg e Thalwil, a pochi chilometri a sud della città di Zurigo.',
         priceTitle: 'Canone e condizioni',
         priceLead: 'Prima occupazione, posto auto incluso, contratto a tempo indeterminato – canone e deposito a colpo d\'occhio.',
         priceRows: [{n:'Appartamento, al mese',v:'CHF 4\'980',c:''},{n:'Posto auto (abbinato all\'appartamento), al mese',v:'CHF 200',c:''},{n:'Totale, spese escluse',v:'CHF 5\'180',c:'sum'},{n:'Deposito di garanzia (cauzione)',v:'CHF 12\'000',c:''},{n:'Disponibile dal',v:'15 gennaio o 1° febbraio 2027',c:''},{n:'Contratto',v:'a tempo indeterminato',c:''},{n:'Arredamento',v:'non arredato',c:''},{n:'Uso',v:'non fumatori, nessuna sublocazione',c:''}],

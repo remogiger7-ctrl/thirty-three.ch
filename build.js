@@ -40,6 +40,7 @@ const IMG = {
   '/_blob/5fa2dc49f45751a1fb6ee638df78e13a': 'thirty-three-rueschlikon-haus',
   '/_blob/c2504cc65731c2a4e4e25c9343429c83': 'thirty-three-rueschlikon-wohnbereich-balkon',
   '/_blob/58f211a293dc771acb78a688d55c5e18': 'thirty-three-rueschlikon-kueche-eggersmann',
+  '/_blob/12647b98cefabc7b8d4c0a84f92358b9': 'thirty-three-rueschlikon-zuerichsee',
 };
 
 const LANGS = {
@@ -201,7 +202,7 @@ function page(lang) {
   body = body.replace(/<img class="img" src="\/img\/([a-z0-9-]+)\.jpg"([^>]*)>/g, (mm, name, rest) => {
     const found = webpWidths(name);
     const isHero = /fetchpriority="high"/.test(rest);
-    const sizes = isHero ? '(max-width:900px) 100vw, 1200px' : /kueche/.test(name) ? '(max-width:900px) 100vw, 680px' : '(max-width:900px) 100vw, 1200px';
+    const sizes = isHero ? '(max-width:900px) 100vw, 600px' : /kueche/.test(name) ? '(max-width:900px) 100vw, 680px' : '(max-width:900px) 100vw, 1200px';
     const img = `<img class="img" src="/img/${name}.jpg"${rest}>`;
     return found.length ? `<picture><source type="image/webp" srcset="${found.map((w) => `/img/${name}-${w}.webp ${w}w`).join(', ')}" sizes="${sizes}">${img}</picture>` : img;
   });
@@ -212,7 +213,7 @@ function page(lang) {
 
   const hw = webpWidths('thirty-three-rueschlikon-haus');
   const heroPreload = hw.length
-    ? `<link rel="preload" as="image" imagesrcset="${hw.map((w) => `/img/thirty-three-rueschlikon-haus-${w}.webp ${w}w`).join(', ')}" imagesizes="(max-width:900px) 100vw, 1200px" type="image/webp" fetchpriority="high">`
+    ? `<link rel="preload" as="image" imagesrcset="${hw.map((w) => `/img/thirty-three-rueschlikon-haus-${w}.webp ${w}w`).join(', ')}" imagesizes="(max-width:900px) 100vw, 600px" type="image/webp" fetchpriority="high">`
     : `<link rel="preload" as="image" href="/img/thirty-three-rueschlikon-haus.jpg" fetchpriority="high">`;
 
   const consent = `
@@ -309,7 +310,7 @@ for (const [lang, v] of Object.entries(LANGS)) {
 }
 fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-${Object.values(LANGS).map((v) => `<url><loc>${DOMAIN}/${v.dir}</loc><lastmod>${LASTMOD}</lastmod>${HREFLANGS.map(([h, d]) => `<xhtml:link rel="alternate" hreflang="${h}" href="${DOMAIN}/${d}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${DOMAIN}/"/>${['haus', 'wohnbereich-balkon', 'kueche-eggersmann'].map((n) => `<image:image><image:loc>${DOMAIN}/img/thirty-three-rueschlikon-${n}.jpg</image:loc></image:image>`).join('')}</url>`).join('\n')}
+${Object.values(LANGS).map((v) => `<url><loc>${DOMAIN}/${v.dir}</loc><lastmod>${LASTMOD}</lastmod>${HREFLANGS.map(([h, d]) => `<xhtml:link rel="alternate" hreflang="${h}" href="${DOMAIN}/${d}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${DOMAIN}/"/>${['haus', 'wohnbereich-balkon', 'kueche-eggersmann', 'zuerichsee'].map((n) => `<image:image><image:loc>${DOMAIN}/img/thirty-three-rueschlikon-${n}.jpg</image:loc></image:image>`).join('')}</url>`).join('\n')}
 </urlset>
 `);
 fs.writeFileSync(path.join(OUT, 'robots.txt'), LIVE
