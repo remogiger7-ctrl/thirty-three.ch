@@ -32,12 +32,15 @@ jobs:
           node build.js
           echo "== picture elements in index.html: $(grep -c '<picture>' site/index.html)" >> site/build-info.txt
           echo "== webp files: $(ls site/img/*.webp | wc -l)" >> site/build-info.txt
-      - name: Add self-hosted fonts (Manrope)
+      - name: Add self-hosted fonts (Cormorant Garamond, Inter)
         run: |
-          npm install --no-save --no-audit --no-fund @fontsource-variable/manrope
+          npm install --no-save --no-audit --no-fund @fontsource/cormorant-garamond @fontsource-variable/inter
           mkdir -p site/fonts
-          cp node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2 site/fonts/
-          cp node_modules/@fontsource-variable/manrope/files/manrope-latin-ext-wght-normal.woff2 site/fonts/
+          cp node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-300-normal.woff2 site/fonts/
+          cp node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-400-normal.woff2 site/fonts/
+          cp node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff2 site/fonts/
+          cp node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2 site/fonts/
+          cp node_modules/@fontsource-variable/inter/files/inter-latin-ext-wght-normal.woff2 site/fonts/
           ls -la site/fonts
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
@@ -58,5 +61,5 @@ jobs:
           sleep 60
           curl -sS -X POST https://api.indexnow.org/indexnow \
             -H 'Content-Type: application/json; charset=utf-8' \
-            -d '{"host":"thirty-three.ch","key":"92455364d20c20e6f61716b20a9827ec","keyLocation":"https://thirty-three.ch/92455364d20c20e6f61716b20a9827ec.txt","urlList":["https://thirty-three.ch/","https://thirty-three.ch/en/"]}' \
+            -d '{"host":"thirty-three.ch","key":"92455364d20c20e6f61716b20a9827ec","keyLocation":"https://thirty-three.ch/92455364d20c20e6f61716b20a9827ec.txt","urlList":["https://thirty-three.ch/","https://thirty-three.ch/en/","https://thirty-three.ch/it/"]}' \
             -w '\nIndexNow HTTP %{http_code}\n'
