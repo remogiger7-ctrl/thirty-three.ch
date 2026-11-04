@@ -20,14 +20,14 @@
 <style>
 figure{margin:0}
 body{margin:0;background:#f3f2ef;color:#1c1b19;font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:#8c6a3f}a:hover{color:#6e5230}
+a{color:#7a5a33}a:hover{color:#6e5230}
 h1,h2,h3{margin:0;font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;letter-spacing:-0.01em;line-height:1.08}
 p{margin:0}
 ul{margin:0;padding:0;list-style:none}
 img{max-width:100%}
 html{scroll-behavior:smooth}
 section[id]{scroll-margin-top:80px}
-a:focus-visible,button:focus-visible,.input:focus-visible{outline:2px solid #8c6a3f;outline-offset:3px}
+a:focus-visible,button:focus-visible,.input:focus-visible,summary:focus-visible{outline:2px solid #8c6a3f;outline-offset:3px}summary:focus-visible{outline-offset:6px}
 .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
 .sec{padding:128px 0}
 .dark{background:#22262a;color:#f3f2ef}
@@ -42,19 +42,19 @@ a:focus-visible,button:focus-visible,.input:focus-visible{outline:2px solid #8c6
 .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px}
 .img7{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:center}
 .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}
-.row{padding:12px 0;border-top:1px solid #d6d2ca;display:flex;justify-content:space-between;align-items:baseline;gap:24px;font-size:16px}
-.row:last-child{border-bottom:1px solid #d6d2ca}
-.row span+span{font-variant-numeric:tabular-nums;white-space:nowrap;flex:0 0 auto;text-align:right}
+.row{padding:15px 0;border-top:1px solid #e2dfd8;display:flex;justify-content:space-between;align-items:baseline;gap:32px;font-size:16px;color:#4a4744}.dark .row{color:#c9c6c0}
+.row:last-child{border-bottom:1px solid #e2dfd8}
+.row span+span{font-variant-numeric:tabular-nums;white-space:nowrap;flex:0 0 auto;text-align:right;font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;line-height:1.2;color:#1c1b19;letter-spacing:0}.dark .row span+span{color:#f3f2ef}
 .row small{display:block;font-size:13px;color:#6f6a64;font-weight:400}
 .dark .row small{color:#9a9790}
-.specs .row{padding:10px 0;font-size:15px}
+.specs .row{padding:12px 0;font-size:15px}
 .kv{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px;padding:18px 0;border-top:1px solid rgba(243,242,239,0.2)}
 .kv:last-child{border-bottom:1px solid rgba(243,242,239,0.2)}
 .kv b{font-weight:400;font-family:"Cormorant Garamond",Georgia,serif;font-size:24px}
 .kv p{font-size:16px}
-.row.sum{font-weight:600}
-.dark .row{border-color:rgba(243,242,239,0.2)}
-.sub{font-size:13px;color:#6f6a64;padding:26px 0 6px}
+.row.sum{border-top:1px solid #1c1b19;color:#1c1b19;font-weight:500}.row.sum span+span{font-size:28px}.row.sum+.row{border-top-color:#1c1b19}
+.dark .row,.dark .row:last-child{border-color:rgba(243,242,239,0.18)}
+.sub{font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c6a3f;padding:34px 0 8px}
 .sub:first-child{padding-top:0}
 .plain li{padding:6px 0 6px 18px;text-indent:-18px;font-size:16px}
 .plain li::before{content:"–";display:inline-block;width:18px;text-indent:0;color:#8c6a3f}
@@ -67,13 +67,13 @@ a:focus-visible,button:focus-visible,.input:focus-visible{outline:2px solid #8c6
 .btn:hover{background:#000000;color:#ffffff}
 .dark .btn{background:#f3f2ef;color:#22262a}.dark .btn:hover{background:#ffffff;color:#22262a}
 .nav a{color:#1c1b19;text-decoration:none;font-size:14px;font-weight:500;padding:8px 2px;display:inline-block}
-.lang{background:none;border:0;padding:8px 6px;font:inherit;font-size:13px;font-weight:500;cursor:pointer;color:#8a8580;min-width:36px;min-height:40px}
+.lang{background:none;border:0;padding:8px 6px;font:inherit;font-size:13px;font-weight:500;cursor:pointer;color:#6f6a64;min-width:36px;min-height:40px}
 .lang-on{color:#1c1b19;border-bottom:1px solid #8c6a3f}
-footer .lang{min-height:auto;padding:4px 6px}
-.hdr-cta{opacity:0;pointer-events:none;transition:opacity .2s}
-.hdr-cta.on{opacity:1;pointer-events:auto}
+footer .lang{min-height:36px;padding:8px 10px;color:#9a9790}footer .lang-on{color:#f3f2ef;border-bottom-color:#8c6a3f}footer a:not(.lang){display:inline-block;padding:5px 0}
+.hdr-cta{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s}
+.hdr-cta.on{opacity:1;visibility:visible;pointer-events:auto}
 details.legal-d{border:0;padding:0}
-details.legal-d summary{list-style:none;cursor:pointer;font-size:14px;color:#8a8580;padding:6px 0}
+details.legal-d summary{list-style:none;cursor:pointer;font-size:14px;color:#6f6a64;padding:8px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:70ch}details.legal-d summary::after{content:"+";font-family:Inter,sans-serif;font-size:20px;font-weight:300;color:#8c6a3f;flex:0 0 auto}details.legal-d[open] summary::after{content:"–"}
 details.legal-d summary::-webkit-details-marker{display:none}
 details.legal-d[open] summary{color:#1c1b19}
 .burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;padding:10px}
@@ -84,7 +84,7 @@ details.legal-d[open] summary{color:#1c1b19}
 .mark{font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:500;letter-spacing:0.14em;color:#1c1b19;text-decoration:none;white-space:nowrap}
 .step{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;padding:10px 0;font-size:15px}
 .step:first-of-type{padding-top:0}
-.step i{font-style:normal;font-size:13px;color:#8a8580;padding-top:3px}
+.step i{font-style:normal;font-size:13px;color:#9a9790;padding-top:3px}
 .step strong{display:block;font-weight:600}
 .input{width:100%;box-sizing:border-box;border:1px solid #d6d2ca;background:#ffffff;padding:14px 14px;font:inherit;font-size:16px;min-height:52px;color:#1c1b19;border-radius:0}
 .input:focus{border-color:#1c1b19}
@@ -106,8 +106,13 @@ details.legal-d[open] summary{color:#1c1b19}
 .legal strong{display:block;color:#1c1b19;margin:14px 0 2px;font-weight:600}
 .map{background:#e4e1db;aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#4a4744;font-size:15px;padding:24px;box-sizing:border-box;gap:14px}
 .dark .map{background:#2e3337;color:#c9c6c0}
-.plan{border:1px solid #d6d2ca;padding:56px 24px;text-align:center;font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;color:#4a4744}
-@media (max-width:900px){.sec{padding:72px 0}.wrap{padding:0 20px}.h1{font-size:38px}.h1-sub{font-size:23px}.h2{font-size:32px}#konditionen{padding-top:72px !important}.kv{grid-template-columns:repeat(1,minmax(0,1fr));gap:6px}.side,.two,.img7,.three{grid-template-columns:repeat(1,minmax(0,1fr));gap:40px}.navlinks,.langs-desk{display:none !important}.burger{display:block}.hero-frame{margin:0 -20px}.hero-cta{padding:10px 14px !important;font-size:13px !important}.hero-frame .img{aspect-ratio:auto;height:auto}.img-mob{margin:0 -20px}.img-mob .img{aspect-ratio:auto;height:auto}.cap-mob{padding:0 20px}.faq h3{font-size:20px}.mobile-cta{display:block}}
+@media (max-width:900px){.sec{padding:72px 0}.wrap{padding:0 20px}.h1{font-size:38px}.h1-sub{font-size:23px}.h2{font-size:32px}#konditionen{padding-top:72px !important}.kv{grid-template-columns:repeat(1,minmax(0,1fr));gap:6px}.side,.two,.img7,.three{grid-template-columns:repeat(1,minmax(0,1fr));gap:40px}.navlinks,.langs-desk{display:none !important}.burger{display:block}.hero-frame{margin:0 -20px}.hero-cta{padding:10px 14px !important;font-size:13px !important}.hero-frame .img{aspect-ratio:auto;height:auto}.img-mob{margin:0 -20px}.img-mob .img{aspect-ratio:auto;height:auto}.cap-mob{padding:0 20px}.faq h3{font-size:20px}#top .h1{margin-top:56px}}
+.h1,.h2,.h3,.h1-sub,.faq h3{text-wrap:balance}.lead{text-wrap:pretty}
+.txtlink{text-underline-offset:3px;display:inline-block;padding:6px 0}
+section[id],details[id]{scroll-margin-top:80px}
+@media (min-width:600px) and (max-width:900px){.hero-frame .img{aspect-ratio:4/5}}
+@media (max-width:480px){.specs .row,#konditionen .row{flex-direction:column;align-items:flex-start;gap:2px}.specs .row span+span,#konditionen .row span+span{text-align:left;white-space:normal}.specs .row span:first-child,#konditionen .row span:first-child{font-size:13px;color:#6f6a64}}
+@media (max-width:420px){.hdr-cta{display:none}}
 </style>
 </helmet>
 
@@ -154,7 +159,6 @@ details.legal-d[open] summary{color:#1c1b19}
 <div class="wrap">
 <figure class="hero-frame">
 <img class="img" src="/_blob/5fa2dc49f45751a1fb6ee638df78e13a" alt="{{t.altHero}}" width="1121" height="1403" fetchpriority="high" style="object-position:center 36%">
-<figcaption class="cap cap-mob">{{t.capVis}}</figcaption>
 </figure>
 <h1 class="h1" style="margin-top:96px">{{t.heroTitle1}}</h1>
 <p class="h1-sub">{{t.heroTitle2}}</p>
@@ -280,7 +284,7 @@ details.legal-d[open] summary{color:#1c1b19}
 <div class="field"><label class="label" for="f-mail">{{t.fMail}}</label><input class="input" id="f-mail" type="email" required="required" value="{{form.mail}}" onChange="{{onMail}}"></div>
 </div>
 <div class="field"><label class="label" for="f-tel">{{t.fTel}}</label><input class="input" id="f-tel" type="tel" value="{{form.tel}}" onChange="{{onTel}}"></div>
-<div class="field"><label class="label" for="f-msg">{{t.fMsg}}</label><textarea class="input" id="f-msg" rows="5" onChange="{{onMsg}}">{{form.msg}}</textarea></div>
+<div class="field"><label class="label" for="f-msg">{{t.fMsg}}</label><textarea class="input" id="f-msg" rows="5" placeholder="{{t.fMsgPh}}" onChange="{{onMsg}}">{{form.msg}}</textarea></div>
 <button class="btn" type="submit">{{t.fSend}}</button>
 <p class="muted" style="font-size:14px;margin-top:16px">{{t.formNote}} <a href="{{mailPlain}}" style="color:#f3f2ef">{{mailAddr}}</a></p>
 </form>
@@ -339,7 +343,7 @@ details.legal-d[open] summary{color:#1c1b19}
 <address style="font-style:normal">Schönenstrasse 33, 8803 Rüschlikon<br><a href="{{mailPlain}}" style="color:#f3f2ef">{{mailAddr}}</a></address>
 <div style="display:flex;gap:20px;flex-wrap:wrap"><a href="#impressum" style="color:#f3f2ef;text-decoration:none">{{t.impH}}</a><a href="#datenschutz" style="color:#f3f2ef;text-decoration:none">{{t.dsH}}</a><span style="display:inline-flex;align-items:center"><button class="lang {{deOn}}" onClick="{{setDe}}" style="color:#c9c6c0">DE</button><button class="lang {{enOn}}" onClick="{{setEn}}" style="color:#c9c6c0">EN</button><button class="lang {{itOn}}" onClick="{{setIt}}" style="color:#c9c6c0">IT</button></span></div>
 </div>
-<p style="font-size:12px;margin-top:32px;color:#8a8580">© 2026 Leonardo Fasciati</p>
+<p style="font-size:12px;margin-top:32px;color:#9a9790">© 2026 Leonardo Fasciati</p>
 </div>
 </footer>
 
@@ -356,13 +360,13 @@ class Component extends DCLogic {
       de: {
         navAria: 'Hauptnavigation', navMenu: 'Menü', navApt: 'Wohnung', navFit: 'Ausbau', navLoc: 'Lage', navPrice: 'Konditionen', navBook: 'Interesse anmelden',
         heroTitle1: '3.5-Zimmer-Wohnung in Rüschlikon', heroTitle2: 'Neubau in Eigentumsqualität, zur Miete',
-        heroLead: 'Wohnung 201 im zweiten Stock des Neubaus THIRTY THREE an der Schönenstrasse 33 – ein Haus mit nur fünf Wohnungen. 100 m² mit offenem Wohn- und Essbereich, gedecktem Balkon zur Seeseite und zwei Bädern. Erstbezug ab 15. Januar oder 1. Februar 2027, unbefristet. Zürich HB in 15 Minuten mit der S-Bahn, der Flughafen in rund 30 Minuten ohne Umsteigen, der See in zehn Gehminuten.',
-        specs: [{n:'Zimmer',v:'3.5'},{n:'Fläche (brutto)',v:'100 m²'},{n:'Balkon, gedeckt',v:'13.5 m²'},{n:'Stockwerk',v:'2. Stock, Lift in die Wohnung'},{n:'Mietzins inkl. Garagenplatz',v:'CHF 5\'180 pro Monat'},{n:'Bezug',v:'ab 15. Januar 2027'},{n:'Mietdauer',v:'unbefristet'}],
+        heroLead: 'Wohnung 201 im zweiten Stock des Neubaus THIRTY THREE an der Schönenstrasse 33: 100 m² mit offenem Wohn- und Essbereich, gedecktem Balkon zur Seeseite und zwei Bädern. Erstbezug ab 15. Januar oder 1. Februar 2027, unbefristet. Ab Bahnhof Rüschlikon in 15 Minuten zum Zürich HB, der Flughafen in rund 30 Minuten ohne Umsteigen, der See in zehn Gehminuten.',
+        specs: [{n:'Zimmer',v:'3.5'},{n:'Fläche (brutto)',v:'100 m²'},{n:'Balkon, gedeckt',v:'13.5 m²'},{n:'Stockwerk',v:'2. Stock, Lift in die Wohnung'},{n:'Mietzins inkl. Garagenplatz, exkl. Nebenkosten',v:'CHF 5\'180 pro Monat'},{n:'Bezug',v:'15. Januar oder 1. Februar 2027'},{n:'Mietdauer',v:'unbefristet'}],
         altHero: 'Visualisierung des Neubaus THIRTY THREE an der Schönenstrasse 33 in Rüschlikon',
         capVis: 'Visualisierung des Hauses – unverbindlich, das Haus ist im Bau.',
         cta: 'Interesse anmelden',
         aptTitle: 'Die Wohnung im zweiten Stock',
-        aptLead: 'Der Wohn- und Essbereich mit offener Küche misst 36.6 m² und öffnet sich auf den gedeckten Balkon. Zwei Zimmer, ein Bad mit Wanne und WC, ein zweites Bad mit Dusche und WC, dazu Réduit und ein Keller mit 13.1 m².',
+        aptLead: 'Der Wohn- und Essbereich mit offener Küche misst 36.6 m² und öffnet sich auf den gedeckten Balkon. Zwei Zimmer, eines mit Einbauschrank, ein Bad mit Wanne und WC, ein zweites Bad mit Dusche und WC, dazu Réduit und ein Keller mit 13.1 m².',
         altLiving: 'Visualisierung: Wohnbereich mit Zugang zum Balkon, 3.5-Zimmer-Wohnung THIRTY THREE in Rüschlikon',
         capLiving: 'Wohnbereich mit Balkonzugang – unverbindliche Visualisierung; Möblierung beispielhaft, die Wohnung wird unmöbliert vermietet.',
         aptMoreH: 'Dazu gehört',
@@ -375,19 +379,19 @@ class Component extends DCLogic {
         material: [
           {h:'Böden', p:'Eichenparkett in allen Wohnräumen und Zimmern.'},
           {h:'Haus', p:'Ein kleines Haus mit nur fünf Wohnungen. Handgefertigte Fassade mit vertikaler Struktur, Rundfenster im Giebel, gedeckte Balkone mit bronzefarbenem Geländer. Fertigstellung Dezember 2026 – Sie sind die ersten Bewohner.'},
-          {h:'Energie', p:'Erdsonden-Wärmepumpe für Heizung und Warmwasser, Freecooling im Sommer, Photovoltaik auf dem Dach.'}
+          {h:'Energie', p:'Erdsonden-Wärmepumpe für Heizung und Warmwasser, im Sommer Freecooling (sanfte Kühlung über die Erdsonden), Photovoltaik auf dem Dach.'}
         ],
         locTitle: 'Lage in Rüschlikon',
-        locLead: 'Rüschlikon hat mit 75 % einen der drei tiefsten Gemeindesteuerfüsse der 160 Gemeinden im Kanton Zürich. Bahnhof, See und Einkauf sind zu Fuss erreichbar, die Stadt mit dem Bus ohne Umsteigen – zu Fuss zum Bahnhof, 15 Minuten zum Zürich HB.',
+        locLead: 'Rüschlikon hat einen Gemeindesteuerfuss von 75 % – einen der drei tiefsten der 160 Gemeinden im Kanton Zürich. Bahnhof, See und Einkauf sind zu Fuss erreichbar. Der Bus 165 fährt ohne Umsteigen in die Stadt, die S-Bahn ab Bahnhof Rüschlikon in 15 Minuten zum Zürich HB.',
         locWalkH: 'Zu Fuss', locCommuteH: 'Nach Zürich', locDriveH: 'Mit dem Auto',
         locWalk: [{n:'Bushaltestelle Bus 165',v:'5 Min.'},{n:'Bahnhof Rüschlikon',v:'9 Min.'},{n:'Zürichsee',v:'10 Min.'},{n:'Coop Supermarkt',v:'10 Min.'}],
-        locCommute: [{n:'Bus 165 direkt zum Bürkliplatz',s:'alle 15–30 Minuten',v:'20 Min.'},{n:'S-Bahn S8/S24 zum Zürich HB',s:'alle 15 Minuten',v:'15 Min.'},{n:'S24 direkt zum Flughafen Zürich',s:'ohne Umsteigen',v:'30 Min.'}],
+        locCommute: [{n:'Bus 165 direkt zum Bürkliplatz',s:'Stadtzentrum am See, alle 15–30 Minuten',v:'20 Min.'},{n:'S-Bahn S8/S24 zum Zürich HB',s:'alle 15 Minuten',v:'15 Min.'},{n:'S24 direkt zum Flughafen Zürich',s:'ohne Umsteigen',v:'ca. 30 Min.'}],
         locDrive: [{n:'Zürich Stadtzentrum',v:'10 Min.'},{n:'Einkaufszentrum Parkside mit Migros',v:'5 Min.'},{n:'Autobahnanschluss A3',v:'5 Min.'}],
         mapPh: 'Die Karte wird angezeigt, sobald Sie Cookies akzeptieren.', addrMap: 'In Google Maps öffnen',
         townText: 'Rüschlikon liegt am linken Zürichseeufer zwischen Kilchberg und Thalwil, wenige Kilometer südlich der Stadt Zürich.',
         priceTitle: 'Mietzins und Konditionen',
-        priceLead: 'Erstbezug, Garagenplatz inbegriffen, unbefristet – alle Kosten auf einen Blick.',
-        priceRows: [{n:'Wohnung, pro Monat',v:'CHF 4\'980',c:''},{n:'Garagenplatz (gehört zur Wohnung), pro Monat',v:'CHF 200',c:''},{n:'Total, ohne Nebenkosten',v:'CHF 5\'180',c:'sum'},{n:'Kaution',v:'CHF 12\'000',c:''},{n:'Bezug',v:'15. Januar oder 1. Februar 2027',c:''},{n:'Mietdauer',v:'unbefristet',c:''},{n:'Möblierung',v:'unmöbliert',c:''},{n:'Nutzung',v:'Nichtraucher, zum Eigengebrauch',c:''}],
+        priceLead: 'Erstbezug, Garagenplatz inbegriffen, unbefristet – Mietzins und Kaution auf einen Blick.',
+        priceRows: [{n:'Wohnung, pro Monat',v:'CHF 4\'980',c:''},{n:'Garagenplatz (fester Bestandteil der Wohnung), pro Monat',v:'CHF 200',c:''},{n:'Total, ohne Nebenkosten',v:'CHF 5\'180',c:'sum'},{n:'Kaution',v:'CHF 12\'000',c:''},{n:'Bezug',v:'15. Januar oder 1. Februar 2027',c:''},{n:'Mietdauer',v:'unbefristet',c:''},{n:'Möblierung',v:'unmöbliert',c:''},{n:'Nutzung',v:'Nichtraucherwohnung, keine Untermiete',c:''}],
         priceNote: 'Der Mietzins ist monatlich im Voraus zahlbar. Nebenkosten akonto, der Betrag wird mit dem Mietvertrag bekannt gegeben. Kaution auf ein Mietkautionskonto auf Ihren Namen, alternativ Mietkautionsversicherung. Kündigungsfrist drei Monate auf Ende März, Juni und September. Details dazu unter «Häufige Fragen».',
         bookTitle: 'Interesse anmelden',
         bookLead: 'Name und E-Mail genügen. Sie erhalten eine persönliche Antwort mit den Besichtigungsterminen – Unterlagen brauchen Sie dafür keine.',
@@ -395,16 +399,16 @@ class Component extends DCLogic {
         bookSteps: [
           {n:'1',h:'Interesse anmelden',p:'Per Formular oder E-Mail.'},
           {n:'2',h:'Besichtigung',p:'Sie erhalten die Besichtigungstermine.'},
-          {n:'3',h:'Bewerbung',p:'Wer die Wohnung möchte, erhält das Bewerbungsformular, inklusive Betreibungsregisterauszug.'},
+          {n:'3',h:'Bewerbung',p:'Wer die Wohnung möchte, erhält das Bewerbungsformular; dazu gehört ein Betreibungsregisterauszug.'},
           {n:'4',h:'Mietvertrag',p:'Auf Deutsch, auf Wunsch mit englischer Lesefassung.'}
         ],
         fName: 'Name', fMail: 'E-Mail', fTel: 'Telefon (optional)', fMsg: 'Nachricht (optional)', fSend: 'Interesse anmelden',
-        formNote: 'Oder direkt per E-Mail an', mailSubject: 'Interesse Schönenstrasse 33, Rüschlikon',
+        formNote: 'Oder direkt per E-Mail an Leonardo Fasciati:', fMsgPh: 'z. B. gewünschter Bezugstermin oder Fragen', mailSubject: 'Interesse Schönenstrasse 33, Rüschlikon',
         mailLabels: {name:'Name',mail:'E-Mail',tel:'Telefon',msg:'Nachricht'},
         faqH: 'Häufige Fragen',
         faqs: [
           {q:'Wie funktioniert die Kaution?', a:'Die Kaution von CHF 12\'000 wird auf ein Mietkautionskonto auf Ihren Namen bei einer Schweizer Bank einbezahlt und am Ende des Mietverhältnisses zurückerstattet. Alternativ ist eine Mietkautionsversicherung möglich: Sie zahlen eine Jahresprämie statt des Betrags.'},
-          {q:'Was bedeutet «Nebenkosten akonto»?', a:'Heizung, Warmwasser und die Betriebskosten des Hauses werden als monatlicher Vorschuss bezahlt und einmal jährlich nach den effektiven Kosten abgerechnet. Der Betrag wird mit dem Mietvertrag bekannt gegeben.'},
+          {q:'Was bedeutet «Nebenkosten akonto»?', a:'Die Nebenkosten (typischerweise Heizung, Warmwasser und Betriebskosten des Hauses) werden als monatlicher Vorschuss bezahlt und einmal jährlich nach den effektiven Kosten abgerechnet. Der Betrag wird mit dem Mietvertrag bekannt gegeben.'},
           {q:'Was ist ein Betreibungsregisterauszug?', a:'Ein Auszug des Betreibungsamts Ihrer Wohngemeinde, der zeigt, dass keine Betreibungen offen sind. Er gehört in der Schweiz zu jeder Wohnungsbewerbung und wird erst nach der Besichtigung verlangt, nicht bei der Anmeldung.'},
           {q:'Welche Kündigungstermine gelten?', a:'Der Mietvertrag ist unbefristet. Gekündigt werden kann mit drei Monaten Frist auf die ortsüblichen Termine Ende März, Juni und September.'},
           {q:'Ist die Wohnung stufenlos erreichbar?', a:'Ja. Der Lift hält direkt in der Wohnung; sie ist ohne Stufen erreichbar, auch mit Kinderwagen oder Rollstuhl.'}
@@ -433,13 +437,13 @@ class Component extends DCLogic {
       en: {
         navAria: 'Main navigation', navMenu: 'Menu', navApt: 'Apartment', navFit: 'Finishes', navLoc: 'Location', navPrice: 'Rent and terms', navBook: 'Enquire',
         heroTitle1: '3.5-room apartment in Rüschlikon', heroTitle2: 'A new build finished to owner-occupier standard, available to rent',
-        heroLead: 'Apartment 201 on the second floor of THIRTY THREE, a new building at Schönenstrasse 33 with just five apartments. 100 m² with an open living and dining area, a covered balcony facing the lake side and two bathrooms. Move in from 15 January or 1 February 2027, open-ended lease. Zurich main station in 15 minutes by S-Bahn, the airport in around 30 minutes without changing, the lake a ten-minute walk away.',
-        specs: [{n:'Rooms',v:'3.5 (2 bedrooms + living/dining)'},{n:'Floor area (gross)',v:'100 m²'},{n:'Balcony, covered',v:'13.5 m²'},{n:'Floor',v:'2nd, lift into the apartment'},{n:'Rent incl. garage space',v:'CHF 5\'180 per month'},{n:'Move-in',v:'from 15 January 2027'},{n:'Lease',v:'open-ended'}],
+        heroLead: 'Apartment 201 on the second floor of THIRTY THREE, a new building at Schönenstrasse 33: 100 m² with an open living and dining area, a covered balcony facing the lake side and two bathrooms. Move in from 15 January or 1 February 2027, open-ended lease. From Rüschlikon station it is 15 minutes to Zurich main station and around 30 minutes to the airport without changing; the lake is a ten-minute walk away.',
+        specs: [{n:'Rooms',v:'3.5 (2 bedrooms + living/dining)'},{n:'Floor area (gross)',v:'100 m²'},{n:'Balcony, covered',v:'13.5 m²'},{n:'Floor',v:'2nd (two levels above ground), lift into the apartment'},{n:'Rent incl. garage space, excl. utilities',v:'CHF 5\'180 per month'},{n:'Move-in',v:'15 January or 1 February 2027'},{n:'Lease',v:'open-ended'}],
         altHero: 'Rendering of the new THIRTY THREE building at Schönenstrasse 33 in Rüschlikon',
         capVis: 'Artist\'s impression of the building, non-binding – the building is under construction.',
         cta: 'Enquire',
         aptTitle: 'The apartment on the second floor',
-        aptLead: 'The living and dining area with open kitchen measures 36.6 m² and opens onto the covered balcony. Two bedrooms, one bathroom with a tub and toilet, a second with a shower and toilet, plus a storage room and a 13.1 m² cellar.',
+        aptLead: 'The living and dining area with open kitchen measures 36.6 m² and opens onto the covered balcony. Two bedrooms, one with a built-in wardrobe, one bathroom with a tub and toilet, a second with a shower and toilet, plus a storage room and a 13.1 m² cellar.',
         altLiving: 'Rendering: living area with access to the balcony, 3.5-room apartment THIRTY THREE in Rüschlikon',
         capLiving: 'Living area with balcony access – artist\'s impression; furniture shown for illustration only, the apartment is let unfurnished.',
         aptMoreH: 'What\'s included',
@@ -452,19 +456,19 @@ class Component extends DCLogic {
         material: [
           {h:'Floors', p:'Oak parquet throughout the living areas and bedrooms.'},
           {h:'The building', p:'A small house with just five apartments. Handcrafted façade with vertical texture, round window in the gable, covered balconies with bronze-coloured railings. Completion in December 2026 – you will be the first residents.'},
-          {h:'Energy', p:'Geothermal heat pump for heating and hot water, free cooling in summer, photovoltaics on the roof.'}
+          {h:'Energy', p:'Geothermal heat pump for heating and hot water, gentle free cooling via the ground probes in summer, photovoltaics on the roof.'}
         ],
         locTitle: 'Location in Rüschlikon',
-        locLead: 'At 75 %, Rüschlikon has one of the three lowest municipal tax rates of the 160 municipalities in the canton of Zurich. Station, lake and shops are within walking distance, the bus takes you into the city without changing – walk to the station, 15 minutes to Zurich main station.',
+        locLead: 'Rüschlikon\'s municipal tax multiplier is 75 % – one of the three lowest among the 160 municipalities in the canton of Zurich (the lower the multiplier, the lower your income tax). Station, lake and shops are within walking distance. Bus 165 runs into the city without changing, and from Rüschlikon station the S-Bahn reaches Zurich main station in 15 minutes.',
         locWalkH: 'On foot', locCommuteH: 'To Zurich', locDriveH: 'By car',
         locWalk: [{n:'Bus stop, line 165',v:'5 min'},{n:'Rüschlikon railway station',v:'9 min'},{n:'Lake Zurich',v:'10 min'},{n:'Coop supermarket',v:'10 min'}],
-        locCommute: [{n:'Bus 165 direct to Bürkliplatz',s:'city centre, lake end of Bahnhofstrasse – every 15–30 minutes',v:'20 min'},{n:'S-Bahn (suburban train) S8/S24 to Zurich main station',s:'every 15 minutes',v:'15 min'},{n:'S24 direct to Zurich Airport',s:'no change',v:'30 min'}],
+        locCommute: [{n:'Bus 165 direct to Bürkliplatz',s:'city centre by the lake, every 15–30 minutes',v:'20 min'},{n:'S-Bahn (suburban train) S8/S24 to Zurich main station',s:'every 15 minutes',v:'15 min'},{n:'S24 direct to Zurich Airport',s:'no change',v:'approx. 30 min'}],
         locDrive: [{n:'Zurich city centre',v:'10 min'},{n:'Parkside shopping centre with Migros',v:'5 min'},{n:'Motorway A3',v:'5 min'}],
         mapPh: 'The map is shown once you accept cookies.', addrMap: 'Open in Google Maps',
         townText: 'Rüschlikon lies on the western shore of Lake Zurich between Kilchberg and Thalwil, a few kilometres south of the city of Zurich.',
         priceTitle: 'Rent and terms',
-        priceLead: 'First occupancy, garage space included, open-ended lease – all costs at a glance.',
-        priceRows: [{n:'Apartment, per month',v:'CHF 4\'980',c:''},{n:'Garage space (comes with the apartment), per month',v:'CHF 200',c:''},{n:'Total, excluding utilities',v:'CHF 5\'180',c:'sum'},{n:'Deposit',v:'CHF 12\'000',c:''},{n:'Move-in',v:'15 January or 1 February 2027',c:''},{n:'Lease',v:'open-ended',c:''},{n:'Furnishing',v:'unfurnished',c:''},{n:'Use',v:'non-smoking, for your own occupation',c:''}],
+        priceLead: 'First occupancy, garage space included, open-ended lease – rent and deposit at a glance.',
+        priceRows: [{n:'Apartment, per month',v:'CHF 4\'980',c:''},{n:'Garage space (part of the apartment), per month',v:'CHF 200',c:''},{n:'Total, excluding utilities',v:'CHF 5\'180',c:'sum'},{n:'Deposit',v:'CHF 12\'000',c:''},{n:'Move-in',v:'15 January or 1 February 2027',c:''},{n:'Lease',v:'open-ended',c:''},{n:'Furnishing',v:'unfurnished',c:''},{n:'Use',v:'non-smoking, no subletting',c:''}],
         priceNote: 'Rent is paid monthly in advance. Utilities are paid as a monthly advance; the amount is stated in the lease. The deposit goes into a rental deposit account in your name; a deposit insurance is possible instead. Notice period: three months, to the end of March, June or September. Details under “Frequently asked questions”.',
         bookTitle: 'Enquire',
         bookLead: 'Name and e-mail are enough. You will receive a personal reply with the viewing dates – no documents are needed at this stage.',
@@ -472,16 +476,16 @@ class Component extends DCLogic {
         bookSteps: [
           {n:'1',h:'Enquire',p:'By form or e-mail.'},
           {n:'2',h:'Viewing',p:'You will receive the viewing dates.'},
-          {n:'3',h:'Application',p:'If you would like the apartment, you will receive the application form, including a debt enforcement register extract.'},
+          {n:'3',h:'Application',p:'If you would like the apartment, you will receive the application form; a debt enforcement register extract is part of the application.'},
           {n:'4',h:'Lease',p:'In German, the legally binding language; an English translation for reference is provided on request.'}
         ],
         fName: 'Name', fMail: 'E-mail', fTel: 'Phone (optional)', fMsg: 'Message (optional)', fSend: 'Send enquiry',
-        formNote: 'Or directly by e-mail to', mailSubject: 'Enquiry Schönenstrasse 33, Rüschlikon',
+        formNote: 'Or directly by e-mail to Leonardo Fasciati:', fMsgPh: 'e.g. preferred move-in date or questions', mailSubject: 'Enquiry Schönenstrasse 33, Rüschlikon',
         mailLabels: {name:'Name',mail:'E-mail',tel:'Phone',msg:'Message'},
         faqH: 'Frequently asked questions',
         faqs: [
           {q:'How does the deposit work?', a:'The deposit of CHF 12\'000 is paid into a blocked rental deposit account at a Swiss bank, held in your name and returned to you at the end of the lease. Alternatively, a rental deposit insurance is possible: you pay an annual premium instead of the lump sum.'},
-          {q:'What does “utilities on account” (Nebenkosten akonto) mean?', a:'Heating, hot water and the running costs of the building are paid as a monthly advance and settled once a year against actual costs. The amount is stated in the lease.'},
+          {q:'What does “utilities on account” (Nebenkosten akonto) mean?', a:'Utilities (typically heating, hot water and the building\'s running costs) are paid as a monthly advance and settled once a year against actual costs. The amount is stated in the lease.'},
           {q:'What is a debt enforcement register extract (Betreibungsregisterauszug)?', a:'A certificate from the debt enforcement office of your municipality confirming that no debt proceedings are pending against you. It is part of every rental application in Switzerland and is requested only after the viewing, not when you enquire.'},
           {q:'Which notice periods apply?', a:'The lease is open-ended. Notice can be given with three months to the end of March, June or September – the standard moving dates in the Zurich area.'},
           {q:'Is the apartment step-free?', a:'Yes. The lift stops directly inside the apartment; it can be reached without steps, with a pram or a wheelchair.'}
@@ -508,19 +512,19 @@ class Component extends DCLogic {
         ]
       },
       it: {
-        navAria: 'Navigazione principale', navMenu: 'Menu', navApt: 'Appartamento', navFit: 'Finiture', navLoc: 'Posizione', navPrice: 'Canone e condizioni', navBook: 'Manifestare interesse',
+        navAria: 'Navigazione principale', navMenu: 'Menu', navApt: 'Appartamento', navFit: 'Finiture', navLoc: 'Posizione', navPrice: 'Canone e condizioni', navBook: 'Segnalare interesse',
         heroTitle1: '3,5 locali a Rüschlikon', heroTitle2: 'Nuova costruzione con finiture da appartamento di proprietà, in affitto',
-        heroLead: 'Appartamento 201 al secondo piano della nuova costruzione THIRTY THREE in Schönenstrasse 33, una casa con soli cinque appartamenti. 100 m² con zona giorno aperta, balcone coperto sul lato del lago e due bagni. Disponibile dal 15 gennaio o dal 1° febbraio 2027, contratto a tempo indeterminato. Zurigo stazione centrale in 15 minuti con la S-Bahn, l\'aeroporto in circa 30 minuti senza cambi, il lago a dieci minuti a piedi.',
-        specs: [{n:'Locali',v:'3,5 (2 camere + soggiorno/pranzo)'},{n:'Superficie (lorda)',v:'100 m²'},{n:'Balcone coperto',v:'13,5 m²'},{n:'Piano',v:'2°, ascensore nell\'appartamento'},{n:'Canone incl. posto auto',v:'CHF 5\'180 al mese'},{n:'Disponibile',v:'dal 15 gennaio 2027'},{n:'Contratto',v:'a tempo indeterminato'}],
+        heroLead: 'Appartamento 201 al secondo piano della nuova costruzione THIRTY THREE in Schönenstrasse 33: 100 m² con zona giorno aperta, balcone coperto sul lato del lago e due bagni. Disponibile dal 15 gennaio o dal 1° febbraio 2027, contratto a tempo indeterminato. Dalla stazione di Rüschlikon 15 minuti fino a Zurigo stazione centrale, l\'aeroporto in circa 30 minuti senza cambi, il lago a dieci minuti a piedi.',
+        specs: [{n:'Locali',v:'3,5 (2 camere + soggiorno/pranzo)'},{n:'Superficie (lorda)',v:'100 m²'},{n:'Balcone coperto',v:'13,5 m²'},{n:'Piano',v:'2°, ascensore nell\'appartamento'},{n:'Canone incl. posto auto, spese escluse',v:'CHF 5\'180 al mese'},{n:'Disponibile',v:'15 gennaio o 1° febbraio 2027'},{n:'Contratto',v:'a tempo indeterminato'}],
         altHero: 'Rendering della nuova costruzione THIRTY THREE in Schönenstrasse 33 a Rüschlikon',
         capVis: 'Rendering dell\'edificio, non vincolante – l\'edificio è in costruzione.',
-        cta: 'Manifestare interesse',
+        cta: 'Segnalare interesse',
         aptTitle: 'L\'appartamento al secondo piano',
-        aptLead: 'La zona giorno con cucina aperta misura 36,6 m² e si apre sul balcone coperto. Due camere, un bagno con vasca e WC, un secondo bagno con doccia e WC, inoltre ripostiglio e una cantina di 13,1 m².',
+        aptLead: 'La zona giorno con cucina aperta misura 36,6 m² e si apre sul balcone coperto. Due camere, una con armadio a muro, un bagno con vasca e WC, un secondo bagno con doccia e WC, inoltre ripostiglio e una cantina di 13,1 m².',
         altLiving: 'Rendering: zona giorno con accesso al balcone, appartamento di 3,5 locali THIRTY THREE a Rüschlikon',
         capLiving: 'Zona giorno con accesso al balcone – rendering non vincolante; arredi indicativi, l\'appartamento è affittato non arredato.',
         aptMoreH: 'Incluso',
-        aptMore: ['Ascensore direttamente nell\'appartamento – senza gradini, per passeggini e sedie a rotelle', 'Lavatrice e asciugatrice in appartamento', 'Posto auto in garage, incluso nell\'appartamento', 'Collegamento in fibra ottica – anche per il lavoro da casa', 'Tapparelle elettriche in tutti i locali'],
+        aptMore: ['Ascensore direttamente nell\'appartamento – senza gradini, per passeggini e sedie a rotelle', 'Lavatrice e asciugatrice in appartamento', 'Posto auto in garage, abbinato all\'appartamento', 'Collegamento in fibra ottica – anche per il lavoro da casa', 'Tapparelle elettriche in tutti i locali'],
         fitTitle: 'Costruito con lo standard di un\'abitazione di proprietà',
         fitLead: 'Pietra naturale, ante senza maniglie ed elettrodomestici BORA, Miele ed Electrolux: la cucina è il segno più evidente della cura con cui è stato costruito l\'edificio.',
         altKitchen: 'Rendering: cucina con ante nere e zona pranzo, appartamento di 3,5 locali THIRTY THREE a Rüschlikon',
@@ -532,33 +536,33 @@ class Component extends DCLogic {
           {h:'Energia', p:'Pompa di calore geotermica per riscaldamento e acqua calda, raffrescamento passivo d\'estate, fotovoltaico sul tetto.'}
         ],
         locTitle: 'La posizione a Rüschlikon',
-        locLead: 'Con il 75 %, Rüschlikon ha uno dei tre moltiplicatori d\'imposta comunali più bassi dei 160 comuni del cantone di Zurigo. Stazione, lago e negozi a piedi, il centro città in autobus senza cambi – a piedi alla stazione, 15 minuti fino a Zurigo stazione centrale.',
+        locLead: 'Il moltiplicatore d\'imposta comunale di Rüschlikon è del 75 %, uno dei tre più bassi fra i 160 comuni del cantone di Zurigo (più è basso, meno imposte sul reddito si pagano). Stazione, lago e negozi sono raggiungibili a piedi. L\'autobus 165 porta in centro senza cambi; dalla stazione di Rüschlikon la S-Bahn arriva a Zurigo stazione centrale in 15 minuti.',
         locWalkH: 'A piedi', locCommuteH: 'Verso Zurigo', locDriveH: 'In auto',
         locWalk: [{n:'Fermata autobus 165',v:'5 min'},{n:'Stazione di Rüschlikon',v:'9 min'},{n:'Lago di Zurigo',v:'10 min'},{n:'Supermercato Coop',v:'10 min'}],
-        locCommute: [{n:'Autobus 165 diretto a Bürkliplatz',s:'centro, capolinea sul lago della Bahnhofstrasse – ogni 15–30 minuti',v:'20 min'},{n:'Treno suburbano S8/S24 per Zurigo stazione centrale (HB)',s:'ogni 15 minuti',v:'15 min'},{n:'S24 diretta all\'aeroporto di Zurigo',s:'senza cambi',v:'30 min'}],
+        locCommute: [{n:'Autobus 165 diretto a Bürkliplatz',s:'centro città sul lago, ogni 15–30 minuti',v:'20 min'},{n:'Treno suburbano S8/S24 per Zurigo stazione centrale (HB)',s:'ogni 15 minuti',v:'15 min'},{n:'S24 diretta all\'aeroporto di Zurigo',s:'senza cambi',v:'ca. 30 min'}],
         locDrive: [{n:'Centro di Zurigo',v:'10 min'},{n:'Centro commerciale Parkside con Migros',v:'5 min'},{n:'Autostrada A3',v:'5 min'}],
         mapPh: 'La mappa viene mostrata non appena accettate i cookie.', addrMap: 'Apri in Google Maps',
         townText: 'Rüschlikon si trova sulla riva occidentale del lago di Zurigo, tra Kilchberg e Thalwil, a pochi chilometri a sud della città di Zurigo.',
         priceTitle: 'Canone e condizioni',
-        priceLead: 'Prima occupazione, posto auto incluso, contratto a tempo indeterminato – tutti i costi a colpo d\'occhio.',
-        priceRows: [{n:'Appartamento, al mese',v:'CHF 4\'980',c:''},{n:'Posto auto (incluso nell\'appartamento), al mese',v:'CHF 200',c:''},{n:'Totale, spese escluse',v:'CHF 5\'180',c:'sum'},{n:'Deposito di garanzia (cauzione)',v:'CHF 12\'000',c:''},{n:'Disponibile dal',v:'15 gennaio o 1° febbraio 2027',c:''},{n:'Contratto',v:'a tempo indeterminato',c:''},{n:'Arredamento',v:'non arredato',c:''},{n:'Uso',v:'non fumatori, per uso proprio',c:''}],
+        priceLead: 'Prima occupazione, posto auto incluso, contratto a tempo indeterminato – canone e deposito a colpo d\'occhio.',
+        priceRows: [{n:'Appartamento, al mese',v:'CHF 4\'980',c:''},{n:'Posto auto (abbinato all\'appartamento), al mese',v:'CHF 200',c:''},{n:'Totale, spese escluse',v:'CHF 5\'180',c:'sum'},{n:'Deposito di garanzia (cauzione)',v:'CHF 12\'000',c:''},{n:'Disponibile dal',v:'15 gennaio o 1° febbraio 2027',c:''},{n:'Contratto',v:'a tempo indeterminato',c:''},{n:'Arredamento',v:'non arredato',c:''},{n:'Uso',v:'non fumatori, nessuna sublocazione',c:''}],
         priceNote: 'Il canone si paga mensilmente in anticipo. Spese accessorie in acconto; l\'importo è indicato nel contratto. Il deposito va su un conto di garanzia a vostro nome; in alternativa è possibile un\'assicurazione cauzionale. Preavviso di disdetta: tre mesi per fine marzo, giugno o settembre. Dettagli nelle «Domande frequenti».',
-        bookTitle: 'Manifestare interesse',
+        bookTitle: 'Segnalate il vostro interesse',
         bookLead: 'Bastano nome ed e-mail. Riceverete una risposta personale con le date delle visite – per ora non servono documenti.',
         bookHowH: 'I prossimi passi',
         bookSteps: [
-          {n:'1',h:'Manifestare interesse',p:'Tramite modulo o e-mail.'},
+          {n:'1',h:'Segnalare l\'interesse',p:'Tramite modulo o e-mail.'},
           {n:'2',h:'Visita',p:'Riceverete le date delle visite.'},
-          {n:'3',h:'Candidatura',p:'Chi desidera l\'appartamento riceve il modulo di candidatura, incluso l\'estratto del registro delle esecuzioni.'},
+          {n:'3',h:'Candidatura',p:'Chi desidera l\'appartamento riceve il modulo di candidatura; ne fa parte un estratto del registro delle esecuzioni.'},
           {n:'4',h:'Contratto',p:'In tedesco (versione vincolante); su richiesta forniamo una traduzione inglese di riferimento.'}
         ],
         fName: 'Nome', fMail: 'E-mail', fTel: 'Telefono (facoltativo)', fMsg: 'Messaggio (facoltativo)', fSend: 'Invia la richiesta',
-        formNote: 'Oppure direttamente via e-mail a', mailSubject: 'Interesse Schönenstrasse 33, Rüschlikon',
+        formNote: 'Oppure direttamente via e-mail a Leonardo Fasciati:', fMsgPh: 'ad es. data di ingresso desiderata o domande', mailSubject: 'Interesse Schönenstrasse 33, Rüschlikon',
         mailLabels: {name:'Nome',mail:'E-mail',tel:'Telefono',msg:'Messaggio'},
         faqH: 'Domande frequenti',
         faqs: [
           {q:'Come funziona il deposito di garanzia?', a:'Il deposito di CHF 12\'000 viene versato su un conto di garanzia bloccato a vostro nome presso una banca svizzera e vi viene restituito alla fine della locazione. In alternativa è possibile un\'assicurazione cauzionale: pagate un premio annuo invece del capitale.'},
-          {q:'Cosa significa «spese accessorie in acconto»?', a:'Riscaldamento, acqua calda e costi di gestione dell\'edificio si pagano come acconto mensile e vengono conteggiati una volta all\'anno sui costi effettivi. L\'importo è indicato nel contratto.'},
+          {q:'Cosa significa «spese accessorie in acconto»?', a:'Le spese accessorie (di norma riscaldamento, acqua calda e costi di gestione dell\'edificio) si pagano come acconto mensile e vengono conteggiati una volta all\'anno sui costi effettivi. L\'importo è indicato nel contratto.'},
           {q:'Cos\'è l\'estratto del registro delle esecuzioni?', a:'Un attestato dell\'ufficio esecuzioni del vostro comune che conferma l\'assenza di procedure esecutive a vostro carico. In Svizzera fa parte di ogni candidatura per un appartamento e viene richiesto solo dopo la visita, non al momento della richiesta.'},
           {q:'Quali termini di disdetta valgono?', a:'Il contratto è a tempo indeterminato. La disdetta è possibile con tre mesi di preavviso per fine marzo, giugno o settembre, le date di trasloco usuali nella regione di Zurigo.'},
           {q:'L\'appartamento è accessibile senza gradini?', a:'Sì. L\'ascensore si ferma direttamente nell\'appartamento, raggiungibile senza gradini, anche con passeggino o sedia a rotelle.'}
