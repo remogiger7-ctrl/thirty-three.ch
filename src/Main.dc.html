@@ -18,123 +18,185 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-figure{margin:0}
-body{margin:0;background:#f3f2ef;color:#1c1b19;font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:#7a5a33}a:hover{color:#6e5230}
-h1,h2,h3{margin:0;font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;letter-spacing:-0.01em;line-height:1.08}
-p{margin:0}
-ul{margin:0;padding:0;list-style:none}
-img{max-width:100%}
+:root{
+--bg:#f3f2ef;--ink:#1c1b19;--ink2:#4a4744;--ink3:#6f6a64;--line:#e2dfd8;--bronze:#8c6a3f;--link:#7a5a33;
+--dark:#22262a;--d-ink:#f3f2ef;--d-ink2:#c9c6c0;--d-ink3:#9a9790;--d-line:rgba(243,242,239,.15);--field:#ffffff;--d-field:rgba(243,242,239,.06);--map:#e4e1db;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:Inter,system-ui,sans-serif;
+--f-display:56px;--f-title:40px;--f-sub:24px;--f-lead:18px;--f-text:16px;--f-ui:15px;--f-small:13px;--f-eyebrow:12px;
+--s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:48px;--s6:64px;--s7:96px;--s8:128px;
+--sec:var(--s8);--measure:640px;--edge:40px;--gut:32px;--max:1200px;--hdr:72px}
+@media (max-width:1100px){:root{--f-display:44px;--f-title:34px}}
+@media (max-width:900px){:root{--sec:80px;--edge:20px;--f-display:36px;--f-title:30px;--f-sub:21px;--f-lead:17px}}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-section[id]{scroll-margin-top:80px}
-a:focus-visible,button:focus-visible,.input:focus-visible,summary:focus-visible{outline:2px solid #8c6a3f;outline-offset:3px}summary:focus-visible{outline-offset:6px}
-.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
-.sec{padding:128px 0}
-.dark{background:#22262a;color:#f3f2ef}
-.muted{color:#4a4744}.dark .muted{color:#c9c6c0}
-.h1{font-size:56px;line-height:1.05}.hero-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:56px;align-items:start}.hero-frame{margin:0}.hero-frame .img{aspect-ratio:auto;height:auto}
-.h1-sub{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;line-height:1.25;margin-top:14px;max-width:40ch}
-.h2{font-size:44px;margin-bottom:28px}
-.h3{font-size:24px;margin-bottom:18px}
-.lead{font-size:18px;line-height:1.6;color:#4a4744;max-width:56ch}
-.dark .lead{color:#c9c6c0}
-.side{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:64px;align-items:start}
-.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px}
-.img7{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:center}
-.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}
-.row{padding:15px 0;border-top:1px solid #e2dfd8;display:flex;justify-content:space-between;align-items:baseline;gap:32px;font-size:16px;color:#4a4744}.dark .row{color:#c9c6c0}
-.row:last-child{border-bottom:1px solid #e2dfd8}
-.row span+span{font-variant-numeric:tabular-nums;white-space:nowrap;flex:0 0 auto;text-align:right;font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;line-height:1.2;color:#1c1b19;letter-spacing:0}.dark .row span+span{color:#f3f2ef}
-.row small{display:block;font-size:13px;color:#6f6a64;font-weight:400}
-.dark .row small{color:#9a9790}
-.specs .row{padding:12px 0;font-size:15px}
-.kv{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px;padding:18px 0;border-top:1px solid rgba(243,242,239,0.2)}
-.kv:last-child{border-bottom:1px solid rgba(243,242,239,0.2)}
-.kv b{font-weight:400;font-family:"Cormorant Garamond",Georgia,serif;font-size:24px}
-.kv p{font-size:16px}
-.row.sum{border-top:1px solid #1c1b19;color:#1c1b19;font-weight:500}.row.sum span+span{font-size:28px}.row.sum+.row{border-top-color:#1c1b19}
-.dark .row,.dark .row:last-child{border-color:rgba(243,242,239,0.18)}
-.sub{font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c6a3f;padding:34px 0 8px}
-.sub:first-child{padding-top:0}
-.plain li{padding:6px 0 6px 18px;text-indent:-18px;font-size:16px}
-.plain li::before{content:"–";display:inline-block;width:18px;text-indent:0;color:#8c6a3f}
-.img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block}
-.cap{font-size:13px;color:#6f6a64;margin-top:12px}
-.dark .cap{color:#9a9790}
-.spec{font-size:15px;color:#1c1b19;line-height:1.8}
-.spec b{font-weight:600}
-.btn{display:inline-block;background:#22262a;color:#ffffff;text-decoration:none;font-weight:500;padding:16px 32px;font-size:15px;min-height:44px;box-sizing:border-box;border:0;cursor:pointer;font-family:inherit;text-align:center}
-.btn:hover{background:#000000;color:#ffffff}
-.dark .btn{background:#f3f2ef;color:#22262a}.dark .btn:hover{background:#ffffff;color:#22262a}
-.nav a{color:#1c1b19;text-decoration:none;font-size:14px;font-weight:500;padding:8px 2px;display:inline-block}
-.lang{background:none;border:0;padding:8px 6px;font:inherit;font-size:13px;font-weight:500;cursor:pointer;color:#6f6a64;min-width:36px;min-height:40px}
-.lang-on{color:#1c1b19;border-bottom:1px solid #8c6a3f}
-footer .lang{min-height:36px;padding:8px 10px;color:#9a9790}footer .lang-on{color:#f3f2ef;border-bottom-color:#8c6a3f}footer a:not(.lang){display:inline-block;padding:5px 0}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:var(--f-text);line-height:1.6;-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums}
+h1,h2,h3,p,figure{margin:0}
+ul{margin:0;padding:0;list-style:none}
+img{max-width:100%;display:block}
+.img{width:100%;height:auto}
+a{color:var(--link)}a:hover{color:var(--ink)}
+a:focus-visible,button:focus-visible,.input:focus-visible,summary:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+section[id],details[id]{scroll-margin-top:var(--hdr)}
+/* type scale */
+.t-display,.t-title,.t-sub{font-family:var(--serif);font-weight:400;font-variant-numeric:lining-nums;letter-spacing:-.005em;hyphens:manual}
+.t-display,.t-title{text-wrap:balance}
+.t-display{font-size:var(--f-display);line-height:1.05}
+.t-title{font-size:var(--f-title);line-height:1.1}
+.t-sub{font-size:var(--f-sub);line-height:1.25}
+.t-lead{font-size:var(--f-lead);line-height:1.6;color:var(--ink2);max-width:var(--measure);text-wrap:pretty}
+.t-text{font-size:var(--f-text);line-height:1.6;color:var(--ink2)}
+.t-small{font-size:var(--f-small);line-height:1.5;color:var(--ink3)}
+.eyebrow{font-size:var(--f-eyebrow);line-height:1.5;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);font-weight:500}
+.dark{background:var(--dark);color:var(--d-ink)}
+.dark .t-lead,.dark .t-text{color:var(--d-ink2)}.dark .t-small{color:var(--d-ink3)}
+/* grid */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--edge)}
+.sec{padding:var(--sec) 0}
+.sec.flush{padding-top:0}
+.sec.short-b{padding-bottom:var(--s6)}
+.c-title .eyebrow.at-row{padding-top:4px}
+.g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gut)}
+.g+.g,.g+.media,.media+.g{margin-top:var(--s6)}
+.c-title{grid-column:1/5}
+.c-body{grid-column:5/13}
+.c-third{grid-column:span 4}
+.c-half-a{grid-column:1/7}
+.c-half-b{grid-column:7/13}
+.stack>*+*{margin-top:var(--s3)}
+.stack-l>*+*{margin-top:var(--s5)}
+.c-title .t-title{margin-top:-6px}
+/* components */
+.media img{width:100%;height:auto}
+.cap{margin-top:12px;font-size:var(--f-small);line-height:1.5;color:var(--ink3);text-wrap:pretty}
+.dark .cap{color:var(--d-ink3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 28px;font:500 var(--f-ui)/1 var(--sans);background:var(--dark);color:var(--d-ink);text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
+.btn:hover{background:#000;color:var(--d-ink)}
+.dark .btn{background:var(--d-ink);color:var(--dark)}.dark .btn:hover{background:#fff;color:var(--dark)}
+.list{max-width:var(--measure)}
+.list li{position:relative;padding:var(--s1) 0 var(--s1) var(--s3);color:var(--ink2)}
+.list li::before{content:"–";position:absolute;left:0;color:var(--bronze)}
+.dark .list li{color:var(--d-ink2)}
+.rows{width:100%}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:var(--s3);align-items:baseline;padding:var(--s2) 0;border-bottom:1px solid var(--line);color:var(--ink2)}
+.row>span:last-child{color:var(--ink);font-weight:500;text-align:right}
+.row small{display:block;font-size:var(--f-small);line-height:1.5;color:var(--ink3);text-wrap:pretty}
+@media (max-width:1100px) and (min-width:901px){.groups .c-third{grid-column:5/13}.groups .c-third+.c-third{margin-top:var(--s5)}}
+.row.sum,.row.sum>span:last-child{font-weight:600;color:var(--ink)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gut)}
+.fact{padding:var(--s3) 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column}
+.fact dt{font-size:var(--f-small);line-height:1.5;color:var(--ink3)}
+.fact dd{margin:auto 0 0;padding-top:4px;font-size:var(--f-lead);line-height:1.4;font-weight:500}
+.fold{border-bottom:1px solid var(--line)}
+.fold summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:var(--s3);padding:var(--s3) 0}
+.fold summary::-webkit-details-marker{display:none}
+.fold summary::after{content:"+";font:300 24px/1 var(--sans);color:var(--bronze);flex:0 0 auto;width:24px;text-align:center}
+.fold[open] summary::after{content:"–"}
+.fold .fold-body{padding:0 0 var(--s3);max-width:var(--measure)}
+.fold-q{font:500 var(--f-text)/1.6 var(--sans);color:var(--ink);text-wrap:pretty}
+.fold.small summary span{font-size:var(--f-text);color:var(--ink2)}
+.fold:first-child summary{padding-top:0}
+.fold:first-child{margin-top:-2px}
+.legal>div+div{margin-top:var(--s2)}
+.legal strong{display:block;color:var(--ink);font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gut)}
+.step{display:grid;grid-template-columns:var(--s4) minmax(0,1fr);padding:var(--s2) 0;border-bottom:1px solid var(--d-line)}
+.step i{font-style:normal;font-size:var(--f-small);color:var(--d-ink3);padding-top:2px}
+.step strong{display:block;font-weight:600;color:var(--d-ink)}
+.field+.field,.fields+.field{margin-top:var(--s3)}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s3)}
+.label{display:block;font-size:var(--f-small);line-height:1.5;color:var(--ink2);margin-bottom:var(--s1)}
+.dark .label{color:var(--d-ink2)}
+.input{width:100%;min-height:52px;padding:14px 16px;border:1px solid var(--line);border-radius:0;background:var(--field);font:400 var(--f-text)/1.5 var(--sans);color:var(--ink)}
+.dark .input{background:var(--d-field);border-color:rgba(243,242,239,.3);color:var(--d-ink)}
+.dark .input:focus{border-color:var(--d-ink)}
+textarea.input{min-height:144px;resize:vertical}
+.form-actions{margin-top:var(--s4)}
+.form-actions .t-small{margin-top:var(--s2)}
+.dark .form-actions a{color:var(--d-ink)}
+.kv .eyebrow{display:block}
+.map{background:var(--map);aspect-ratio:5/2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--s2);padding:var(--s3);text-align:center;font-size:var(--f-small);color:var(--ink2)}
+.txtlink{display:inline-block;padding:6px 0;text-underline-offset:3px}
+.addr{font-style:normal}
+.mt1{margin-top:var(--s1)}.mt2{margin-top:var(--s2)}.mt3{margin-top:var(--s3)}.mt6{margin-top:var(--s6)}.measure{max-width:var(--measure)}
+/* header */
+.hdr{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.hdr .wrap.bar{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gut);align-items:center;height:var(--hdr)}
+.bar .mark{grid-column:1/5}.bar .nav{grid-column:5/10}.bar .hdr-right{grid-column:10/13;justify-self:end}
+.nav a{white-space:nowrap}
+.hdr-right .langs-desk{margin-right:-6px}
+@media (max-width:1100px){.navlinks,.langs-desk{display:none}.burger{display:block}.hdr .wrap.bar{display:flex;justify-content:space-between}}
+.mark{font:500 var(--f-small)/1 var(--sans);letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.nav{display:flex;gap:var(--s4)}
+.nav a{font:500 var(--f-ui)/1 var(--sans);color:var(--ink);text-decoration:none;padding:var(--s1) 0}
+.hdr-right{display:flex;align-items:center;gap:var(--s3)}
+.langs-desk,.langs{display:flex;gap:4px}
+.lang{background:none;border:0;cursor:pointer;font:500 var(--f-small)/1 var(--sans);color:var(--ink3);min-width:36px;min-height:40px;padding:0 6px;border-bottom:1px solid transparent;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.lang-on{color:var(--ink);border-bottom-color:var(--bronze)}
 .hdr-cta{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s}
 .hdr-cta.on{opacity:1;visibility:visible;pointer-events:auto}
-details.legal-d{border:0;padding:0}
-details.legal-d summary{list-style:none;cursor:pointer;font-size:14px;color:#6f6a64;padding:8px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:70ch}details.legal-d summary::after{content:"+";font-family:Inter,sans-serif;font-size:20px;font-weight:300;color:#8c6a3f;flex:0 0 auto}details.legal-d[open] summary::after{content:"–"}
-details.legal-d summary::-webkit-details-marker{display:none}
-details.legal-d[open] summary{color:#1c1b19}
 .burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;padding:10px}
-.burger span{display:block;height:1.5px;background:#1c1b19;margin:6px 0}
+.burger span{display:block;height:1.5px;background:var(--ink);margin:6px 0}
 .mob{display:none}
-.mob.open{display:block;background:#f3f2ef;border-top:1px solid #d6d2ca}
-.mob a{display:block;padding:16px 0;font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;color:#1c1b19;text-decoration:none;border-bottom:1px solid #d6d2ca}
-.mark{font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:500;letter-spacing:0.14em;color:#1c1b19;text-decoration:none;white-space:nowrap}
-.step{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;padding:10px 0;font-size:15px}
-.step:first-of-type{padding-top:0}
-.step i{font-style:normal;font-size:13px;color:#9a9790;padding-top:3px}
-.step strong{display:block;font-weight:600}
-.input{width:100%;box-sizing:border-box;border:1px solid #d6d2ca;background:#ffffff;padding:14px 14px;font:inherit;font-size:16px;min-height:52px;color:#1c1b19;border-radius:0}
-.input:focus{border-color:#1c1b19}
-.dark .input{background:rgba(243,242,239,0.06);border-color:rgba(243,242,239,0.35);color:#f3f2ef}
-.dark .input:focus{border-color:#f3f2ef}
-.label{display:block;font-size:14px;color:#4a4744;margin-bottom:6px}
-.dark .label{color:#c9c6c0}
-.field{margin-bottom:18px}
-.faq{padding:22px 0;border-top:1px solid #d6d2ca}
-.faq:last-child{border-bottom:0}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:Inter,sans-serif;font-size:24px;font-weight:300;color:#8c6a3f;flex:0 0 auto}
-.faq[open] summary::after{content:"–"}
-.faq h3{font-size:22px;margin:0}
-.faq[open] p{margin-top:10px}
-.faq p{font-size:16px;color:#4a4744;max-width:64ch}
-.legal{font-size:14px;color:#4a4744;line-height:1.6}
-.legal strong{display:block;color:#1c1b19;margin:14px 0 2px;font-weight:600}
-.map{background:#e4e1db;aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#4a4744;font-size:15px;padding:24px;box-sizing:border-box;gap:14px}
-.dark .map{background:#2e3337;color:#c9c6c0}
-@media (max-width:900px){.sec{padding:72px 0}.wrap{padding:0 20px}.h1{font-size:38px}.h1-sub{font-size:23px}.h2{font-size:32px}#konditionen{padding-top:72px !important}.kv{grid-template-columns:repeat(1,minmax(0,1fr));gap:6px}.side,.two,.img7,.three{grid-template-columns:repeat(1,minmax(0,1fr));gap:40px}.navlinks,.langs-desk{display:none !important}.burger{display:block}.hero-frame{margin:0 -20px}.hero-cta{padding:10px 14px !important;font-size:13px !important}.hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}.img-mob{margin:0 -20px}.img-mob .img{aspect-ratio:auto;height:auto}.cap-mob{padding:0 20px}.faq h3{font-size:20px}}
-.h1,.h2,.h3,.h1-sub,.faq h3{text-wrap:balance}.lead{text-wrap:pretty}
-.txtlink{text-underline-offset:3px;display:inline-block;padding:6px 0}
-section[id],details[id]{scroll-margin-top:80px}
-@media (max-width:480px){.specs .row,#konditionen .row{flex-direction:column;align-items:flex-start;gap:2px}.specs .row span+span,#konditionen .row span+span{text-align:left;white-space:normal}.specs .row span:first-child,#konditionen .row span:first-child{font-size:13px;color:#6f6a64}}
-@media (max-width:420px){.hdr-cta{display:none}}
-@media (max-width:900px){.lake .img{aspect-ratio:4/3 !important;object-position:38% 60%}}
+.mob.open{display:block;border-top:1px solid var(--line);background:var(--bg)}
+.mob a:not(.lang){display:block;padding:var(--s2) 0;font:400 var(--f-sub)/1.25 var(--serif);color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.mob .langs{padding:var(--s2) 0 var(--s3)}
+/* hero */
+.hero{padding:var(--s6) 0 var(--sec)}
+.hero-text{grid-column:1/7;align-self:end}
+.hero-img{grid-column:7/13}
+.hero-text .t-sub{margin-top:var(--s2)}
+.hero-text .t-lead{margin-top:var(--s4)}
+.hero-text .btn{margin-top:var(--s4)}
+.hero-text .eyebrow{margin-bottom:var(--s3)}
+/* footer */
+.ftr{background:var(--dark);color:var(--d-ink2);padding:var(--s6) 0 var(--s5);font-size:var(--f-small);line-height:1.5}
+.ftr a{color:var(--d-ink);text-decoration:none}
+.ftr .mark{color:var(--d-ink)}
+.ftr-links{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s1)}.ftr .langs{gap:var(--s2)}.ftr .lang{min-width:0;min-height:32px;padding:0}
+.ftr-links a{display:block}
+.ftr .lang{color:var(--d-ink3)}.ftr .lang-on{color:var(--d-ink)}
+.ftr .g{align-items:start}.ftr .mark{line-height:1.5}.ftr .copy{margin-top:var(--s4);color:var(--d-ink3)}
+/* responsive */
+@media (max-width:900px){
+.g{grid-template-columns:minmax(0,1fr);row-gap:var(--s4)}
+.c-title,.c-body,.c-third,.c-half-a,.c-half-b,.hero-text,.hero-img{grid-column:1/-1}
+.c-title .t-title{margin-top:0}
+.hero{padding-top:0}
+.hero-img{order:-1;margin:0 calc(-1 * var(--edge))}
+.media{margin-left:calc(-1 * var(--edge));margin-right:calc(-1 * var(--edge))}
+.media .cap{padding:0 var(--edge)}
+.lake img{aspect-ratio:4/3;object-fit:cover;object-position:38% 60%}
+.facts{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s3)}
+.fields{grid-template-columns:minmax(0,1fr);row-gap:var(--s3)}
+.navlinks,.langs-desk{display:none}
+.hdr .wrap.bar{display:flex;justify-content:space-between}
+.burger{display:block}
+.step{grid-template-columns:var(--s3) minmax(0,1fr)}.steps{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){.hdr-cta{display:none}.facts{grid-template-columns:minmax(0,1fr)}.rows-stack .row{grid-template-columns:minmax(0,1fr);row-gap:4px}.rows-stack .row>span:first-child{font-size:var(--f-small);color:var(--ink3)}.rows-stack .row>span:last-child{text-align:left}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </helmet>
 
-<div style="width:100%;box-sizing:border-box">
+<div class="page">
 
-<!-- NAV -->
-<header style="position:sticky;top:0;background:#f3f2ef;border-bottom:1px solid #d6d2ca;z-index:10">
-<div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px">
+<!-- HEADER -->
+<header class="hdr">
+<div class="wrap bar">
 <a href="#top" class="mark">THIRTY THREE</a>
-<nav class="nav navlinks" style="display:flex;gap:28px" aria-label="{{t.navAria}}">
+<nav class="nav navlinks" aria-label="{{t.navAria}}">
 <a href="#wohnung">{{t.navApt}}</a>
 <a href="#ausbau">{{t.navFit}}</a>
 <a href="#lage">{{t.navLoc}}</a>
 <a href="#konditionen">{{t.navPrice}}</a>
 </nav>
-<div style="display:flex;gap:12px;align-items:center">
-<div class="langs-desk" style="display:flex;gap:2px">
+<div class="hdr-right">
+<a class="btn hdr-cta on" href="#interesse">{{t.cta}}</a>
+<div class="langs-desk">
 <button class="lang {{deOn}}" onClick="{{setDe}}" aria-label="Deutsch" lang="de">DE</button>
 <button class="lang {{enOn}}" onClick="{{setEn}}" aria-label="English" lang="en">EN</button>
 <button class="lang {{itOn}}" onClick="{{setIt}}" aria-label="Italiano" lang="it">IT</button>
 </div>
-<a class="btn hero-cta hdr-cta on" href="#interesse" style="padding:12px 20px;min-height:40px;font-size:14px;white-space:nowrap">{{t.cta}}</a>
 <button class="burger" onClick="{{toggleMenu}}" aria-label="{{t.navMenu}}" aria-expanded="{{menuOpen}}"><span></span><span></span></button>
 </div>
 </div>
@@ -145,7 +207,7 @@ section[id],details[id]{scroll-margin-top:80px}
 <a href="#lage" onClick="{{closeMenu}}">{{t.navLoc}}</a>
 <a href="#konditionen" onClick="{{closeMenu}}">{{t.navPrice}}</a>
 <a href="#interesse" onClick="{{closeMenu}}">{{t.navBook}}</a>
-<div style="display:flex;gap:4px;padding:16px 0 20px">
+<div class="langs">
 <button class="lang {{deOn}}" onClick="{{setDe}}" aria-label="Deutsch" lang="de">DE</button>
 <button class="lang {{enOn}}" onClick="{{setEn}}" aria-label="English" lang="en">EN</button>
 <button class="lang {{itOn}}" onClick="{{setIt}}" aria-label="Italiano" lang="it">IT</button>
@@ -155,42 +217,45 @@ section[id],details[id]{scroll-margin-top:80px}
 </header>
 
 <!-- HERO -->
-<section id="top" style="padding:40px 0 0">
+<section id="top" class="hero">
 <div class="wrap">
-<div class="hero-grid">
-<figure class="hero-frame">
+<div class="g">
+<div class="hero-text">
+<p class="eyebrow">{{t.heroEyebrow}}</p>
+<h1 class="t-display">{{t.heroTitle1}}</h1>
+<p class="t-sub">{{t.heroTitle2}}</p>
+<p class="t-lead">{{t.heroLead}}</p>
+<a class="btn" href="#interesse">{{t.cta}}</a>
+</div>
+<figure class="hero-img">
 <img class="img" src="/_blob/5fa2dc49f45751a1fb6ee638df78e13a" alt="{{t.altHero}}" width="1121" height="1403" fetchpriority="high">
 </figure>
-<div class="hero-text">
-<h1 class="h1">{{t.heroTitle1}}</h1>
-<p class="h1-sub">{{t.heroTitle2}}</p>
-<p class="lead" style="margin-top:28px">{{t.heroLead}}</p>
-<a class="btn" href="#interesse" style="margin-top:28px">{{t.cta}}</a>
-<ul class="specs" style="margin-top:44px">
-<sc-for list="{{t.specs}}" as="x" hint-placeholder-count="7">
-<li class="row"><span>{{x.n}}</span><span>{{x.v}}</span></li>
+</div>
+<dl class="facts specs mt6">
+<sc-for list="{{t.specs}}" as="x" hint-placeholder-count="6">
+<div class="fact"><dt>{{x.n}}</dt><dd>{{x.v}}</dd></div>
 </sc-for>
-</ul>
-</div>
-</div>
+</dl>
 </div>
 </section>
 
 <!-- WOHNUNG -->
-<section id="wohnung" class="sec">
+<section id="wohnung" class="sec flush">
 <div class="wrap">
-<figure class="img-mob"><img class="img" src="/_blob/c2504cc65731c2a4e4e25c9343429c83" alt="{{t.altLiving}}" width="1536" height="1024" loading="lazy"><figcaption class="cap cap-mob">{{t.capLiving}}</figcaption></figure>
-<div class="two" style="margin-top:64px;align-items:start">
-<h2 class="h2" style="margin:0">{{t.aptTitle}}</h2>
-<p class="lead">{{t.aptLead}}</p>
-</div>
-<div class="side" style="margin-top:64px">
-<h3 class="h3" style="margin:0">{{t.aptMoreH}}</h3>
-<ul class="plain two" style="gap:0 48px">
-<sc-for list="{{t.aptMore}}" as="x" hint-placeholder-count="7">
+<figure class="media"><img class="img" src="/_blob/c2504cc65731c2a4e4e25c9343429c83" alt="{{t.altLiving}}" width="1536" height="1024" loading="lazy"><figcaption class="cap">{{t.capLiving}}</figcaption></figure>
+<div class="g">
+<div class="c-title"><h2 class="t-title">{{t.aptTitle}}</h2></div>
+<div class="c-body stack-l">
+<p class="t-lead">{{t.aptLead}}</p>
+<div>
+<p class="eyebrow">{{t.aptMoreH}}</p>
+<ul class="list mt2">
+<sc-for list="{{t.aptMore}}" as="x" hint-placeholder-count="5">
 <li>{{x}}</li>
 </sc-for>
 </ul>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -198,22 +263,23 @@ section[id],details[id]{scroll-margin-top:80px}
 <!-- AUSBAU -->
 <section id="ausbau" class="sec dark">
 <div class="wrap">
-<div class="img7" style="align-items:start">
-<figure class="img-mob"><img class="img" src="/_blob/58f211a293dc771acb78a688d55c5e18" alt="{{t.altKitchen}}" width="1536" height="1024" loading="lazy"><figcaption class="cap cap-mob">{{t.capKitchen}}</figcaption></figure>
+<figure class="media"><img class="img" src="/_blob/58f211a293dc771acb78a688d55c5e18" alt="{{t.altKitchen}}" width="1536" height="1024" loading="lazy"><figcaption class="cap">{{t.capKitchen}}</figcaption></figure>
+<div class="g">
+<div class="c-title"><h2 class="t-title">{{t.fitTitle}}</h2></div>
+<div class="c-body stack-l">
+<p class="t-lead">{{t.fitLead}}</p>
 <div>
-<h2 class="h2">{{t.fitTitle}}</h2>
-<p class="lead">{{t.fitLead}}</p>
-<ul class="plain" style="margin-top:24px">
+<p class="eyebrow">{{t.kitchenH}}</p>
+<ul class="list mt2">
 <sc-for list="{{t.kitchen}}" as="x" hint-placeholder-count="5">
 <li>{{x}}</li>
 </sc-for>
 </ul>
 </div>
-</div>
-<div style="margin-top:80px">
 <sc-for list="{{t.material}}" as="m" hint-placeholder-count="3">
-<div class="kv"><b>{{m.h}}</b><p class="muted">{{m.p}}</p></div>
+<div class="kv"><span class="eyebrow">{{m.h}}</span><p class="t-text mt2">{{m.p}}</p></div>
 </sc-for>
+</div>
 </div>
 </div>
 </section>
@@ -221,55 +287,62 @@ section[id],details[id]{scroll-margin-top:80px}
 <!-- LAGE -->
 <section id="lage" class="sec">
 <div class="wrap">
-<figure class="img-mob lake" style="margin-bottom:64px">
-<img class="img" src="/_blob/12647b98cefabc7b8d4c0a84f92358b9" alt="{{t.altLake}}" width="2400" height="800" loading="lazy" style="aspect-ratio:3/1">
-<figcaption class="cap cap-mob">{{t.capLake}}</figcaption>
-</figure>
-<div class="side">
-<div>
-<h2 class="h2">{{t.locTitle}}</h2>
-<p class="lead">{{t.locLead}}</p>
+<figure class="media lake"><img class="img" src="/_blob/12647b98cefabc7b8d4c0a84f92358b9" alt="{{t.altLake}}" width="2400" height="800" loading="lazy"><figcaption class="cap">{{t.capLake}}</figcaption></figure>
+<div class="g">
+<div class="c-title"><h2 class="t-title">{{t.locTitle}}</h2></div>
+<div class="c-body"><p class="t-lead">{{t.locLead}}</p></div>
 </div>
-<ul>
-<li class="sub">{{t.locWalkH}}</li>
+<div class="g groups">
+<div class="c-third">
+<p class="eyebrow">{{t.locWalkH}}</p>
+<ul class="rows mt1">
 <sc-for list="{{t.locWalk}}" as="x" hint-placeholder-count="4">
 <li class="row"><span>{{x.n}}</span><span>{{x.v}}</span></li>
 </sc-for>
-<li class="sub">{{t.locCommuteH}}</li>
+</ul>
+</div>
+<div class="c-third">
+<p class="eyebrow">{{t.locCommuteH}}</p>
+<ul class="rows mt1">
 <sc-for list="{{t.locCommute}}" as="x" hint-placeholder-count="3">
 <li class="row"><span>{{x.n}}<small>{{x.s}}</small></span><span>{{x.v}}</span></li>
 </sc-for>
-<li class="sub">{{t.locDriveH}}</li>
+</ul>
+</div>
+<div class="c-third">
+<p class="eyebrow">{{t.locDriveH}}</p>
+<ul class="rows mt1">
 <sc-for list="{{t.locDrive}}" as="x" hint-placeholder-count="3">
 <li class="row"><span>{{x.n}}</span><span>{{x.v}}</span></li>
 </sc-for>
 </ul>
 </div>
-<div class="img7" style="margin-top:80px;align-items:stretch">
+</div>
+<div class="g">
+<div class="c-title"><address class="addr eyebrow">Schönenstrasse 33<br>8803 Rüschlikon</address></div>
+<div class="c-body">
 <div class="map"><span>{{t.mapPh}}</span><a class="txtlink" href="https://www.google.com/maps/search/?api=1&amp;query=Sch%C3%B6nenstrasse+33%2C+8803+R%C3%BCschlikon" target="_blank" rel="noopener">{{t.addrMap}}</a></div>
-<div style="display:flex;flex-direction:column;justify-content:center;gap:24px">
-<p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;line-height:1.2">Schönenstrasse 33<br>8803 Rüschlikon</p>
 </div>
 </div>
 </div>
 </section>
 
 <!-- KONDITIONEN -->
-<section id="konditionen" class="sec" style="padding-top:0">
+<section id="konditionen" class="sec flush">
 <div class="wrap">
-<div class="side">
+<div class="g">
+<div class="c-title"><h2 class="t-title">{{t.priceTitle}}</h2></div>
+<div class="c-body stack-l">
+<p class="t-lead">{{t.priceLead}}</p>
 <div>
-<h2 class="h2">{{t.priceTitle}}</h2>
-<p class="lead">{{t.priceLead}}</p>
-</div>
-<div>
-<ul>
+<ul class="rows rows-stack">
 <sc-for list="{{t.priceRows}}" as="r" hint-placeholder-count="8">
 <li class="row {{r.c}}"><span>{{r.n}}</span><span>{{r.v}}</span></li>
 </sc-for>
 </ul>
-<p class="muted" style="font-size:14px;margin-top:16px;max-width:60ch">{{t.priceNote}}</p>
-<div style="display:flex;justify-content:flex-end;margin-top:32px"><a class="btn" href="#interesse">{{t.cta}}</a></div>
+<p class="t-small mt3 measure">{{t.priceNote}}</p>
+</div>
+<div><a class="btn" href="#interesse">{{t.cta}}</a></div>
 </div>
 </div>
 </div>
@@ -278,37 +351,45 @@ section[id],details[id]{scroll-margin-top:80px}
 <!-- INTERESSE -->
 <section id="interesse" class="sec dark">
 <div class="wrap">
-<h2 class="h2">{{t.bookTitle}}</h2>
-<p class="lead">{{t.bookLead}}</p>
-<div class="img7" style="margin-top:56px;align-items:start">
+<div class="g">
+<div class="c-title stack">
+<h2 class="t-title">{{t.bookTitle}}</h2>
+<p class="t-lead">{{t.bookLead}}</p>
+</div>
+<div class="c-body stack-l">
 <form onSubmit="{{onSubmit}}">
-<div class="two" style="gap:18px">
-<div class="field"><label class="label" for="f-name">{{t.fName}}</label><input class="input" id="f-name" type="text" required="required" value="{{form.name}}" onChange="{{onName}}"></div>
-<div class="field"><label class="label" for="f-mail">{{t.fMail}}</label><input class="input" id="f-mail" type="email" required="required" value="{{form.mail}}" onChange="{{onMail}}"></div>
+<div class="fields">
+<div><label class="label" for="f-name">{{t.fName}}</label><input class="input" id="f-name" type="text" required="required" value="{{form.name}}" onChange="{{onName}}"></div>
+<div><label class="label" for="f-mail">{{t.fMail}}</label><input class="input" id="f-mail" type="email" required="required" value="{{form.mail}}" onChange="{{onMail}}"></div>
 </div>
 <div class="field"><label class="label" for="f-tel">{{t.fTel}}</label><input class="input" id="f-tel" type="tel" value="{{form.tel}}" onChange="{{onTel}}"></div>
 <div class="field"><label class="label" for="f-msg">{{t.fMsg}}</label><textarea class="input" id="f-msg" rows="5" placeholder="{{t.fMsgPh}}" onChange="{{onMsg}}">{{form.msg}}</textarea></div>
+<div class="form-actions">
 <button class="btn" type="submit">{{t.fSend}}</button>
-<p class="muted" style="font-size:14px;margin-top:16px">{{t.formNote}} <a href="{{mailPlain}}" style="color:#f3f2ef">{{mailAddr}}</a></p>
+<p class="t-small">{{t.formNote}} <a href="{{mailPlain}}">{{mailAddr}}</a></p>
+</div>
 </form>
 <div>
-<h3 class="h3" style="margin-top:0">{{t.bookHowH}}</h3>
+<p class="eyebrow">{{t.bookHowH}}</p>
+<div class="steps mt1">
 <sc-for list="{{t.bookSteps}}" as="s" hint-placeholder-count="4">
-<div class="step"><i>{{s.n}}</i><div><strong>{{s.h}}</strong><span class="muted">{{s.p}}</span></div></div>
+<div class="step"><i>{{s.n}}</i><div class="t-text"><strong>{{s.h}}</strong>{{s.p}}</div></div>
 </sc-for>
+</div>
+</div>
 </div>
 </div>
 </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="sec" style="padding-bottom:0">
+<section id="faq" class="sec short-b">
 <div class="wrap">
-<div class="side">
-<h2 class="h2" style="margin:0">{{t.faqH}}</h2>
-<div>
+<div class="g">
+<div class="c-title"><h2 class="t-title">{{t.faqH}}</h2></div>
+<div class="c-body">
 <sc-for list="{{t.faqs}}" as="q" hint-placeholder-count="5">
-<details class="faq"><summary><h3>{{q.q}}</h3></summary><p>{{q.a}}</p></details>
+<details class="fold"><summary><h3 class="fold-q">{{q.q}}</h3></summary><div class="fold-body t-text">{{q.a}}</div></details>
 </sc-for>
 </div>
 </div>
@@ -316,37 +397,42 @@ section[id],details[id]{scroll-margin-top:80px}
 </section>
 
 <!-- RECHTLICHES -->
-<section id="rechtliches" style="padding:64px 0 48px">
-<div class="wrap" style="border-top:1px solid #d6d2ca;padding-top:24px">
-<details class="legal-d" id="impressum">
-<summary>{{t.impH}}</summary>
-<div class="legal" style="padding:8px 0 24px;max-width:70ch">
+<section id="rechtliches" class="sec flush">
+<div class="wrap">
+<div class="g">
+<div class="c-title"><p class="eyebrow at-row">{{t.legalH}}</p></div>
+<div class="c-body">
+<details class="fold small" id="impressum">
+<summary><span>{{t.impH}}</span></summary>
+<div class="fold-body legal t-small">
 <sc-for list="{{t.imp}}" as="x" hint-placeholder-count="5">
-<div><strong>{{x.h}}</strong><span style="white-space:pre-line">{{x.p}}</span></div>
+<div><strong>{{x.h}}</strong>{{x.p}}</div>
 </sc-for>
 </div>
 </details>
-<details class="legal-d" id="datenschutz">
-<summary>{{t.dsH}}</summary>
-<div class="legal" style="padding:8px 0 24px;max-width:70ch">
-<p>{{t.dsDate}}</p>
+<details class="fold small" id="datenschutz">
+<summary><span>{{t.dsH}}</span></summary>
+<div class="fold-body legal t-small">
+<div>{{t.dsDate}}</div>
 <sc-for list="{{t.ds}}" as="x" hint-placeholder-count="8">
-<div><strong>{{x.h}}</strong><span style="white-space:pre-line">{{x.p}}</span></div>
+<div><strong>{{x.h}}</strong>{{x.p}}</div>
 </sc-for>
 </div>
 </details>
+</div>
+</div>
 </div>
 </section>
 
 <!-- FOOTER -->
-<footer style="background:#22262a;color:#c9c6c0;padding:48px 0 40px;font-size:14px">
+<footer class="ftr">
 <div class="wrap">
-<div class="three" style="gap:32px">
-<div><span class="mark" style="color:#f3f2ef">THIRTY THREE</span></div>
-<address style="font-style:normal">Schönenstrasse 33, 8803 Rüschlikon<br><a href="{{mailPlain}}" style="color:#f3f2ef">{{mailAddr}}</a></address>
-<div style="display:flex;gap:20px;flex-wrap:wrap"><a href="#impressum" style="color:#f3f2ef;text-decoration:none">{{t.impH}}</a><a href="#datenschutz" style="color:#f3f2ef;text-decoration:none">{{t.dsH}}</a><span style="display:inline-flex;align-items:center"><button class="lang {{deOn}}" onClick="{{setDe}}" style="color:#c9c6c0">DE</button><button class="lang {{enOn}}" onClick="{{setEn}}" style="color:#c9c6c0">EN</button><button class="lang {{itOn}}" onClick="{{setIt}}" style="color:#c9c6c0">IT</button></span></div>
+<div class="g">
+<div class="c-third"><span class="mark">THIRTY THREE</span></div>
+<address class="c-third addr">Schönenstrasse 33, 8803 Rüschlikon<br><a href="{{mailPlain}}">{{mailAddr}}</a></address>
+<div class="c-third"><div class="ftr-links"><a href="#impressum">{{t.impH}}</a><a href="#datenschutz">{{t.dsH}}</a></div><div class="langs mt2"><button class="lang {{deOn}}" onClick="{{setDe}}">DE</button><button class="lang {{enOn}}" onClick="{{setEn}}">EN</button><button class="lang {{itOn}}" onClick="{{setIt}}">IT</button></div></div>
 </div>
-<p style="font-size:12px;margin-top:32px;color:#9a9790">© 2026 Leonardo Fasciati</p>
+<p class="copy">© 2026 Leonardo Fasciati</p>
 </div>
 </footer>
 
@@ -361,10 +447,10 @@ class Component extends DCLogic {
   texts() {
     return {
       de: {
-        navAria: 'Hauptnavigation', navMenu: 'Menü', navApt: 'Wohnung', navFit: 'Ausbau', navLoc: 'Lage', navPrice: 'Konditionen', navBook: 'Interesse anmelden',
+        navAria: 'Hauptnavigation', heroEyebrow: 'Schönenstrasse 33 · Rüschlikon', kitchenH: 'Küche', legalH: 'Rechtliches', navMenu: 'Menü', navApt: 'Wohnung', navFit: 'Ausbau', navLoc: 'Lage', navPrice: 'Konditionen', navBook: 'Interesse anmelden',
         heroTitle1: '3.5-Zimmer-Wohnung in Rüschlikon', heroTitle2: 'Neubau in Eigentumsqualität, zur Miete',
         heroLead: 'Wohnung 201 im zweiten Stock des Neubaus THIRTY THREE an der Schönenstrasse 33: 100 m² mit offenem Wohn- und Essbereich, gedecktem Balkon zur Seeseite und zwei Bädern. Erstbezug ab 15. Januar oder 1. Februar 2027, unbefristet. Ab Bahnhof Rüschlikon in 15 Minuten zum Zürich HB, der Flughafen in rund 30 Minuten ohne Umsteigen, der See in zehn Gehminuten.',
-        specs: [{n:'Zimmer',v:'3.5'},{n:'Fläche (brutto)',v:'100 m²'},{n:'Balkon, gedeckt',v:'13.5 m²'},{n:'Stockwerk',v:'2. Stock, Lift in die Wohnung'},{n:'Mietzins inkl. Garagenplatz, exkl. Nebenkosten',v:'CHF 5\'180 pro Monat'},{n:'Bezug',v:'15. Januar oder 1. Februar 2027'},{n:'Mietdauer',v:'unbefristet'}],
+        specs: [{n:'Zimmer',v:'3.5'},{n:'Fläche (brutto)',v:'100 m²'},{n:'Balkon, gedeckt',v:'13.5 m²'},{n:'Stockwerk',v:'2. Stock, Lift in die Wohnung'},{n:'Mietzins inkl. Garagenplatz, exkl. Nebenkosten',v:'CHF 5\'180 pro Monat'},{n:'Bezug',v:'15. Januar oder 1. Februar 2027'}],
         altHero: 'Visualisierung des Neubaus THIRTY THREE an der Schönenstrasse 33 in Rüschlikon',
         capVis: 'Visualisierung des Hauses – unverbindlich, das Haus ist im Bau.',
         cta: 'Interesse anmelden',
@@ -385,11 +471,11 @@ class Component extends DCLogic {
           {h:'Energie', p:'Erdsonden-Wärmepumpe für Heizung und Warmwasser, im Sommer Freecooling (sanfte Kühlung über die Erdsonden), Photovoltaik auf dem Dach.'}
         ],
         locTitle: 'Rüschlikon am Zürichsee',
-        locLead: 'Wohnen am See, arbeiten in der Stadt: Rüschlikon liegt am linken Ufer des Zürichsees zwischen Kilchberg und Thalwil, wenige Kilometer von Zürich. Der See ist in zehn Gehminuten erreicht, Bahnhof und Einkauf ebenso. Der Bus 165 fährt ohne Umsteigen ins Zentrum, die S-Bahn ab Bahnhof Rüschlikon in 15 Minuten zum Zürich HB. Und mit 75 % hat die Gemeinde einen der drei tiefsten Steuerfüsse der 160 Gemeinden im Kanton Zürich.',
+        locLead: 'Wohnen am See, arbeiten in der Stadt: Rüschlikon liegt am linken Ufer des Zürichsees zwischen Kilchberg und Thalwil, wenige Kilometer von Zürich. Der See ist in zehn Gehminuten erreicht, Bahnhof und Einkauf ebenso. Der Bus 165 fährt ohne Umsteigen ins Zentrum, die S‑Bahn ab Bahnhof Rüschlikon in 15 Minuten zum Zürich HB. Und mit 75 % hat die Gemeinde einen der drei tiefsten Steuerfüsse der 160 Gemeinden im Kanton Zürich.',
         altLake: 'Der Zürichsee mit dem linken Seeufer, im Hintergrund die Alpen', capLake: 'Der Zürichsee – zehn Gehminuten von der Wohnung',
         locWalkH: 'Zu Fuss', locCommuteH: 'Nach Zürich', locDriveH: 'Mit dem Auto',
         locWalk: [{n:'Bushaltestelle Bus 165',v:'5 Min.'},{n:'Bahnhof Rüschlikon',v:'9 Min.'},{n:'Zürichsee',v:'10 Min.'},{n:'Coop Supermarkt',v:'10 Min.'}],
-        locCommute: [{n:'Bus 165 direkt zum Bürkliplatz',s:'Stadtzentrum am See, alle 15–30 Minuten',v:'20 Min.'},{n:'S-Bahn S8/S24 zum Zürich HB',s:'alle 15 Minuten',v:'15 Min.'},{n:'S24 direkt zum Flughafen Zürich',s:'ohne Umsteigen',v:'ca. 30 Min.'}],
+        locCommute: [{n:'Bus 165 direkt zum Bürkliplatz',s:'Stadtzentrum am See, alle 15–30 Minuten',v:'20 Min.'},{n:'S‑Bahn S8/S24 zum Zürich HB',s:'alle 15 Minuten',v:'15 Min.'},{n:'S24 zum Flughafen Zürich',s:'ohne Umsteigen',v:'ca. 30 Min.'}],
         locDrive: [{n:'Zürich Stadtzentrum',v:'10 Min.'},{n:'Einkaufszentrum Parkside mit Migros',v:'5 Min.'},{n:'Autobahnanschluss A3',v:'5 Min.'}],
         mapPh: 'Die Karte wird angezeigt, sobald Sie Cookies akzeptieren.', addrMap: 'In Google Maps öffnen',
         priceTitle: 'Mietzins und Konditionen',
@@ -438,10 +524,10 @@ class Component extends DCLogic {
         ]
       },
       en: {
-        navAria: 'Main navigation', navMenu: 'Menu', navApt: 'Apartment', navFit: 'Finishes', navLoc: 'Location', navPrice: 'Rent and terms', navBook: 'Enquire',
+        navAria: 'Main navigation', heroEyebrow: 'Schönenstrasse 33 · Rüschlikon', kitchenH: 'Kitchen', legalH: 'Legal', navMenu: 'Menu', navApt: 'Apartment', navFit: 'Finishes', navLoc: 'Location', navPrice: 'Rent and terms', navBook: 'Enquire',
         heroTitle1: '3.5-room apartment in Rüschlikon', heroTitle2: 'A new build finished to owner-occupier standard, available to rent',
         heroLead: 'Apartment 201 on the second floor of THIRTY THREE, a new building at Schönenstrasse 33: 100 m² with an open living and dining area, a covered balcony facing the lake side and two bathrooms. Move in from 15 January or 1 February 2027, open-ended lease. From Rüschlikon station it is 15 minutes to Zurich main station and around 30 minutes to the airport without changing; the lake is a ten-minute walk away.',
-        specs: [{n:'Rooms',v:'3.5 (2 bedrooms + living/dining)'},{n:'Floor area (gross)',v:'100 m²'},{n:'Balcony, covered',v:'13.5 m²'},{n:'Floor',v:'2nd (two levels above ground), lift into the apartment'},{n:'Rent incl. garage space, excl. utilities',v:'CHF 5\'180 per month'},{n:'Move-in',v:'15 January or 1 February 2027'},{n:'Lease',v:'open-ended'}],
+        specs: [{n:'Rooms',v:'3.5 (2 bedrooms + living/dining)'},{n:'Floor area (gross)',v:'100 m²'},{n:'Balcony, covered',v:'13.5 m²'},{n:'Floor',v:'2nd (two levels above ground), lift into the apartment'},{n:'Rent incl. garage space, excl. utilities',v:'CHF 5\'180 per month'},{n:'Move-in',v:'15 January or 1 February 2027'}],
         altHero: 'Rendering of the new THIRTY THREE building at Schönenstrasse 33 in Rüschlikon',
         capVis: 'Artist\'s impression of the building, non-binding – the building is under construction.',
         cta: 'Enquire',
@@ -462,11 +548,11 @@ class Component extends DCLogic {
           {h:'Energy', p:'Geothermal heat pump for heating and hot water, gentle free cooling via the ground probes in summer, photovoltaics on the roof.'}
         ],
         locTitle: 'Rüschlikon on Lake Zurich',
-        locLead: 'Live by the lake, work in the city: Rüschlikon lies on the western shore of Lake Zurich between Kilchberg and Thalwil, a few kilometres from Zurich. The lake is a ten-minute walk away, as are the station and the shops. Bus 165 runs into the city centre without changing, and from Rüschlikon station the S-Bahn reaches Zurich main station in 15 minutes. And at 75 %, the municipal tax multiplier is one of the three lowest among the 160 municipalities in the canton of Zurich – the lower the multiplier, the lower your income tax.',
+        locLead: 'Live by the lake, work in the city: Rüschlikon lies on the western shore of Lake Zurich between Kilchberg and Thalwil, a few kilometres from Zurich. The lake is a ten-minute walk away, as are the station and the shops. Bus 165 runs into the city centre without changing, and from Rüschlikon station the S‑Bahn reaches Zurich main station in 15 minutes. And at 75 %, the municipal tax multiplier is one of the three lowest among the 160 municipalities in the canton of Zurich – the lower the multiplier, the lower your income tax.',
         altLake: 'Lake Zurich with its western shore and the Alps in the background', capLake: 'Lake Zurich – a ten-minute walk from the apartment',
         locWalkH: 'On foot', locCommuteH: 'To Zurich', locDriveH: 'By car',
         locWalk: [{n:'Bus stop, line 165',v:'5 min'},{n:'Rüschlikon railway station',v:'9 min'},{n:'Lake Zurich',v:'10 min'},{n:'Coop supermarket',v:'10 min'}],
-        locCommute: [{n:'Bus 165 direct to Bürkliplatz',s:'city centre by the lake, every 15–30 minutes',v:'20 min'},{n:'S-Bahn (suburban train) S8/S24 to Zurich main station',s:'every 15 minutes',v:'15 min'},{n:'S24 direct to Zurich Airport',s:'no change',v:'approx. 30 min'}],
+        locCommute: [{n:'Bus 165 direct to Bürkliplatz',s:'city centre by the lake, every 15–30 minutes',v:'20 min'},{n:'S‑Bahn (suburban train) S8/S24 to Zurich main station',s:'every 15 minutes',v:'15 min'},{n:'S24 to Zurich Airport',s:'no change',v:'approx. 30 min'}],
         locDrive: [{n:'Zurich city centre',v:'10 min'},{n:'Parkside shopping centre with Migros',v:'5 min'},{n:'Motorway A3',v:'5 min'}],
         mapPh: 'The map is shown once you accept cookies.', addrMap: 'Open in Google Maps',
         priceTitle: 'Rent and terms',
@@ -515,10 +601,10 @@ class Component extends DCLogic {
         ]
       },
       it: {
-        navAria: 'Navigazione principale', navMenu: 'Menu', navApt: 'Appartamento', navFit: 'Finiture', navLoc: 'Posizione', navPrice: 'Canone e condizioni', navBook: 'Segnalare interesse',
+        navAria: 'Navigazione principale', heroEyebrow: 'Schönenstrasse 33 · Rüschlikon', kitchenH: 'Cucina', legalH: 'Note legali', navMenu: 'Menu', navApt: 'Appartamento', navFit: 'Finiture', navLoc: 'Posizione', navPrice: 'Canone e condizioni', navBook: 'Segnalare interesse',
         heroTitle1: '3,5 locali a Rüschlikon', heroTitle2: 'Nuova costruzione con finiture da appartamento di proprietà, in affitto',
         heroLead: 'Appartamento 201 al secondo piano della nuova costruzione THIRTY THREE in Schönenstrasse 33: 100 m² con zona giorno aperta, balcone coperto sul lato del lago e due bagni. Disponibile dal 15 gennaio o dal 1° febbraio 2027, contratto a tempo indeterminato. Dalla stazione di Rüschlikon 15 minuti fino a Zurigo stazione centrale, l\'aeroporto in circa 30 minuti senza cambi, il lago a dieci minuti a piedi.',
-        specs: [{n:'Locali',v:'3,5 (2 camere + soggiorno/pranzo)'},{n:'Superficie (lorda)',v:'100 m²'},{n:'Balcone coperto',v:'13,5 m²'},{n:'Piano',v:'2°, ascensore nell\'appartamento'},{n:'Canone incl. posto auto, spese escluse',v:'CHF 5\'180 al mese'},{n:'Disponibile',v:'15 gennaio o 1° febbraio 2027'},{n:'Contratto',v:'a tempo indeterminato'}],
+        specs: [{n:'Locali',v:'3,5 (2 camere + soggiorno/pranzo)'},{n:'Superficie (lorda)',v:'100 m²'},{n:'Balcone coperto',v:'13,5 m²'},{n:'Piano',v:'2°, ascensore nell\'appartamento'},{n:'Canone incl. posto auto, spese escluse',v:'CHF 5\'180 al mese'},{n:'Disponibile',v:'15 gennaio o 1° febbraio 2027'}],
         altHero: 'Rendering della nuova costruzione THIRTY THREE in Schönenstrasse 33 a Rüschlikon',
         capVis: 'Rendering dell\'edificio, non vincolante – l\'edificio è in costruzione.',
         cta: 'Segnalare interesse',
@@ -539,11 +625,11 @@ class Component extends DCLogic {
           {h:'Energia', p:'Pompa di calore geotermica per riscaldamento e acqua calda, raffrescamento passivo d\'estate, fotovoltaico sul tetto.'}
         ],
         locTitle: 'Rüschlikon sul lago di Zurigo',
-        locLead: 'Vivere sul lago, lavorare in città: Rüschlikon si trova sulla riva occidentale del lago di Zurigo, tra Kilchberg e Thalwil, a pochi chilometri da Zurigo. Il lago è a dieci minuti a piedi, così come la stazione e i negozi. L\'autobus 165 porta in centro senza cambi; dalla stazione di Rüschlikon la S-Bahn arriva a Zurigo stazione centrale in 15 minuti. E con il 75 % il moltiplicatore d\'imposta comunale è uno dei tre più bassi fra i 160 comuni del cantone di Zurigo: più è basso, meno imposte si pagano.',
+        locLead: 'Vivere sul lago, lavorare in città: Rüschlikon si trova sulla riva occidentale del lago di Zurigo, tra Kilchberg e Thalwil, a pochi chilometri da Zurigo. Il lago è a dieci minuti a piedi, così come la stazione e i negozi. L\'autobus 165 porta in centro senza cambi; dalla stazione di Rüschlikon la S‑Bahn arriva a Zurigo stazione centrale in 15 minuti. E con il 75 % il moltiplicatore d\'imposta comunale è uno dei tre più bassi fra i 160 comuni del cantone di Zurigo: più è basso, meno imposte si pagano.',
         altLake: 'Il lago di Zurigo con la riva occidentale e le Alpi sullo sfondo', capLake: 'Il lago di Zurigo – a dieci minuti a piedi dall\'appartamento',
         locWalkH: 'A piedi', locCommuteH: 'Verso Zurigo', locDriveH: 'In auto',
         locWalk: [{n:'Fermata autobus 165',v:'5 min'},{n:'Stazione di Rüschlikon',v:'9 min'},{n:'Lago di Zurigo',v:'10 min'},{n:'Supermercato Coop',v:'10 min'}],
-        locCommute: [{n:'Autobus 165 diretto a Bürkliplatz',s:'centro città sul lago, ogni 15–30 minuti',v:'20 min'},{n:'Treno suburbano S8/S24 per Zurigo stazione centrale (HB)',s:'ogni 15 minuti',v:'15 min'},{n:'S24 diretta all\'aeroporto di Zurigo',s:'senza cambi',v:'ca. 30 min'}],
+        locCommute: [{n:'Autobus 165 diretto a Bürkliplatz',s:'centro città sul lago, ogni 15–30 minuti',v:'20 min'},{n:'Treno suburbano S8/S24 per Zurigo stazione centrale (HB)',s:'ogni 15 minuti',v:'15 min'},{n:'S24 per l\'aeroporto di Zurigo',s:'senza cambi',v:'ca. 30 min'}],
         locDrive: [{n:'Centro di Zurigo',v:'10 min'},{n:'Centro commerciale Parkside con Migros',v:'5 min'},{n:'Autostrada A3',v:'5 min'}],
         mapPh: 'La mappa viene mostrata non appena accettate i cookie.', addrMap: 'Apri in Google Maps',
         priceTitle: 'Canone e condizioni',

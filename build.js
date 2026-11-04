@@ -108,16 +108,12 @@ css += `
 *{min-width:0}
 picture{display:block}
 .lang{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
-.langs-desk{display:flex;gap:2px}
-.mob .langs{display:flex;gap:4px;padding:16px 0 20px}
-.mob .langs a{font-family:Inter,system-ui,sans-serif;font-size:13px;border-bottom:0;padding:8px 10px;color:#6f6a64;display:inline-flex}
-.mob .langs a.lang-on{color:#1c1b19;border-bottom:1px solid #8c6a3f}
-.map-frame{width:100%;aspect-ratio:3/2;border:0;display:block}
-#form-hint{font-size:14px;margin-top:14px;color:#c9c6c0;min-height:1.4em}#form-hint.err{color:#f3f2ef}#form-hint.err::before{content:"Hinweis: "}html[lang=en] #form-hint.err::before{content:"Note: "}html[lang=it] #form-hint.err::before{content:"Nota: "}
+.map-frame{width:100%;aspect-ratio:5/2;border:0;display:block}
+.mob .langs a{border-bottom:1px solid transparent}.mob .langs a.lang-on{border-bottom-color:var(--bronze)}
+#form-hint{font-size:var(--f-small);line-height:1.5;margin-top:var(--s2);color:var(--d-ink2);min-height:1.5em}#form-hint.err{color:#f3f2ef}#form-hint.err::before{content:"Hinweis: "}html[lang=en] #form-hint.err::before{content:"Note: "}html[lang=it] #form-hint.err::before{content:"Nota: "}
 .hp{position:absolute;left:-9999px;top:-9999px}
-.consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:560px;margin:0 auto;background:#22262a;color:#f3f2ef;padding:18px 20px;box-shadow:0 10px 30px rgba(0,0,0,.3);font-size:14px;line-height:1.5}
-.consent .btn{padding:10px 18px;font-size:14px;min-height:44px}
-.consent .btn-ghost{background:transparent;color:#f3f2ef;border:1px solid #8a8580}
+.consent{position:fixed;left:var(--s2);right:var(--s2);bottom:var(--s2);z-index:60;max-width:560px;margin:0 auto;background:var(--dark);color:var(--d-ink);padding:var(--s3);box-shadow:0 10px 30px rgba(0,0,0,.3);font-size:var(--f-small);line-height:1.5}
+.consent .btn-ghost{background:transparent;color:var(--d-ink);border:1px solid rgba(243,242,239,.3)}
 .rented{background:#8c6a3f;color:#fff;text-align:center;padding:12px 20px;font-size:15px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 `;
@@ -190,7 +186,7 @@ function page(lang) {
   for (const [blob, name] of Object.entries(IMG)) body = body.split(blob).join('/img/' + name + '.jpg');
   // map: consent-gated iframe
   body = body.replace(/<div class="map"><span>([^<]*)<\/span>(<a class="(?:btn|txtlink)"[^>]*>[^<]*<\/a>)<\/div>/, (mm, label, link) =>
-    `<div class="map" id="map-box" data-src="https://www.google.com/maps?q=Sch%C3%B6nenstrasse+33,+8803+R%C3%BCschlikon&amp;z=16&amp;output=embed"><span>${esc(m.mapConsent)} <a href="#" class="consent-open" style="color:#1c1b19">${esc(m.consentSettings)}</a></span>${link.replace('class="btn"', 'class="txtlink"')}</div>`);
+    `<div class="map" id="map-box" data-src="https://www.google.com/maps?q=Sch%C3%B6nenstrasse+33,+8803+R%C3%BCschlikon&amp;z=16&amp;output=embed"><span>${esc(m.mapConsent)} <a href="#" class="consent-open">${esc(m.consentSettings)}</a></span>${link.replace('class="btn"', 'class="txtlink"')}</div>`);
   // enquiry form: real form with hint and honeypot
   body = body.replace('<form>', '<form id="enquiry" novalidate="novalidate">').replace('<form >', '<form id="enquiry" novalidate="novalidate">');
   body = body.replace(/<input class="input" id="f-name" type="text" required="required" value="">/, '<input class="input" id="f-name" name="name" type="text" required="required" autocomplete="name" aria-describedby="form-hint">');
@@ -209,7 +205,7 @@ function page(lang) {
   // rented banner
   if (STATUS === 'rented') body = body.replace('<header', `<div class="rented">${esc(m.rented)}</div><header`);
   // cookie settings link in footer when analytics is on
-  body = body.replace(/(<a href="#datenschutz"[^>]*>[^<]*<\/a>)/, `$1<a href="#" class="consent-open" style="color:#f3f2ef;text-decoration:none">${esc(m.consentSettings)}</a>`);
+  body = body.replace(/(<a href="#datenschutz"[^>]*>[^<]*<\/a>)/, `$1<a href="#" class="consent-open">${esc(m.consentSettings)}</a>`);
 
   const hw = webpWidths('thirty-three-rueschlikon-haus');
   const heroPreload = hw.length
@@ -218,8 +214,8 @@ function page(lang) {
 
   const consent = `
 <div id="consent" class="consent" role="dialog" aria-labelledby="consent-text" hidden>
-<p id="consent-text" style="margin:0 0 12px">${esc(GA_ID ? m.consentText : m.consentTextMap)} <a href="#datenschutz" style="color:#fff">${esc(m.consentMore)}</a></p>
-<div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" id="consent-accept" class="btn" style="background:#f3f2ef;color:#22262a">${esc(m.consentAccept)}</button><button type="button" id="consent-decline" class="btn btn-ghost">${esc(m.consentDecline)}</button></div>
+<p id="consent-text" style="margin:0 0 16px">${esc(GA_ID ? m.consentText : m.consentTextMap)} <a href="#datenschutz" style="color:#fff">${esc(m.consentMore)}</a></p>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" id="consent-accept" class="btn" style="background:#f3f2ef;color:#22262a">${esc(m.consentAccept)}</button><button type="button" id="consent-decline" class="btn btn-ghost">${esc(m.consentDecline)}</button></div>
 </div>`;
 
   const script = `

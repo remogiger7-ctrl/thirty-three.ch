@@ -38,101 +38,163 @@
 <link rel="apple-touch-icon" href="/favicon-180.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://thirty-three.ch/#website","url":"https://thirty-three.ch/","name":"THIRTY THREE","alternateName":"Thirty Three Rüschlikon","inLanguage":["de","en","it"]},{"@type":"Person","@id":"https://thirty-three.ch/#contact","name":"Leonardo Fasciati","email":"leonardo.fasciati@hotmail.com"},{"@type":"RealEstateListing","@id":"https://thirty-three.ch/en/#listing","url":"https://thirty-three.ch/en/","name":"3.5-Room Apartment for Rent in Rüschlikon, Zurich – THIRTY THREE","description":"3.5-room new-build apartment for rent in Rüschlikon near Zurich, CHF 5'180 incl. garage space, from 15 Jan 2027: 100 m², covered balcony, lift into the apartment.","inLanguage":"en","datePosted":"2026-11-04","dateModified":"2026-11-04","isPartOf":{"@id":"https://thirty-three.ch/#website"},"mainEntity":{"@id":"https://thirty-three.ch/#apartment"},"offers":{"@id":"https://thirty-three.ch/#offer"},"primaryImageOfPage":"https://thirty-three.ch/img/thirty-three-rueschlikon-haus.jpg"},{"@type":"Apartment","@id":"https://thirty-three.ch/#apartment","name":"THIRTY THREE – Apartment 201, Schönenstrasse 33, Rüschlikon","description":"The living and dining area with open kitchen measures 36.6 m² and opens onto the covered balcony. Two bedrooms, one with a built-in wardrobe, one bathroom with a tub and toilet, a second with a shower and toilet, plus a storage room and a 13.1 m² cellar.","address":{"@type":"PostalAddress","streetAddress":"Schönenstrasse 33","postalCode":"8803","addressLocality":"Rüschlikon","addressRegion":"ZH","addressCountry":"CH"},"floorLevel":"2","numberOfRooms":3.5,"numberOfBedrooms":2,"numberOfBathroomsTotal":2,"numberOfFullBathrooms":2,"numberOfPartialBathrooms":0,"floorSize":{"@type":"QuantitativeValue","value":100.1,"unitCode":"MTK"},"yearBuilt":2026,"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Covered balcony 13.5 m²","value":true},{"@type":"LocationFeatureSpecification","name":"Lift directly into the apartment (step-free)","value":true},{"@type":"LocationFeatureSpecification","name":"Own washer and dryer","value":true},{"@type":"LocationFeatureSpecification","name":"Garage space","value":true},{"@type":"LocationFeatureSpecification","name":"Cellar 13.1 m²","value":true},{"@type":"LocationFeatureSpecification","name":"Fibre-optic connection","value":true},{"@type":"LocationFeatureSpecification","name":"Electric blinds","value":true},{"@type":"LocationFeatureSpecification","name":"Oak parquet","value":true},{"@type":"LocationFeatureSpecification","name":"Geothermal heat pump with free cooling","value":true},{"@type":"LocationFeatureSpecification","name":"Photovoltaics","value":true}],"image":["https://thirty-three.ch/img/thirty-three-rueschlikon-haus.jpg","https://thirty-three.ch/img/thirty-three-rueschlikon-wohnbereich-balkon.jpg","https://thirty-three.ch/img/thirty-three-rueschlikon-kueche-eggersmann.jpg"],"containedInPlace":{"@type":"ApartmentComplex","name":"THIRTY THREE","numberOfAccommodationUnits":{"@type":"QuantitativeValue","value":5}}},{"@type":"Offer","@id":"https://thirty-three.ch/#offer","itemOffered":{"@id":"https://thirty-three.ch/#apartment"},"businessFunction":"http://purl.org/goodrelations/v1#LeaseOut","price":4980,"priceCurrency":"CHF","priceSpecification":[{"@type":"UnitPriceSpecification","name":"Apartment 201","price":4980,"priceCurrency":"CHF","unitCode":"MON"},{"@type":"UnitPriceSpecification","name":"Garage space","price":200,"priceCurrency":"CHF","unitCode":"MON"},{"@type":"CompoundPriceSpecification","name":"Total","price":5180,"priceCurrency":"CHF","unitCode":"MON"}],"availability":"https://schema.org/InStock","availabilityStarts":"2027-01-15","validFrom":"2026-11-04","offeredBy":{"@id":"https://thirty-three.ch/#contact"},"url":"https://thirty-three.ch/en/#konditionen","addOn":{"@type":"Offer","name":"Garage space","price":200,"priceCurrency":"CHF","priceSpecification":{"@type":"UnitPriceSpecification","price":200,"priceCurrency":"CHF","unitCode":"MON"}}},{"@type":"FAQPage","@id":"https://thirty-three.ch/en/#faq","mainEntity":[{"@type":"Question","name":"How does the deposit work?","acceptedAnswer":{"@type":"Answer","text":"The deposit of CHF 12'000 is paid into a blocked rental deposit account at a Swiss bank, held in your name and returned to you at the end of the lease. Alternatively, a rental deposit insurance is possible: you pay an annual premium instead of the lump sum."}},{"@type":"Question","name":"What does “utilities on account” (Nebenkosten akonto) mean?","acceptedAnswer":{"@type":"Answer","text":"Utilities (typically heating, hot water and the building's running costs) are paid as a monthly advance and settled once a year against actual costs. The amount is stated in the lease."}},{"@type":"Question","name":"What is a debt enforcement register extract (Betreibungsregisterauszug)?","acceptedAnswer":{"@type":"Answer","text":"A certificate from the debt enforcement office of your municipality confirming that no debt proceedings are pending against you. It is part of every rental application in Switzerland and is requested only after the viewing, not when you enquire."}},{"@type":"Question","name":"Which notice periods apply?","acceptedAnswer":{"@type":"Answer","text":"The lease is open-ended. Notice can be given with three months to the end of March, June or September – the standard moving dates in the Zurich area."}},{"@type":"Question","name":"Is the apartment step-free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The lift stops directly inside the apartment; it can be reached without steps, with a pram or a wheelchair."}}]}]}</script>
 <style>
-figure{margin:0}
-body{margin:0;background:#f3f2ef;color:#1c1b19;font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:#7a5a33}a:hover{color:#6e5230}
-h1,h2,h3{margin:0;font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;letter-spacing:-0.01em;line-height:1.08}
-p{margin:0}
-ul{margin:0;padding:0;list-style:none}
-img{max-width:100%}
+:root{
+--bg:#f3f2ef;--ink:#1c1b19;--ink2:#4a4744;--ink3:#6f6a64;--line:#e2dfd8;--bronze:#8c6a3f;--link:#7a5a33;
+--dark:#22262a;--d-ink:#f3f2ef;--d-ink2:#c9c6c0;--d-ink3:#9a9790;--d-line:rgba(243,242,239,.15);--field:#ffffff;--d-field:rgba(243,242,239,.06);--map:#e4e1db;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:Inter,system-ui,sans-serif;
+--f-display:56px;--f-title:40px;--f-sub:24px;--f-lead:18px;--f-text:16px;--f-ui:15px;--f-small:13px;--f-eyebrow:12px;
+--s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:48px;--s6:64px;--s7:96px;--s8:128px;
+--sec:var(--s8);--measure:640px;--edge:40px;--gut:32px;--max:1200px;--hdr:72px}
+@media (max-width:1100px){:root{--f-display:44px;--f-title:34px}}
+@media (max-width:900px){:root{--sec:80px;--edge:20px;--f-display:36px;--f-title:30px;--f-sub:21px;--f-lead:17px}}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-section[id]{scroll-margin-top:80px}
-a:focus-visible,button:focus-visible,.input:focus-visible,summary:focus-visible{outline:2px solid #8c6a3f;outline-offset:3px}summary:focus-visible{outline-offset:6px}
-.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
-.sec{padding:128px 0}
-.dark{background:#22262a;color:#f3f2ef}
-.muted{color:#4a4744}.dark .muted{color:#c9c6c0}
-.h1{font-size:56px;line-height:1.05}.hero-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:56px;align-items:start}.hero-frame{margin:0}.hero-frame .img{aspect-ratio:auto;height:auto}
-.h1-sub{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;line-height:1.25;margin-top:14px;max-width:40ch}
-.h2{font-size:44px;margin-bottom:28px}
-.h3{font-size:24px;margin-bottom:18px}
-.lead{font-size:18px;line-height:1.6;color:#4a4744;max-width:56ch}
-.dark .lead{color:#c9c6c0}
-.side{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:64px;align-items:start}
-.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px}
-.img7{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:center}
-.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}
-.row{padding:15px 0;border-top:1px solid #e2dfd8;display:flex;justify-content:space-between;align-items:baseline;gap:32px;font-size:16px;color:#4a4744}.dark .row{color:#c9c6c0}
-.row:last-child{border-bottom:1px solid #e2dfd8}
-.row span+span{font-variant-numeric:tabular-nums;white-space:nowrap;flex:0 0 auto;text-align:right;font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;line-height:1.2;color:#1c1b19;letter-spacing:0}.dark .row span+span{color:#f3f2ef}
-.row small{display:block;font-size:13px;color:#6f6a64;font-weight:400}
-.dark .row small{color:#9a9790}
-.specs .row{padding:12px 0;font-size:15px}
-.kv{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px;padding:18px 0;border-top:1px solid rgba(243,242,239,0.2)}
-.kv:last-child{border-bottom:1px solid rgba(243,242,239,0.2)}
-.kv b{font-weight:400;font-family:"Cormorant Garamond",Georgia,serif;font-size:24px}
-.kv p{font-size:16px}
-.row.sum{border-top:1px solid #1c1b19;color:#1c1b19;font-weight:500}.row.sum span+span{font-size:28px}.row.sum+.row{border-top-color:#1c1b19}
-.dark .row,.dark .row:last-child{border-color:rgba(243,242,239,0.18)}
-.sub{font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c6a3f;padding:34px 0 8px}
-.sub:first-child{padding-top:0}
-.plain li{padding:6px 0 6px 18px;text-indent:-18px;font-size:16px}
-.plain li::before{content:"–";display:inline-block;width:18px;text-indent:0;color:#8c6a3f}
-.img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block}
-.cap{font-size:13px;color:#6f6a64;margin-top:12px}
-.dark .cap{color:#9a9790}
-.spec{font-size:15px;color:#1c1b19;line-height:1.8}
-.spec b{font-weight:600}
-.btn{display:inline-block;background:#22262a;color:#ffffff;text-decoration:none;font-weight:500;padding:16px 32px;font-size:15px;min-height:44px;box-sizing:border-box;border:0;cursor:pointer;font-family:inherit;text-align:center}
-.btn:hover{background:#000000;color:#ffffff}
-.dark .btn{background:#f3f2ef;color:#22262a}.dark .btn:hover{background:#ffffff;color:#22262a}
-.nav a{color:#1c1b19;text-decoration:none;font-size:14px;font-weight:500;padding:8px 2px;display:inline-block}
-.lang{background:none;border:0;padding:8px 6px;font:inherit;font-size:13px;font-weight:500;cursor:pointer;color:#6f6a64;min-width:36px;min-height:40px}
-.lang-on{color:#1c1b19;border-bottom:1px solid #8c6a3f}
-footer .lang{min-height:36px;padding:8px 10px;color:#9a9790}footer .lang-on{color:#f3f2ef;border-bottom-color:#8c6a3f}footer a:not(.lang){display:inline-block;padding:5px 0}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:var(--f-text);line-height:1.6;-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums}
+h1,h2,h3,p,figure{margin:0}
+ul{margin:0;padding:0;list-style:none}
+img{max-width:100%;display:block}
+.img{width:100%;height:auto}
+a{color:var(--link)}a:hover{color:var(--ink)}
+a:focus-visible,button:focus-visible,.input:focus-visible,summary:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+section[id],details[id]{scroll-margin-top:var(--hdr)}
+/* type scale */
+.t-display,.t-title,.t-sub{font-family:var(--serif);font-weight:400;font-variant-numeric:lining-nums;letter-spacing:-.005em;hyphens:manual}
+.t-display,.t-title{text-wrap:balance}
+.t-display{font-size:var(--f-display);line-height:1.05}
+.t-title{font-size:var(--f-title);line-height:1.1}
+.t-sub{font-size:var(--f-sub);line-height:1.25}
+.t-lead{font-size:var(--f-lead);line-height:1.6;color:var(--ink2);max-width:var(--measure);text-wrap:pretty}
+.t-text{font-size:var(--f-text);line-height:1.6;color:var(--ink2)}
+.t-small{font-size:var(--f-small);line-height:1.5;color:var(--ink3)}
+.eyebrow{font-size:var(--f-eyebrow);line-height:1.5;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);font-weight:500}
+.dark{background:var(--dark);color:var(--d-ink)}
+.dark .t-lead,.dark .t-text{color:var(--d-ink2)}.dark .t-small{color:var(--d-ink3)}
+/* grid */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--edge)}
+.sec{padding:var(--sec) 0}
+.sec.flush{padding-top:0}
+.sec.short-b{padding-bottom:var(--s6)}
+.c-title .eyebrow.at-row{padding-top:4px}
+.g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gut)}
+.g+.g,.g+.media,.media+.g{margin-top:var(--s6)}
+.c-title{grid-column:1/5}
+.c-body{grid-column:5/13}
+.c-third{grid-column:span 4}
+.c-half-a{grid-column:1/7}
+.c-half-b{grid-column:7/13}
+.stack>*+*{margin-top:var(--s3)}
+.stack-l>*+*{margin-top:var(--s5)}
+.c-title .t-title{margin-top:-6px}
+/* components */
+.media img{width:100%;height:auto}
+.cap{margin-top:12px;font-size:var(--f-small);line-height:1.5;color:var(--ink3);text-wrap:pretty}
+.dark .cap{color:var(--d-ink3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 28px;font:500 var(--f-ui)/1 var(--sans);background:var(--dark);color:var(--d-ink);text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
+.btn:hover{background:#000;color:var(--d-ink)}
+.dark .btn{background:var(--d-ink);color:var(--dark)}.dark .btn:hover{background:#fff;color:var(--dark)}
+.list{max-width:var(--measure)}
+.list li{position:relative;padding:var(--s1) 0 var(--s1) var(--s3);color:var(--ink2)}
+.list li::before{content:"–";position:absolute;left:0;color:var(--bronze)}
+.dark .list li{color:var(--d-ink2)}
+.rows{width:100%}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:var(--s3);align-items:baseline;padding:var(--s2) 0;border-bottom:1px solid var(--line);color:var(--ink2)}
+.row>span:last-child{color:var(--ink);font-weight:500;text-align:right}
+.row small{display:block;font-size:var(--f-small);line-height:1.5;color:var(--ink3);text-wrap:pretty}
+@media (max-width:1100px) and (min-width:901px){.groups .c-third{grid-column:5/13}.groups .c-third+.c-third{margin-top:var(--s5)}}
+.row.sum,.row.sum>span:last-child{font-weight:600;color:var(--ink)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gut)}
+.fact{padding:var(--s3) 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column}
+.fact dt{font-size:var(--f-small);line-height:1.5;color:var(--ink3)}
+.fact dd{margin:auto 0 0;padding-top:4px;font-size:var(--f-lead);line-height:1.4;font-weight:500}
+.fold{border-bottom:1px solid var(--line)}
+.fold summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:var(--s3);padding:var(--s3) 0}
+.fold summary::-webkit-details-marker{display:none}
+.fold summary::after{content:"+";font:300 24px/1 var(--sans);color:var(--bronze);flex:0 0 auto;width:24px;text-align:center}
+.fold[open] summary::after{content:"–"}
+.fold .fold-body{padding:0 0 var(--s3);max-width:var(--measure)}
+.fold-q{font:500 var(--f-text)/1.6 var(--sans);color:var(--ink);text-wrap:pretty}
+.fold.small summary span{font-size:var(--f-text);color:var(--ink2)}
+.fold:first-child summary{padding-top:0}
+.fold:first-child{margin-top:-2px}
+.legal>div+div{margin-top:var(--s2)}
+.legal strong{display:block;color:var(--ink);font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gut)}
+.step{display:grid;grid-template-columns:var(--s4) minmax(0,1fr);padding:var(--s2) 0;border-bottom:1px solid var(--d-line)}
+.step i{font-style:normal;font-size:var(--f-small);color:var(--d-ink3);padding-top:2px}
+.step strong{display:block;font-weight:600;color:var(--d-ink)}
+.field+.field,.fields+.field{margin-top:var(--s3)}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s3)}
+.label{display:block;font-size:var(--f-small);line-height:1.5;color:var(--ink2);margin-bottom:var(--s1)}
+.dark .label{color:var(--d-ink2)}
+.input{width:100%;min-height:52px;padding:14px 16px;border:1px solid var(--line);border-radius:0;background:var(--field);font:400 var(--f-text)/1.5 var(--sans);color:var(--ink)}
+.dark .input{background:var(--d-field);border-color:rgba(243,242,239,.3);color:var(--d-ink)}
+.dark .input:focus{border-color:var(--d-ink)}
+textarea.input{min-height:144px;resize:vertical}
+.form-actions{margin-top:var(--s4)}
+.form-actions .t-small{margin-top:var(--s2)}
+.dark .form-actions a{color:var(--d-ink)}
+.kv .eyebrow{display:block}
+.map{background:var(--map);aspect-ratio:5/2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--s2);padding:var(--s3);text-align:center;font-size:var(--f-small);color:var(--ink2)}
+.txtlink{display:inline-block;padding:6px 0;text-underline-offset:3px}
+.addr{font-style:normal}
+.mt1{margin-top:var(--s1)}.mt2{margin-top:var(--s2)}.mt3{margin-top:var(--s3)}.mt6{margin-top:var(--s6)}.measure{max-width:var(--measure)}
+/* header */
+.hdr{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.hdr .wrap.bar{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gut);align-items:center;height:var(--hdr)}
+.bar .mark{grid-column:1/5}.bar .nav{grid-column:5/10}.bar .hdr-right{grid-column:10/13;justify-self:end}
+.nav a{white-space:nowrap}
+.hdr-right .langs-desk{margin-right:-6px}
+@media (max-width:1100px){.navlinks,.langs-desk{display:none}.burger{display:block}.hdr .wrap.bar{display:flex;justify-content:space-between}}
+.mark{font:500 var(--f-small)/1 var(--sans);letter-spacing:.18em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.nav{display:flex;gap:var(--s4)}
+.nav a{font:500 var(--f-ui)/1 var(--sans);color:var(--ink);text-decoration:none;padding:var(--s1) 0}
+.hdr-right{display:flex;align-items:center;gap:var(--s3)}
+.langs-desk,.langs{display:flex;gap:4px}
+.lang{background:none;border:0;cursor:pointer;font:500 var(--f-small)/1 var(--sans);color:var(--ink3);min-width:36px;min-height:40px;padding:0 6px;border-bottom:1px solid transparent;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.lang-on{color:var(--ink);border-bottom-color:var(--bronze)}
 .hdr-cta{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s}
 .hdr-cta.on{opacity:1;visibility:visible;pointer-events:auto}
-details.legal-d{border:0;padding:0}
-details.legal-d summary{list-style:none;cursor:pointer;font-size:14px;color:#6f6a64;padding:8px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:70ch}details.legal-d summary::after{content:"+";font-family:Inter,sans-serif;font-size:20px;font-weight:300;color:#8c6a3f;flex:0 0 auto}details.legal-d[open] summary::after{content:"–"}
-details.legal-d summary::-webkit-details-marker{display:none}
-details.legal-d[open] summary{color:#1c1b19}
 .burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;padding:10px}
-.burger span{display:block;height:1.5px;background:#1c1b19;margin:6px 0}
+.burger span{display:block;height:1.5px;background:var(--ink);margin:6px 0}
 .mob{display:none}
-.mob.open{display:block;background:#f3f2ef;border-top:1px solid #d6d2ca}
-.mob a{display:block;padding:16px 0;font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;color:#1c1b19;text-decoration:none;border-bottom:1px solid #d6d2ca}
-.mark{font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:500;letter-spacing:0.14em;color:#1c1b19;text-decoration:none;white-space:nowrap}
-.step{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;padding:10px 0;font-size:15px}
-.step:first-of-type{padding-top:0}
-.step i{font-style:normal;font-size:13px;color:#9a9790;padding-top:3px}
-.step strong{display:block;font-weight:600}
-.input{width:100%;box-sizing:border-box;border:1px solid #d6d2ca;background:#ffffff;padding:14px 14px;font:inherit;font-size:16px;min-height:52px;color:#1c1b19;border-radius:0}
-.input:focus{border-color:#1c1b19}
-.dark .input{background:rgba(243,242,239,0.06);border-color:rgba(243,242,239,0.35);color:#f3f2ef}
-.dark .input:focus{border-color:#f3f2ef}
-.label{display:block;font-size:14px;color:#4a4744;margin-bottom:6px}
-.dark .label{color:#c9c6c0}
-.field{margin-bottom:18px}
-.faq{padding:22px 0;border-top:1px solid #d6d2ca}
-.faq:last-child{border-bottom:0}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:Inter,sans-serif;font-size:24px;font-weight:300;color:#8c6a3f;flex:0 0 auto}
-.faq[open] summary::after{content:"–"}
-.faq h3{font-size:22px;margin:0}
-.faq[open] p{margin-top:10px}
-.faq p{font-size:16px;color:#4a4744;max-width:64ch}
-.legal{font-size:14px;color:#4a4744;line-height:1.6}
-.legal strong{display:block;color:#1c1b19;margin:14px 0 2px;font-weight:600}
-.map{background:#e4e1db;aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#4a4744;font-size:15px;padding:24px;box-sizing:border-box;gap:14px}
-.dark .map{background:#2e3337;color:#c9c6c0}
-@media (max-width:900px){.sec{padding:72px 0}.wrap{padding:0 20px}.mob .lang{min-height:44px}.h1{font-size:38px}.h1-sub{font-size:23px}.h2{font-size:32px}#konditionen{padding-top:72px !important}.kv{grid-template-columns:repeat(1,minmax(0,1fr));gap:6px}.side,.two,.img7,.three{grid-template-columns:repeat(1,minmax(0,1fr));gap:40px}.navlinks,.langs-desk{display:none !important}.burger{display:block}.hero-frame{margin:0 -20px}.hero-cta{padding:10px 14px !important;font-size:13px !important}.hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}.img-mob{margin:0 -20px}.img-mob .img{aspect-ratio:auto;height:auto}.cap-mob{padding:0 20px}.faq h3{font-size:20px}}
-.h1,.h2,.h3,.h1-sub,.faq h3{text-wrap:balance}.lead{text-wrap:pretty}
-.txtlink{text-underline-offset:3px;display:inline-block;padding:6px 0}
-section[id],details[id]{scroll-margin-top:80px}
-@media (max-width:480px){.specs .row,#konditionen .row{flex-direction:column;align-items:flex-start;gap:2px}.specs .row span+span,#konditionen .row span+span{text-align:left;white-space:normal}.specs .row span:first-child,#konditionen .row span:first-child{font-size:13px;color:#6f6a64}}
-@media (max-width:420px){.hdr-cta{display:none}}
-@media (max-width:900px){.lake .img{aspect-ratio:4/3 !important;object-position:38% 60%}}
+.mob.open{display:block;border-top:1px solid var(--line);background:var(--bg)}
+.mob a:not(.lang){display:block;padding:var(--s2) 0;font:400 var(--f-sub)/1.25 var(--serif);color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.mob .langs{padding:var(--s2) 0 var(--s3)}
+/* hero */
+.hero{padding:var(--s6) 0 var(--sec)}
+.hero-text{grid-column:1/7;align-self:end}
+.hero-img{grid-column:7/13}
+.hero-text .t-sub{margin-top:var(--s2)}
+.hero-text .t-lead{margin-top:var(--s4)}
+.hero-text .btn{margin-top:var(--s4)}
+.hero-text .eyebrow{margin-bottom:var(--s3)}
+/* footer */
+.ftr{background:var(--dark);color:var(--d-ink2);padding:var(--s6) 0 var(--s5);font-size:var(--f-small);line-height:1.5}
+.ftr a{color:var(--d-ink);text-decoration:none}
+.ftr .mark{color:var(--d-ink)}
+.ftr-links{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s1)}.ftr .langs{gap:var(--s2)}.ftr .lang{min-width:0;min-height:32px;padding:0}
+.ftr-links a{display:block}
+.ftr .lang{color:var(--d-ink3)}.ftr .lang-on{color:var(--d-ink)}
+.ftr .g{align-items:start}.ftr .mark{line-height:1.5}.ftr .copy{margin-top:var(--s4);color:var(--d-ink3)}
+/* responsive */
+@media (max-width:900px){
+.g{grid-template-columns:minmax(0,1fr);row-gap:var(--s4)}
+.c-title,.c-body,.c-third,.c-half-a,.c-half-b,.hero-text,.hero-img{grid-column:1/-1}
+.c-title .t-title{margin-top:0}
+.hero{padding-top:0}
+.hero-img{order:-1;margin:0 calc(-1 * var(--edge))}
+.media{margin-left:calc(-1 * var(--edge));margin-right:calc(-1 * var(--edge))}
+.media .cap{padding:0 var(--edge)}
+.lake img{aspect-ratio:4/3;object-fit:cover;object-position:38% 60%}
+.facts{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s3)}
+.fields{grid-template-columns:minmax(0,1fr);row-gap:var(--s3)}
+.navlinks,.langs-desk{display:none}
+.hdr .wrap.bar{display:flex;justify-content:space-between}
+.burger{display:block}
+.step{grid-template-columns:var(--s3) minmax(0,1fr)}.steps{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){.hdr-cta{display:none}.facts{grid-template-columns:minmax(0,1fr)}.rows-stack .row{grid-template-columns:minmax(0,1fr);row-gap:4px}.rows-stack .row>span:first-child{font-size:var(--f-small);color:var(--ink3)}.rows-stack .row>span:last-child{text-align:left}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2")}
 @font-face{font-family:Inter;font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format("woff2-variations")}
@@ -140,16 +202,12 @@ section[id],details[id]{scroll-margin-top:80px}
 *{min-width:0}
 picture{display:block}
 .lang{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
-.langs-desk{display:flex;gap:2px}
-.mob .langs{display:flex;gap:4px;padding:16px 0 20px}
-.mob .langs a{font-family:Inter,system-ui,sans-serif;font-size:13px;border-bottom:0;padding:8px 10px;color:#6f6a64;display:inline-flex}
-.mob .langs a.lang-on{color:#1c1b19;border-bottom:1px solid #8c6a3f}
-.map-frame{width:100%;aspect-ratio:3/2;border:0;display:block}
-#form-hint{font-size:14px;margin-top:14px;color:#c9c6c0;min-height:1.4em}#form-hint.err{color:#f3f2ef}#form-hint.err::before{content:"Hinweis: "}html[lang=en] #form-hint.err::before{content:"Note: "}html[lang=it] #form-hint.err::before{content:"Nota: "}
+.map-frame{width:100%;aspect-ratio:5/2;border:0;display:block}
+.mob .langs a{border-bottom:1px solid transparent}.mob .langs a.lang-on{border-bottom-color:var(--bronze)}
+#form-hint{font-size:var(--f-small);line-height:1.5;margin-top:var(--s2);color:var(--d-ink2);min-height:1.5em}#form-hint.err{color:#f3f2ef}#form-hint.err::before{content:"Hinweis: "}html[lang=en] #form-hint.err::before{content:"Note: "}html[lang=it] #form-hint.err::before{content:"Nota: "}
 .hp{position:absolute;left:-9999px;top:-9999px}
-.consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:560px;margin:0 auto;background:#22262a;color:#f3f2ef;padding:18px 20px;box-shadow:0 10px 30px rgba(0,0,0,.3);font-size:14px;line-height:1.5}
-.consent .btn{padding:10px 18px;font-size:14px;min-height:44px}
-.consent .btn-ghost{background:transparent;color:#f3f2ef;border:1px solid #8a8580}
+.consent{position:fixed;left:var(--s2);right:var(--s2);bottom:var(--s2);z-index:60;max-width:560px;margin:0 auto;background:var(--dark);color:var(--d-ink);padding:var(--s3);box-shadow:0 10px 30px rgba(0,0,0,.3);font-size:var(--f-small);line-height:1.5}
+.consent .btn-ghost{background:transparent;color:var(--d-ink);border:1px solid rgba(243,242,239,.3)}
 .rented{background:#8c6a3f;color:#fff;text-align:center;padding:12px 20px;font-size:15px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -157,25 +215,25 @@ picture{display:block}
 <body>
 
 
-<div style="width:100%;box-sizing:border-box">
+<div class="page">
 
-<!-- NAV -->
-<header style="position:sticky;top:0;background:#f3f2ef;border-bottom:1px solid #d6d2ca;z-index:10">
-<div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px">
+<!-- HEADER -->
+<header class="hdr">
+<div class="wrap bar">
 <a href="#top" class="mark">THIRTY THREE</a>
-<nav class="nav navlinks" style="display:flex;gap:28px" aria-label="Main navigation">
+<nav class="nav navlinks" aria-label="Main navigation">
 <a href="#wohnung">Apartment</a>
 <a href="#ausbau">Finishes</a>
 <a href="#lage">Location</a>
 <a href="#konditionen">Rent and terms</a>
 </nav>
-<div style="display:flex;gap:12px;align-items:center">
+<div class="hdr-right">
+<a class="btn hdr-cta on" href="#interesse">Enquire</a>
 <div class="langs-desk">
 <a class="lang" href="/" lang="de" hreflang="de">DE</a>
 <a class="lang lang-on" href="/en/" lang="en" hreflang="en">EN</a>
 <a class="lang" href="/it/" lang="it" hreflang="it">IT</a>
 </div>
-<a class="btn hero-cta hdr-cta on" href="#interesse" style="padding:12px 20px;min-height:40px;font-size:14px;white-space:nowrap">Enquire</a>
 <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
 </div>
 </div>
@@ -196,50 +254,49 @@ picture{display:block}
 </header>
 
 <!-- HERO -->
-<section id="top" style="padding:40px 0 0">
+<section id="top" class="hero">
 <div class="wrap">
-<div class="hero-grid">
-<figure class="hero-frame">
+<div class="g">
+<div class="hero-text">
+<p class="eyebrow">Schönenstrasse 33 · Rüschlikon</p>
+<h1 class="t-display">3.5-room apartment in Rüschlikon</h1>
+<p class="t-sub">A new build finished to owner-occupier standard, available to rent</p>
+<p class="t-lead">Apartment 201 on the second floor of THIRTY THREE, a new building at Schönenstrasse 33: 100 m² with an open living and dining area, a covered balcony facing the lake side and two bathrooms. Move in from 15 January or 1 February 2027, open-ended lease. From Rüschlikon station it is 15 minutes to Zurich main station and around 30 minutes to the airport without changing; the lake is a ten-minute walk away.</p>
+<a class="btn" href="#interesse">Enquire</a>
+</div>
+<figure class="hero-img">
 <img class="img" src="/img/thirty-three-rueschlikon-haus.jpg" alt="Rendering of the new THIRTY THREE building at Schönenstrasse 33 in Rüschlikon" width="1121" height="1403" fetchpriority="high">
 </figure>
-<div class="hero-text">
-<h1 class="h1">3.5-room apartment in Rüschlikon</h1>
-<p class="h1-sub">A new build finished to owner-occupier standard, available to rent</p>
-<p class="lead" style="margin-top:28px">Apartment 201 on the second floor of THIRTY THREE, a new building at Schönenstrasse 33: 100 m² with an open living and dining area, a covered balcony facing the lake side and two bathrooms. Move in from 15 January or 1 February 2027, open-ended lease. From Rüschlikon station it is 15 minutes to Zurich main station and around 30 minutes to the airport without changing; the lake is a ten-minute walk away.</p>
-<a class="btn" href="#interesse" style="margin-top:28px">Enquire</a>
-<ul class="specs" style="margin-top:44px">
-
-<li class="row"><span>Rooms</span><span>3.5 (2 bedrooms + living/dining)</span></li>
-
-<li class="row"><span>Floor area (gross)</span><span>100 m²</span></li>
-
-<li class="row"><span>Balcony, covered</span><span>13.5 m²</span></li>
-
-<li class="row"><span>Floor</span><span>2nd (two levels above ground), lift into the apartment</span></li>
-
-<li class="row"><span>Rent incl. garage space, excl. utilities</span><span>CHF 5'180 per month</span></li>
-
-<li class="row"><span>Move-in</span><span>15 January or 1 February 2027</span></li>
-
-<li class="row"><span>Lease</span><span>open-ended</span></li>
-
-</ul>
 </div>
-</div>
+<dl class="facts specs mt6">
+
+<div class="fact"><dt>Rooms</dt><dd>3.5 (2 bedrooms + living/dining)</dd></div>
+
+<div class="fact"><dt>Floor area (gross)</dt><dd>100 m²</dd></div>
+
+<div class="fact"><dt>Balcony, covered</dt><dd>13.5 m²</dd></div>
+
+<div class="fact"><dt>Floor</dt><dd>2nd (two levels above ground), lift into the apartment</dd></div>
+
+<div class="fact"><dt>Rent incl. garage space, excl. utilities</dt><dd>CHF 5'180 per month</dd></div>
+
+<div class="fact"><dt>Move-in</dt><dd>15 January or 1 February 2027</dd></div>
+
+</dl>
 </div>
 </section>
 
 <!-- WOHNUNG -->
-<section id="wohnung" class="sec">
+<section id="wohnung" class="sec flush">
 <div class="wrap">
-<figure class="img-mob"><img class="img" src="/img/thirty-three-rueschlikon-wohnbereich-balkon.jpg" alt="Rendering: living area with access to the balcony, 3.5-room apartment THIRTY THREE in Rüschlikon" width="1536" height="1024" loading="lazy"><figcaption class="cap cap-mob">Living area with balcony access – artist's impression; furniture shown for illustration only, the apartment is let unfurnished.</figcaption></figure>
-<div class="two" style="margin-top:64px;align-items:start">
-<h2 class="h2" style="margin:0">The apartment on the second floor</h2>
-<p class="lead">The living and dining area with open kitchen measures 36.6 m² and opens onto the covered balcony. Two bedrooms, one with a built-in wardrobe, one bathroom with a tub and toilet, a second with a shower and toilet, plus a storage room and a 13.1 m² cellar.</p>
-</div>
-<div class="side" style="margin-top:64px">
-<h3 class="h3" style="margin:0">What's included</h3>
-<ul class="plain two" style="gap:0 48px">
+<figure class="media"><img class="img" src="/img/thirty-three-rueschlikon-wohnbereich-balkon.jpg" alt="Rendering: living area with access to the balcony, 3.5-room apartment THIRTY THREE in Rüschlikon" width="1536" height="1024" loading="lazy"><figcaption class="cap">Living area with balcony access – artist's impression; furniture shown for illustration only, the apartment is let unfurnished.</figcaption></figure>
+<div class="g">
+<div class="c-title"><h2 class="t-title">The apartment on the second floor</h2></div>
+<div class="c-body stack-l">
+<p class="t-lead">The living and dining area with open kitchen measures 36.6 m² and opens onto the covered balcony. Two bedrooms, one with a built-in wardrobe, one bathroom with a tub and toilet, a second with a shower and toilet, plus a storage room and a 13.1 m² cellar.</p>
+<div>
+<p class="eyebrow">What's included</p>
+<ul class="list mt2">
 
 <li>Lift directly into the apartment – step-free, for prams and wheelchairs</li>
 
@@ -254,17 +311,21 @@ picture{display:block}
 </ul>
 </div>
 </div>
+</div>
+</div>
 </section>
 
 <!-- AUSBAU -->
 <section id="ausbau" class="sec dark">
 <div class="wrap">
-<div class="img7" style="align-items:start">
-<figure class="img-mob"><img class="img" src="/img/thirty-three-rueschlikon-kueche-eggersmann.jpg" alt="Rendering: kitchen with black fronts and dining area, 3.5-room apartment THIRTY THREE in Rüschlikon" width="1536" height="1024" loading="lazy"><figcaption class="cap cap-mob">Kitchen and dining area – artist's impression, non-binding</figcaption></figure>
+<figure class="media"><img class="img" src="/img/thirty-three-rueschlikon-kueche-eggersmann.jpg" alt="Rendering: kitchen with black fronts and dining area, 3.5-room apartment THIRTY THREE in Rüschlikon" width="1536" height="1024" loading="lazy"><figcaption class="cap">Kitchen and dining area – artist's impression, non-binding</figcaption></figure>
+<div class="g">
+<div class="c-title"><h2 class="t-title">Built to the standard of an owner-occupied home</h2></div>
+<div class="c-body stack-l">
+<p class="t-lead">Natural stone, handleless fronts and appliances by BORA, Miele and Electrolux: the kitchen is the clearest sign of the standard the whole building is built to.</p>
 <div>
-<h2 class="h2">Built to the standard of an owner-occupied home</h2>
-<p class="lead">Natural stone, handleless fronts and appliances by BORA, Miele and Electrolux: the kitchen is the clearest sign of the standard the whole building is built to.</p>
-<ul class="plain" style="margin-top:24px">
+<p class="eyebrow">Kitchen</p>
+<ul class="list mt2">
 
 <li>Kitchen by eggersmann, handleless, matt black Fenix fronts; worktop and splashback in leathered Taj Mahal natural stone</li>
 
@@ -278,15 +339,14 @@ picture{display:block}
 
 </ul>
 </div>
+
+<div class="kv"><span class="eyebrow">Floors</span><p class="t-text mt2">Oak parquet throughout the living areas and bedrooms.</p></div>
+
+<div class="kv"><span class="eyebrow">The building</span><p class="t-text mt2">A small house with just five apartments. Handcrafted façade with vertical texture, round window in the gable, covered balconies with bronze-coloured railings. Completion in December 2026 – you will be the first residents.</p></div>
+
+<div class="kv"><span class="eyebrow">Energy</span><p class="t-text mt2">Geothermal heat pump for heating and hot water, gentle free cooling via the ground probes in summer, photovoltaics on the roof.</p></div>
+
 </div>
-<div style="margin-top:80px">
-
-<div class="kv"><b>Floors</b><p class="muted">Oak parquet throughout the living areas and bedrooms.</p></div>
-
-<div class="kv"><b>The building</b><p class="muted">A small house with just five apartments. Handcrafted façade with vertical texture, round window in the gable, covered balconies with bronze-coloured railings. Completion in December 2026 – you will be the first residents.</p></div>
-
-<div class="kv"><b>Energy</b><p class="muted">Geothermal heat pump for heating and hot water, gentle free cooling via the ground probes in summer, photovoltaics on the roof.</p></div>
-
 </div>
 </div>
 </section>
@@ -294,17 +354,15 @@ picture{display:block}
 <!-- LAGE -->
 <section id="lage" class="sec">
 <div class="wrap">
-<figure class="img-mob lake" style="margin-bottom:64px">
-<img class="img" src="/img/thirty-three-rueschlikon-zuerichsee.jpg" alt="Lake Zurich with its western shore and the Alps in the background" width="2400" height="800" loading="lazy" style="aspect-ratio:3/1">
-<figcaption class="cap cap-mob">Lake Zurich – a ten-minute walk from the apartment</figcaption>
-</figure>
-<div class="side">
-<div>
-<h2 class="h2">Rüschlikon on Lake Zurich</h2>
-<p class="lead">Live by the lake, work in the city: Rüschlikon lies on the western shore of Lake Zurich between Kilchberg and Thalwil, a few kilometres from Zurich. The lake is a ten-minute walk away, as are the station and the shops. Bus 165 runs into the city centre without changing, and from Rüschlikon station the S-Bahn reaches Zurich main station in 15 minutes. And at 75 %, the municipal tax multiplier is one of the three lowest among the 160 municipalities in the canton of Zurich – the lower the multiplier, the lower your income tax.</p>
+<figure class="media lake"><img class="img" src="/img/thirty-three-rueschlikon-zuerichsee.jpg" alt="Lake Zurich with its western shore and the Alps in the background" width="2400" height="800" loading="lazy"><figcaption class="cap">Lake Zurich – a ten-minute walk from the apartment</figcaption></figure>
+<div class="g">
+<div class="c-title"><h2 class="t-title">Rüschlikon on Lake Zurich</h2></div>
+<div class="c-body"><p class="t-lead">Live by the lake, work in the city: Rüschlikon lies on the western shore of Lake Zurich between Kilchberg and Thalwil, a few kilometres from Zurich. The lake is a ten-minute walk away, as are the station and the shops. Bus 165 runs into the city centre without changing, and from Rüschlikon station the S‑Bahn reaches Zurich main station in 15 minutes. And at 75 %, the municipal tax multiplier is one of the three lowest among the 160 municipalities in the canton of Zurich – the lower the multiplier, the lower your income tax.</p></div>
 </div>
-<ul>
-<li class="sub">On foot</li>
+<div class="g groups">
+<div class="c-third">
+<p class="eyebrow">On foot</p>
+<ul class="rows mt1">
 
 <li class="row"><span>Bus stop, line 165</span><span>5 min</span></li>
 
@@ -314,15 +372,23 @@ picture{display:block}
 
 <li class="row"><span>Coop supermarket</span><span>10 min</span></li>
 
-<li class="sub">To Zurich</li>
+</ul>
+</div>
+<div class="c-third">
+<p class="eyebrow">To Zurich</p>
+<ul class="rows mt1">
 
 <li class="row"><span>Bus 165 direct to Bürkliplatz<small>city centre by the lake, every 15–30 minutes</small></span><span>20 min</span></li>
 
-<li class="row"><span>S-Bahn (suburban train) S8/S24 to Zurich main station<small>every 15 minutes</small></span><span>15 min</span></li>
+<li class="row"><span>S‑Bahn (suburban train) S8/S24 to Zurich main station<small>every 15 minutes</small></span><span>15 min</span></li>
 
-<li class="row"><span>S24 direct to Zurich Airport<small>no change</small></span><span>approx. 30 min</span></li>
+<li class="row"><span>S24 to Zurich Airport<small>no change</small></span><span>approx. 30 min</span></li>
 
-<li class="sub">By car</li>
+</ul>
+</div>
+<div class="c-third">
+<p class="eyebrow">By car</p>
+<ul class="rows mt1">
 
 <li class="row"><span>Zurich city centre</span><span>10 min</span></li>
 
@@ -332,25 +398,25 @@ picture{display:block}
 
 </ul>
 </div>
-<div class="img7" style="margin-top:80px;align-items:stretch">
-<div class="map" id="map-box" data-src="https://www.google.com/maps?q=Sch%C3%B6nenstrasse+33,+8803+R%C3%BCschlikon&amp;z=16&amp;output=embed"><span>The map is shown once you accept cookies. <a href="#" class="consent-open" style="color:#1c1b19">Cookie settings</a></span><a class="txtlink" href="https://www.google.com/maps/search/?api=1&amp;query=Sch%C3%B6nenstrasse+33%2C+8803+R%C3%BCschlikon" target="_blank" rel="noopener">Open in Google Maps</a></div>
-<div style="display:flex;flex-direction:column;justify-content:center;gap:24px">
-<p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;line-height:1.2">Schönenstrasse 33<br>8803 Rüschlikon</p>
+</div>
+<div class="g">
+<div class="c-title"><address class="addr eyebrow">Schönenstrasse 33<br>8803 Rüschlikon</address></div>
+<div class="c-body">
+<div class="map" id="map-box" data-src="https://www.google.com/maps?q=Sch%C3%B6nenstrasse+33,+8803+R%C3%BCschlikon&amp;z=16&amp;output=embed"><span>The map is shown once you accept cookies. <a href="#" class="consent-open">Cookie settings</a></span><a class="txtlink" href="https://www.google.com/maps/search/?api=1&amp;query=Sch%C3%B6nenstrasse+33%2C+8803+R%C3%BCschlikon" target="_blank" rel="noopener">Open in Google Maps</a></div>
 </div>
 </div>
 </div>
 </section>
 
 <!-- KONDITIONEN -->
-<section id="konditionen" class="sec" style="padding-top:0">
+<section id="konditionen" class="sec flush">
 <div class="wrap">
-<div class="side">
+<div class="g">
+<div class="c-title"><h2 class="t-title">Rent and terms</h2></div>
+<div class="c-body stack-l">
+<p class="t-lead">First occupancy, garage space included, open-ended lease – rent and deposit at a glance.</p>
 <div>
-<h2 class="h2">Rent and terms</h2>
-<p class="lead">First occupancy, garage space included, open-ended lease – rent and deposit at a glance.</p>
-</div>
-<div>
-<ul>
+<ul class="rows rows-stack">
 
 <li class="row "><span>Apartment, per month</span><span>CHF 4'980</span></li>
 
@@ -369,8 +435,9 @@ picture{display:block}
 <li class="row "><span>Use</span><span>non-smoking, no subletting</span></li>
 
 </ul>
-<p class="muted" style="font-size:14px;margin-top:16px;max-width:60ch">Rent is paid monthly in advance. Utilities are paid as a monthly advance; the amount is stated in the lease. The deposit goes into a rental deposit account in your name; a deposit insurance is possible instead. Notice period: three months, to the end of March, June or September. Details under “Frequently asked questions”.</p>
-<div style="display:flex;justify-content:flex-end;margin-top:32px"><a class="btn" href="#interesse">Enquire</a></div>
+<p class="t-small mt3 measure">Rent is paid monthly in advance. Utilities are paid as a monthly advance; the amount is stated in the lease. The deposit goes into a rental deposit account in your name; a deposit insurance is possible instead. Notice period: three months, to the end of March, June or September. Details under “Frequently asked questions”.</p>
+</div>
+<div><a class="btn" href="#interesse">Enquire</a></div>
 </div>
 </div>
 </div>
@@ -379,51 +446,59 @@ picture{display:block}
 <!-- INTERESSE -->
 <section id="interesse" class="sec dark">
 <div class="wrap">
-<h2 class="h2">Enquire</h2>
-<p class="lead">Name and e-mail are enough. You will receive a personal reply with the viewing dates – no documents are needed at this stage.</p>
-<div class="img7" style="margin-top:56px;align-items:start">
+<div class="g">
+<div class="c-title stack">
+<h2 class="t-title">Enquire</h2>
+<p class="t-lead">Name and e-mail are enough. You will receive a personal reply with the viewing dates – no documents are needed at this stage.</p>
+</div>
+<div class="c-body stack-l">
 <form id="enquiry" novalidate="novalidate">
-<div class="two" style="gap:18px">
-<div class="field"><label class="label" for="f-name">Name</label><input class="input" id="f-name" name="name" type="text" required="required" autocomplete="name" aria-describedby="form-hint"></div>
-<div class="field"><label class="label" for="f-mail">E-mail</label><input class="input" id="f-mail" name="mail" type="email" required="required" autocomplete="email" aria-describedby="form-hint"></div>
+<div class="fields">
+<div><label class="label" for="f-name">Name</label><input class="input" id="f-name" name="name" type="text" required="required" autocomplete="name" aria-describedby="form-hint"></div>
+<div><label class="label" for="f-mail">E-mail</label><input class="input" id="f-mail" name="mail" type="email" required="required" autocomplete="email" aria-describedby="form-hint"></div>
 </div>
 <div class="field"><label class="label" for="f-tel">Phone (optional)</label><input class="input" id="f-tel" name="tel" type="tel" autocomplete="tel"></div>
 <div class="field"><label class="label" for="f-msg">Message (optional)</label><textarea class="input" id="f-msg" name="msg" rows="5" placeholder="e.g. preferred move-in date or questions"></textarea></div>
+<div class="form-actions">
 <label class="hp" aria-hidden="true"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label><button class="btn" type="submit">Send enquiry</button><p id="form-hint" aria-live="polite"></p>
-<p class="muted" style="font-size:14px;margin-top:16px">Or directly by e-mail to Leonardo Fasciati: <a href="mailto:leonardo.fasciati@hotmail.com" style="color:#f3f2ef">leonardo.fasciati@hotmail.com</a></p>
+<p class="t-small">Or directly by e-mail to Leonardo Fasciati: <a href="mailto:leonardo.fasciati@hotmail.com">leonardo.fasciati@hotmail.com</a></p>
+</div>
 </form>
 <div>
-<h3 class="h3" style="margin-top:0">What happens next</h3>
+<p class="eyebrow">What happens next</p>
+<div class="steps mt1">
 
-<div class="step"><i>1</i><div><strong>Enquire</strong><span class="muted">By form or e-mail.</span></div></div>
+<div class="step"><i>1</i><div class="t-text"><strong>Enquire</strong>By form or e-mail.</div></div>
 
-<div class="step"><i>2</i><div><strong>Viewing</strong><span class="muted">You will receive the viewing dates.</span></div></div>
+<div class="step"><i>2</i><div class="t-text"><strong>Viewing</strong>You will receive the viewing dates.</div></div>
 
-<div class="step"><i>3</i><div><strong>Application</strong><span class="muted">If you would like the apartment, you will receive the application form; a debt enforcement register extract is part of the application.</span></div></div>
+<div class="step"><i>3</i><div class="t-text"><strong>Application</strong>If you would like the apartment, you will receive the application form; a debt enforcement register extract is part of the application.</div></div>
 
-<div class="step"><i>4</i><div><strong>Lease</strong><span class="muted">In German, the legally binding language; an English translation for reference is provided on request.</span></div></div>
+<div class="step"><i>4</i><div class="t-text"><strong>Lease</strong>In German, the legally binding language; an English translation for reference is provided on request.</div></div>
 
+</div>
+</div>
 </div>
 </div>
 </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="sec" style="padding-bottom:0">
+<section id="faq" class="sec short-b">
 <div class="wrap">
-<div class="side">
-<h2 class="h2" style="margin:0">Frequently asked questions</h2>
-<div>
+<div class="g">
+<div class="c-title"><h2 class="t-title">Frequently asked questions</h2></div>
+<div class="c-body">
 
-<details class="faq"><summary><h3>How does the deposit work?</h3></summary><p>The deposit of CHF 12'000 is paid into a blocked rental deposit account at a Swiss bank, held in your name and returned to you at the end of the lease. Alternatively, a rental deposit insurance is possible: you pay an annual premium instead of the lump sum.</p></details>
+<details class="fold"><summary><h3 class="fold-q">How does the deposit work?</h3></summary><div class="fold-body t-text">The deposit of CHF 12'000 is paid into a blocked rental deposit account at a Swiss bank, held in your name and returned to you at the end of the lease. Alternatively, a rental deposit insurance is possible: you pay an annual premium instead of the lump sum.</div></details>
 
-<details class="faq"><summary><h3>What does “utilities on account” (Nebenkosten akonto) mean?</h3></summary><p>Utilities (typically heating, hot water and the building's running costs) are paid as a monthly advance and settled once a year against actual costs. The amount is stated in the lease.</p></details>
+<details class="fold"><summary><h3 class="fold-q">What does “utilities on account” (Nebenkosten akonto) mean?</h3></summary><div class="fold-body t-text">Utilities (typically heating, hot water and the building's running costs) are paid as a monthly advance and settled once a year against actual costs. The amount is stated in the lease.</div></details>
 
-<details class="faq"><summary><h3>What is a debt enforcement register extract (Betreibungsregisterauszug)?</h3></summary><p>A certificate from the debt enforcement office of your municipality confirming that no debt proceedings are pending against you. It is part of every rental application in Switzerland and is requested only after the viewing, not when you enquire.</p></details>
+<details class="fold"><summary><h3 class="fold-q">What is a debt enforcement register extract (Betreibungsregisterauszug)?</h3></summary><div class="fold-body t-text">A certificate from the debt enforcement office of your municipality confirming that no debt proceedings are pending against you. It is part of every rental application in Switzerland and is requested only after the viewing, not when you enquire.</div></details>
 
-<details class="faq"><summary><h3>Which notice periods apply?</h3></summary><p>The lease is open-ended. Notice can be given with three months to the end of March, June or September – the standard moving dates in the Zurich area.</p></details>
+<details class="fold"><summary><h3 class="fold-q">Which notice periods apply?</h3></summary><div class="fold-body t-text">The lease is open-ended. Notice can be given with three months to the end of March, June or September – the standard moving dates in the Zurich area.</div></details>
 
-<details class="faq"><summary><h3>Is the apartment step-free?</h3></summary><p>Yes. The lift stops directly inside the apartment; it can be reached without steps, with a pram or a wheelchair.</p></details>
+<details class="fold"><summary><h3 class="fold-q">Is the apartment step-free?</h3></summary><div class="fold-body t-text">Yes. The lift stops directly inside the apartment; it can be reached without steps, with a pram or a wheelchair.</div></details>
 
 </div>
 </div>
@@ -431,59 +506,64 @@ picture{display:block}
 </section>
 
 <!-- RECHTLICHES -->
-<section id="rechtliches" style="padding:64px 0 48px">
-<div class="wrap" style="border-top:1px solid #d6d2ca;padding-top:24px">
-<details class="legal-d" id="impressum">
-<summary>Legal notice</summary>
-<div class="legal" style="padding:8px 0 24px;max-width:70ch">
+<section id="rechtliches" class="sec flush">
+<div class="wrap">
+<div class="g">
+<div class="c-title"><p class="eyebrow at-row">Legal</p></div>
+<div class="c-body">
+<details class="fold small" id="impressum">
+<summary><span>Legal notice</span></summary>
+<div class="fold-body legal t-small">
 
-<div><strong>Responsible for this website</strong><span style="white-space:pre-line">Leonardo Fasciati, Switzerland</span></div>
+<div><strong>Responsible for this website</strong>Leonardo Fasciati, Switzerland</div>
 
-<div><strong>Contact</strong><span style="white-space:pre-line">leonardo.fasciati@hotmail.com</span></div>
+<div><strong>Contact</strong>leonardo.fasciati@hotmail.com</div>
 
-<div><strong>Property</strong><span style="white-space:pre-line">Apartment 201, Schönenstrasse 33, 8803 Rüschlikon. Private letting, no commercial activity.</span></div>
+<div><strong>Property</strong>Apartment 201, Schönenstrasse 33, 8803 Rüschlikon. Private letting, no commercial activity.</div>
 
-<div><strong>Disclaimer</strong><span style="white-space:pre-line">The content of this website has been prepared with care. Images are non-binding renderings; the lease is decisive.</span></div>
+<div><strong>Disclaimer</strong>The content of this website has been prepared with care. Images are non-binding renderings; the lease is decisive.</div>
 
-<div><strong>Copyright</strong><span style="white-space:pre-line">Texts: © Leonardo Fasciati. Renderings: oora AG.</span></div>
-
-</div>
-</details>
-<details class="legal-d" id="datenschutz">
-<summary>Privacy</summary>
-<div class="legal" style="padding:8px 0 24px;max-width:70ch">
-<p>As of November 2026, under the Swiss Data Protection Act (DSG).</p>
-
-<div><strong>Controller</strong><span style="white-space:pre-line">Leonardo Fasciati, Switzerland, leonardo.fasciati@hotmail.com.</span></div>
-
-<div><strong>Data</strong><span style="white-space:pre-line">When you contact us by form or e-mail: name, e-mail address, phone number (if given) and your message. Application documents are received only after the viewing and only from you directly.</span></div>
-
-<div><strong>Purpose</strong><span style="white-space:pre-line">Answering your enquiry, arranging a viewing and, where applicable, preparing the lease.</span></div>
-
-<div><strong>Disclosure</strong><span style="white-space:pre-line">The form is transmitted to us by e-mail via the Web3Forms service. Beyond that, we do not pass on your data.</span></div>
-
-<div><strong>Transfer abroad</strong><span style="white-space:pre-line">The website is hosted on GitHub Pages (GitHub Inc., USA); technical access data may reach the USA. The Google map loads data from Google only after you click.</span></div>
-
-<div><strong>Analytics</strong><span style="white-space:pre-line">Google Analytics 4 only with your consent via the cookie notice.</span></div>
-
-<div><strong>Retention</strong><span style="white-space:pre-line">Enquiries that do not lead to a lease are deleted no later than three months after the letting is concluded.</span></div>
-
-<div><strong>Your rights</strong><span style="white-space:pre-line">Access, rectification, erasure, restriction of processing and data portability – contact the address above. The website is transmitted in encrypted form (HTTPS).</span></div>
+<div><strong>Copyright</strong>Texts: © Leonardo Fasciati. Renderings: oora AG.</div>
 
 </div>
 </details>
+<details class="fold small" id="datenschutz">
+<summary><span>Privacy</span></summary>
+<div class="fold-body legal t-small">
+<div>As of November 2026, under the Swiss Data Protection Act (DSG).</div>
+
+<div><strong>Controller</strong>Leonardo Fasciati, Switzerland, leonardo.fasciati@hotmail.com.</div>
+
+<div><strong>Data</strong>When you contact us by form or e-mail: name, e-mail address, phone number (if given) and your message. Application documents are received only after the viewing and only from you directly.</div>
+
+<div><strong>Purpose</strong>Answering your enquiry, arranging a viewing and, where applicable, preparing the lease.</div>
+
+<div><strong>Disclosure</strong>The form is transmitted to us by e-mail via the Web3Forms service. Beyond that, we do not pass on your data.</div>
+
+<div><strong>Transfer abroad</strong>The website is hosted on GitHub Pages (GitHub Inc., USA); technical access data may reach the USA. The Google map loads data from Google only after you click.</div>
+
+<div><strong>Analytics</strong>Google Analytics 4 only with your consent via the cookie notice.</div>
+
+<div><strong>Retention</strong>Enquiries that do not lead to a lease are deleted no later than three months after the letting is concluded.</div>
+
+<div><strong>Your rights</strong>Access, rectification, erasure, restriction of processing and data portability – contact the address above. The website is transmitted in encrypted form (HTTPS).</div>
+
+</div>
+</details>
+</div>
+</div>
 </div>
 </section>
 
 <!-- FOOTER -->
-<footer style="background:#22262a;color:#c9c6c0;padding:48px 0 40px;font-size:14px">
+<footer class="ftr">
 <div class="wrap">
-<div class="three" style="gap:32px">
-<div><span class="mark" style="color:#f3f2ef">THIRTY THREE</span></div>
-<address style="font-style:normal">Schönenstrasse 33, 8803 Rüschlikon<br><a href="mailto:leonardo.fasciati@hotmail.com" style="color:#f3f2ef">leonardo.fasciati@hotmail.com</a></address>
-<div style="display:flex;gap:20px;flex-wrap:wrap"><a href="#impressum" style="color:#f3f2ef;text-decoration:none">Legal notice</a><a href="#datenschutz" style="color:#f3f2ef;text-decoration:none">Privacy</a><a href="#" class="consent-open" style="color:#f3f2ef;text-decoration:none">Cookie settings</a><span style="display:inline-flex;align-items:center"><a class="lang" href="/" lang="de" hreflang="de">DE</a><a class="lang lang-on" href="/en/" lang="en" hreflang="en">EN</a><a class="lang" href="/it/" lang="it" hreflang="it">IT</a></span></div>
+<div class="g">
+<div class="c-third"><span class="mark">THIRTY THREE</span></div>
+<address class="c-third addr">Schönenstrasse 33, 8803 Rüschlikon<br><a href="mailto:leonardo.fasciati@hotmail.com">leonardo.fasciati@hotmail.com</a></address>
+<div class="c-third"><div class="ftr-links"><a href="#impressum">Legal notice</a><a href="#datenschutz">Privacy</a><a href="#" class="consent-open">Cookie settings</a></div><div class="langs mt2"><a class="lang" href="/" lang="de" hreflang="de">DE</a><a class="lang lang-on" href="/en/" lang="en" hreflang="en">EN</a><a class="lang" href="/it/" lang="it" hreflang="it">IT</a></div></div>
 </div>
-<p style="font-size:12px;margin-top:32px;color:#9a9790">© 2026 Leonardo Fasciati</p>
+<p class="copy">© 2026 Leonardo Fasciati</p>
 </div>
 </footer>
 
@@ -491,8 +571,8 @@ picture{display:block}
 
 
 <div id="consent" class="consent" role="dialog" aria-labelledby="consent-text" hidden>
-<p id="consent-text" style="margin:0 0 12px">This website uses cookies for the Google map. This requires your consent. <a href="#datenschutz" style="color:#fff">Privacy</a></p>
-<div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" id="consent-accept" class="btn" style="background:#f3f2ef;color:#22262a">Accept</button><button type="button" id="consent-decline" class="btn btn-ghost">Decline</button></div>
+<p id="consent-text" style="margin:0 0 16px">This website uses cookies for the Google map. This requires your consent. <a href="#datenschutz" style="color:#fff">Privacy</a></p>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" id="consent-accept" class="btn" style="background:#f3f2ef;color:#22262a">Accept</button><button type="button" id="consent-decline" class="btn btn-ghost">Decline</button></div>
 </div>
 
 <script>
