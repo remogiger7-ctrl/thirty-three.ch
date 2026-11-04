@@ -114,7 +114,12 @@ details.legal-d[open] summary{color:#1c1b19}
 .field{margin-bottom:18px}
 .faq{padding:22px 0;border-top:1px solid #d6d2ca}
 .faq:last-child{border-bottom:0}
-.faq h3{font-size:22px;margin-bottom:8px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:Inter,sans-serif;font-size:24px;font-weight:300;color:#8c6a3f;flex:0 0 auto}
+.faq[open] summary::after{content:"–"}
+.faq h3{font-size:22px;margin:0}
+.faq[open] p{margin-top:10px}
 .faq p{font-size:16px;color:#4a4744;max-width:64ch}
 .legal{font-size:14px;color:#4a4744;line-height:1.6}
 .legal strong{display:block;color:#1c1b19;margin:14px 0 2px;font-weight:600}
@@ -406,15 +411,15 @@ picture{display:block}
 <h2 class="h2" style="margin:0">Domande frequenti</h2>
 <div>
 
-<div class="faq"><h3>Quanto costa l'appartamento al mese?</h3><p>CHF 4'980 per l'appartamento e CHF 200 per il posto auto, in totale CHF 5'180. Si aggiungono le spese accessorie come acconto mensile, conteggiate una volta all'anno sui costi effettivi; l'importo è indicato nel contratto.</p></div>
+<details class="faq"><summary><h3>Quanto costa l'appartamento al mese?</h3></summary><p>CHF 4'980 per l'appartamento e CHF 200 per il posto auto, in totale CHF 5'180. Si aggiungono le spese accessorie come acconto mensile, conteggiate una volta all'anno sui costi effettivi; l'importo è indicato nel contratto.</p></details>
 
-<div class="faq"><h3>Da quando è disponibile?</h3><p>Dal 15 gennaio o dal 1° febbraio 2027, a vostra scelta. L'edificio sarà completato a dicembre 2026 – sarete i primi inquilini.</p></div>
+<details class="faq"><summary><h3>Da quando è disponibile?</h3></summary><p>Dal 15 gennaio o dal 1° febbraio 2027, a vostra scelta. L'edificio sarà completato a dicembre 2026 – sarete i primi inquilini.</p></details>
 
-<div class="faq"><h3>Qual è la durata del contratto?</h3><p>A tempo indeterminato. Il preavviso di disdetta è di tre mesi, per fine marzo, giugno o settembre, le date di trasloco usuali nella regione di Zurigo.</p></div>
+<details class="faq"><summary><h3>Qual è la durata del contratto?</h3></summary><p>A tempo indeterminato. Il preavviso di disdetta è di tre mesi, per fine marzo, giugno o settembre, le date di trasloco usuali nella regione di Zurigo.</p></details>
 
-<div class="faq"><h3>Quali documenti servono?</h3><p>Nessuno per manifestare interesse. Chi desidera l'appartamento dopo la visita riceve un modulo di candidatura; ne fa parte l'estratto del registro delle esecuzioni, che attesta l'assenza di procedure esecutive.</p></div>
+<details class="faq"><summary><h3>Quali documenti servono?</h3></summary><p>Nessuno per manifestare interesse. Chi desidera l'appartamento dopo la visita riceve un modulo di candidatura; ne fa parte l'estratto del registro delle esecuzioni, che attesta l'assenza di procedure esecutive.</p></details>
 
-<div class="faq"><h3>Cosa è compreso?</h3><p>Cucina con tutti gli elettrodomestici, lavatrice e asciugatrice, fibra ottica, tapparelle elettriche, ripostiglio, cantina e posto auto. L'appartamento è affittato non arredato.</p></div>
+<details class="faq"><summary><h3>Cosa è compreso?</h3></summary><p>Cucina con tutti gli elettrodomestici, lavatrice e asciugatrice, fibra ottica, tapparelle elettriche, ripostiglio, cantina e posto auto. L'appartamento è affittato non arredato.</p></details>
 
 </div>
 </div>

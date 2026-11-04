@@ -114,7 +114,12 @@ details.legal-d[open] summary{color:#1c1b19}
 .field{margin-bottom:18px}
 .faq{padding:22px 0;border-top:1px solid #d6d2ca}
 .faq:last-child{border-bottom:0}
-.faq h3{font-size:22px;margin-bottom:8px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:Inter,sans-serif;font-size:24px;font-weight:300;color:#8c6a3f;flex:0 0 auto}
+.faq[open] summary::after{content:"–"}
+.faq h3{font-size:22px;margin:0}
+.faq[open] p{margin-top:10px}
 .faq p{font-size:16px;color:#4a4744;max-width:64ch}
 .legal{font-size:14px;color:#4a4744;line-height:1.6}
 .legal strong{display:block;color:#1c1b19;margin:14px 0 2px;font-weight:600}
@@ -406,15 +411,15 @@ picture{display:block}
 <h2 class="h2" style="margin:0">Frequently asked questions</h2>
 <div>
 
-<div class="faq"><h3>What does the apartment cost per month?</h3><p>CHF 4'980 for the apartment and CHF 200 for the garage space, CHF 5'180 in total. Utilities are paid as a monthly advance and settled once a year against actual costs; the amount is stated in the lease.</p></div>
+<details class="faq"><summary><h3>What does the apartment cost per month?</h3></summary><p>CHF 4'980 for the apartment and CHF 200 for the garage space, CHF 5'180 in total. Utilities are paid as a monthly advance and settled once a year against actual costs; the amount is stated in the lease.</p></details>
 
-<div class="faq"><h3>When is the apartment available?</h3><p>From 15 January or 1 February 2027, your choice. The building will be completed in December 2026 – you will be the first tenants.</p></div>
+<details class="faq"><summary><h3>When is the apartment available?</h3></summary><p>From 15 January or 1 February 2027, your choice. The building will be completed in December 2026 – you will be the first tenants.</p></details>
 
-<div class="faq"><h3>How long is the lease?</h3><p>Open-ended. The notice period is three months, to the end of March, June or September – the standard moving dates in the Zurich area.</p></div>
+<details class="faq"><summary><h3>How long is the lease?</h3></summary><p>Open-ended. The notice period is three months, to the end of March, June or September – the standard moving dates in the Zurich area.</p></details>
 
-<div class="faq"><h3>Which documents do I need?</h3><p>None to enquire. If you would like the apartment after the viewing, you will receive an application form; it includes a debt enforcement register extract (Betreibungsregisterauszug) – a certificate from the local debt enforcement office confirming that no debt proceedings are pending against you.</p></div>
+<details class="faq"><summary><h3>Which documents do I need?</h3></summary><p>None to enquire. If you would like the apartment after the viewing, you will receive an application form; it includes a debt enforcement register extract (Betreibungsregisterauszug) – a certificate from the local debt enforcement office confirming that no debt proceedings are pending against you.</p></details>
 
-<div class="faq"><h3>What comes with the apartment?</h3><p>Kitchen with all appliances, own washer and dryer, fibre-optic connection, electric blinds, storage room, cellar and garage space. The apartment is let unfurnished.</p></div>
+<details class="faq"><summary><h3>What comes with the apartment?</h3></summary><p>Kitchen with all appliances, own washer and dryer, fibre-optic connection, electric blinds, storage room, cellar and garage space. The apartment is let unfurnished.</p></details>
 
 </div>
 </div>

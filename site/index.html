@@ -114,7 +114,12 @@ details.legal-d[open] summary{color:#1c1b19}
 .field{margin-bottom:18px}
 .faq{padding:22px 0;border-top:1px solid #d6d2ca}
 .faq:last-child{border-bottom:0}
-.faq h3{font-size:22px;margin-bottom:8px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:Inter,sans-serif;font-size:24px;font-weight:300;color:#8c6a3f;flex:0 0 auto}
+.faq[open] summary::after{content:"–"}
+.faq h3{font-size:22px;margin:0}
+.faq[open] p{margin-top:10px}
 .faq p{font-size:16px;color:#4a4744;max-width:64ch}
 .legal{font-size:14px;color:#4a4744;line-height:1.6}
 .legal strong{display:block;color:#1c1b19;margin:14px 0 2px;font-weight:600}
@@ -406,15 +411,15 @@ picture{display:block}
 <h2 class="h2" style="margin:0">Häufige Fragen</h2>
 <div>
 
-<div class="faq"><h3>Was kostet die Wohnung pro Monat?</h3><p>CHF 4'980 für die Wohnung und CHF 200 für den Garagenplatz, zusammen CHF 5'180. Dazu kommen die Nebenkosten als monatlicher Vorschuss, die jährlich nach den effektiven Kosten abgerechnet werden; der Betrag wird mit dem Mietvertrag bekannt gegeben.</p></div>
+<details class="faq"><summary><h3>Was kostet die Wohnung pro Monat?</h3></summary><p>CHF 4'980 für die Wohnung und CHF 200 für den Garagenplatz, zusammen CHF 5'180. Dazu kommen die Nebenkosten als monatlicher Vorschuss, die jährlich nach den effektiven Kosten abgerechnet werden; der Betrag wird mit dem Mietvertrag bekannt gegeben.</p></details>
 
-<div class="faq"><h3>Ab wann ist die Wohnung verfügbar?</h3><p>Ab 15. Januar oder 1. Februar 2027, nach Ihrer Wahl. Das Haus wird im Dezember 2026 fertiggestellt – Sie sind die ersten Mieter.</p></div>
+<details class="faq"><summary><h3>Ab wann ist die Wohnung verfügbar?</h3></summary><p>Ab 15. Januar oder 1. Februar 2027, nach Ihrer Wahl. Das Haus wird im Dezember 2026 fertiggestellt – Sie sind die ersten Mieter.</p></details>
 
-<div class="faq"><h3>Wie lange läuft der Mietvertrag?</h3><p>Unbefristet. Gekündigt werden kann mit drei Monaten Frist auf die ortsüblichen Termine Ende März, Juni und September.</p></div>
+<details class="faq"><summary><h3>Wie lange läuft der Mietvertrag?</h3></summary><p>Unbefristet. Gekündigt werden kann mit drei Monaten Frist auf die ortsüblichen Termine Ende März, Juni und September.</p></details>
 
-<div class="faq"><h3>Welche Unterlagen brauche ich?</h3><p>Für die Anmeldung keine. Wer die Wohnung nach der Besichtigung möchte, erhält ein Bewerbungsformular; dazu gehört ein Betreibungsregisterauszug – der Nachweis, dass keine Betreibungen offen sind.</p></div>
+<details class="faq"><summary><h3>Welche Unterlagen brauche ich?</h3></summary><p>Für die Anmeldung keine. Wer die Wohnung nach der Besichtigung möchte, erhält ein Bewerbungsformular; dazu gehört ein Betreibungsregisterauszug – der Nachweis, dass keine Betreibungen offen sind.</p></details>
 
-<div class="faq"><h3>Was ist in der Wohnung dabei?</h3><p>Küche mit allen Geräten, eigener Waschturm, Glasfaseranschluss, elektrische Storen, Réduit, Keller und Garagenplatz. Die Wohnung wird unmöbliert vermietet.</p></div>
+<details class="faq"><summary><h3>Was ist in der Wohnung dabei?</h3></summary><p>Küche mit allen Geräten, eigener Waschturm, Glasfaseranschluss, elektrische Storen, Réduit, Keller und Garagenplatz. Die Wohnung wird unmöbliert vermietet.</p></details>
 
 </div>
 </div>

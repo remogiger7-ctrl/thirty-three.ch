@@ -95,7 +95,12 @@ details.legal-d[open] summary{color:#1c1b19}
 .field{margin-bottom:18px}
 .faq{padding:22px 0;border-top:1px solid #d6d2ca}
 .faq:last-child{border-bottom:0}
-.faq h3{font-size:22px;margin-bottom:8px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:Inter,sans-serif;font-size:24px;font-weight:300;color:#8c6a3f;flex:0 0 auto}
+.faq[open] summary::after{content:"–"}
+.faq h3{font-size:22px;margin:0}
+.faq[open] p{margin-top:10px}
 .faq p{font-size:16px;color:#4a4744;max-width:64ch}
 .legal{font-size:14px;color:#4a4744;line-height:1.6}
 .legal strong{display:block;color:#1c1b19;margin:14px 0 2px;font-weight:600}
@@ -296,7 +301,7 @@ details.legal-d[open] summary{color:#1c1b19}
 <h2 class="h2" style="margin:0">{{t.faqH}}</h2>
 <div>
 <sc-for list="{{t.faqs}}" as="q" hint-placeholder-count="5">
-<div class="faq"><h3>{{q.q}}</h3><p>{{q.a}}</p></div>
+<details class="faq"><summary><h3>{{q.q}}</h3></summary><p>{{q.a}}</p></details>
 </sc-for>
 </div>
 </div>
