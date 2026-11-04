@@ -57,19 +57,19 @@ const META = {
     ogAlt: 'Visualisierung des Neubaus THIRTY THREE, Schönenstrasse 33, Rüschlikon',
     mapTitle: 'Google Maps – Schönenstrasse 33, Rüschlikon', mapNote: 'Beim Laden werden Daten an Google übermittelt.',
     formSending: 'Wird gesendet …', formDone: 'Vielen Dank – Ihre Anmeldung ist eingegangen. Sie erhalten eine persönliche Antwort.', formError: 'Das Senden hat nicht geklappt. Ihr E-Mail-Programm öffnet sich mit der Nachricht.', formNeed: 'Bitte Name und eine gültige E-Mail-Adresse angeben.',
-    consentText: 'Wir verwenden Google Analytics, um die Nutzung dieser Website zu verstehen. Dafür brauchen wir Ihre Einwilligung.', consentMore: 'Datenschutz', consentAccept: 'Einverstanden', consentDecline: 'Ablehnen', consentSettings: 'Cookie-Einstellungen',
-    rented: 'Die Wohnung ist vermietet.',
+    consentText: 'Diese Website verwendet Cookies für die Google-Karte und die Webanalyse (Google Analytics). Dafür brauchen wir Ihre Einwilligung.', mapConsent: 'Die Karte wird angezeigt, sobald Sie Cookies akzeptieren.', consentMore: 'Datenschutz', consentAccept: 'Einverstanden', consentDecline: 'Ablehnen', consentSettings: 'Cookie-Einstellungen',
+    rented: 'Die Wohnung ist vermietet.', rentedPrefix: 'Vermietet – ', aptName: 'Wohnung 201', garageName: 'Garagenplatz',
   },
   en: {
     title: 'Apartment for rent in Rüschlikon: 3.5 rooms – THIRTY THREE',
-    desc: "New-build 3.5-room apartment with covered balcony, lift into the apartment and garage space. Schönenstrasse 33, Rüschlikon near Zurich. From 15 Jan 2027, CHF 4'980.",
+    desc: "New-build 3.5-room apartment, covered balcony, lift into the apartment, garage space. Schönenstrasse 33, Rüschlikon near Zurich. From 15 Jan 2027, CHF 4'980.",
     ogTitle: '3.5-room apartment in Rüschlikon, available 2027 – THIRTY THREE',
     ogDesc: "100 m², covered balcony, lift directly into the apartment, garage space. CHF 4'980 per month. Schönenstrasse 33, Rüschlikon.",
     ogAlt: 'Rendering of the new THIRTY THREE building, Schönenstrasse 33, Rüschlikon',
     mapTitle: 'Google Maps – Schönenstrasse 33, Rüschlikon', mapNote: 'Loading the map sends data to Google.',
     formSending: 'Sending …', formDone: 'Thank you – your enquiry has been received. You will get a personal reply.', formError: 'Sending did not work. Your e-mail program opens with the message.', formNeed: 'Please enter your name and a valid e-mail address.',
-    consentText: 'We use Google Analytics to understand how this website is used. This requires your consent.', consentMore: 'Privacy', consentAccept: 'Accept', consentDecline: 'Decline', consentSettings: 'Cookie settings',
-    rented: 'The apartment has been let.',
+    consentText: 'This website uses cookies for the Google map and web analytics (Google Analytics). This requires your consent.', mapConsent: 'The map is shown once you accept cookies.', consentMore: 'Privacy', consentAccept: 'Accept', consentDecline: 'Decline', consentSettings: 'Cookie settings',
+    rented: 'The apartment has been let.', rentedPrefix: 'Let – ', aptName: 'Apartment 201', garageName: 'Garage space',
   },
   it: {
     title: 'Affitto Rüschlikon: 3,5 locali, nuovo – THIRTY THREE',
@@ -79,8 +79,8 @@ const META = {
     ogAlt: 'Rendering della nuova costruzione THIRTY THREE, Schönenstrasse 33, Rüschlikon',
     mapTitle: 'Google Maps – Schönenstrasse 33, Rüschlikon', mapNote: 'Caricando la mappa vengono trasmessi dati a Google.',
     formSending: 'Invio in corso …', formDone: 'Grazie – la vostra richiesta è stata ricevuta. Riceverete una risposta personale.', formError: "L'invio non è riuscito. Si apre il vostro programma di posta con il messaggio.", formNeed: 'Indicate il nome e un indirizzo e-mail valido.',
-    consentText: 'Utilizziamo Google Analytics per capire come viene usato questo sito. Per questo serve il vostro consenso.', consentMore: 'Privacy', consentAccept: 'Accetto', consentDecline: 'Rifiuto', consentSettings: 'Impostazioni cookie',
-    rented: "L'appartamento è stato affittato.",
+    consentText: 'Questo sito utilizza cookie per la mappa Google e l\'analisi web (Google Analytics). Per questo serve il vostro consenso.', mapConsent: 'La mappa viene mostrata non appena accettate i cookie.', consentMore: 'Privacy', consentAccept: 'Accetto', consentDecline: 'Rifiuto', consentSettings: 'Impostazioni cookie',
+    rented: "L'appartamento è stato affittato.", rentedPrefix: 'Affittato – ', aptName: 'Appartamento 201', garageName: 'Posto auto',
   },
 };
 
@@ -100,9 +100,7 @@ function expand(h, ctx) {
 // ---------- 3. CSS additions for the static site ----------
 css = css.replace(/@media \(max-width:900px\)\{\.sec\{padding:72px 0\}\.wrap\{padding:0 20px\}/, '@media (max-width:900px){.sec{padding:72px 0}.wrap{padding:0 20px}.mob .lang{min-height:44px}');
 css += `
-@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/cormorant-garamond-latin-300-normal.woff2) format("woff2")}
 @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2")}
-@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2")}
 @font-face{font-family:Inter;font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format("woff2-variations")}
 @font-face{font-family:Inter;font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/inter-latin-ext-wght-normal.woff2) format("woff2-variations");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 *{min-width:0}
@@ -128,17 +126,17 @@ function jsonLd(lang, t) {
   const img = (n) => DOMAIN + '/img/' + n + '.jpg';
   const g = [
     { '@type': 'WebSite', '@id': DOMAIN + '/#website', url: DOMAIN + '/', name: 'THIRTY THREE', alternateName: 'Thirty Three Rüschlikon', inLanguage: ['de', 'en', 'it'] },
-    { '@type': 'Person', '@id': DOMAIN + '/#contact', name: 'Leonardo Fasciati', email: MAIL },
+    { '@type': 'Person', '@id': DOMAIN + '/#contact', name: 'Leonardo Fasciati' },
     {
       '@type': 'RealEstateListing', '@id': url + '#listing', url, name: META[lang].title, description: META[lang].desc, inLanguage: lang,
       datePosted: '2026-11-04', dateModified: LASTMOD, isPartOf: { '@id': DOMAIN + '/#website' },
       mainEntity: { '@id': DOMAIN + '/#apartment' }, offers: { '@id': DOMAIN + '/#offer' }, primaryImageOfPage: img('thirty-three-rueschlikon-haus'),
     },
     {
-      '@type': 'Apartment', '@id': DOMAIN + '/#apartment', name: 'THIRTY THREE – Wohnung 201, Schönenstrasse 33, Rüschlikon', url,
+      '@type': 'Apartment', '@id': DOMAIN + '/#apartment', name: 'THIRTY THREE – ' + META[lang].aptName + ', Schönenstrasse 33, Rüschlikon', url: DOMAIN + '/',
       description: t.aptLead,
       address: { '@type': 'PostalAddress', streetAddress: 'Schönenstrasse 33', postalCode: '8803', addressLocality: 'Rüschlikon', addressRegion: 'ZH', addressCountry: 'CH' },
-      floorLevel: '2', numberOfRooms: 3.5, numberOfBedrooms: 2, numberOfBathroomsTotal: 2, numberOfFullBathrooms: 1, numberOfPartialBathrooms: 1,
+      floorLevel: '2', numberOfRooms: 3.5, numberOfBedrooms: 2, numberOfBathroomsTotal: 2, numberOfFullBathrooms: 2, numberOfPartialBathrooms: 0,
       floorSize: { '@type': 'QuantitativeValue', value: 100.1, unitCode: 'MTK' }, yearBuilt: 2026,
       amenityFeature: [
         ['balcony', true], ['elevator', true], ['washerDryer', true], ['parking', true], ['cellar', true], ['internet', true], ['heatPump', true], ['solar', true],
@@ -150,12 +148,18 @@ function jsonLd(lang, t) {
       '@type': 'Offer', '@id': DOMAIN + '/#offer', itemOffered: { '@id': DOMAIN + '/#apartment' }, businessFunction: 'http://purl.org/goodrelations/v1#LeaseOut',
       price: 4980, priceCurrency: 'CHF', priceSpecification: { '@type': 'UnitPriceSpecification', price: 4980, priceCurrency: 'CHF', unitCode: 'MON' },
       availability: STATUS === 'rented' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock', availabilityStarts: '2027-01-15', validFrom: '2026-11-04',
-      offeredBy: { '@id': DOMAIN + '/#contact' }, url: url + '#konditionen',
-      addOn: { '@type': 'Offer', name: 'Garagenplatz', price: 200, priceCurrency: 'CHF', priceSpecification: { '@type': 'UnitPriceSpecification', price: 200, priceCurrency: 'CHF', unitCode: 'MON' } },
+      offeredBy: { '@id': DOMAIN + '/#contact' }, url: DOMAIN + '/#konditionen',
+      addOn: { '@type': 'Offer', name: META[lang].garageName, price: 200, priceCurrency: 'CHF', priceSpecification: { '@type': 'UnitPriceSpecification', price: 200, priceCurrency: 'CHF', unitCode: 'MON' } },
     },
     { '@type': 'FAQPage', '@id': url + '#faq', mainEntity: t.faqs.map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: q.a } })) },
   ];
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': g });
+}
+
+function webpWidths(name) {
+  const dir = path.join(OUT, 'img');
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir).filter((f) => f.startsWith(name + '-') && f.endsWith('.webp')).map((f) => parseInt(f.slice(name.length + 1), 10)).filter(Boolean).sort((a, b) => a - b);
 }
 
 // ---------- 5. Page ----------
@@ -182,7 +186,7 @@ function page(lang) {
   for (const [blob, name] of Object.entries(IMG)) body = body.split(blob).join('/img/' + name + '.jpg');
   // map: consent-gated iframe
   body = body.replace(/<div class="map"><span>([^<]*)<\/span>(<a class="btn"[^>]*>[^<]*<\/a>)<\/div>/, (mm, label, link) =>
-    `<div class="map" id="map-box" data-src="https://www.google.com/maps?q=Sch%C3%B6nenstrasse+33,+8803+R%C3%BCschlikon&amp;z=16&amp;output=embed"><button type="button" class="btn" id="map-load">${label}</button><span style="font-size:13px">${esc(m.mapNote)}</span>${link}</div>`);
+    `<div class="map" id="map-box" data-src="https://www.google.com/maps?q=Sch%C3%B6nenstrasse+33,+8803+R%C3%BCschlikon&amp;z=16&amp;output=embed"><span>${esc(m.mapConsent)} <a href="#" class="consent-open" style="color:#1c1b19">${esc(m.consentSettings)}</a></span>${link.replace('class="btn"', 'class="txtlink"')}</div>`);
   // enquiry form: real form with hint and honeypot
   body = body.replace('<form>', '<form id="enquiry" novalidate="novalidate">').replace('<form >', '<form id="enquiry" novalidate="novalidate">');
   body = body.replace(/<input class="input" id="f-name" type="text" required="required" value="">/, '<input class="input" id="f-name" name="name" type="text" required="required" autocomplete="name">');
@@ -192,30 +196,32 @@ function page(lang) {
   body = body.replace(/(<button class="btn" type="submit">[^<]*<\/button>)/, '<label class="hp" aria-hidden="true"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"> Leave this empty</label>$1<p id="form-hint" aria-live="polite"></p>');
   // images -> picture with webp (optimize-images.js creates -800/-1600 variants in CI)
   body = body.replace(/<img class="img" src="\/img\/([a-z0-9-]+)\.jpg"([^>]*)>/g, (mm, name, rest) => {
-    const has = fs.existsSync(path.join(OUT, 'img', `${name}-800.webp`)) && fs.existsSync(path.join(OUT, 'img', `${name}-1600.webp`));
+    const found = webpWidths(name);
     const isHero = /fetchpriority="high"/.test(rest);
     const sizes = isHero ? '(max-width:900px) 100vw, 1120px' : /kueche/.test(name) ? '(max-width:900px) 100vw, 640px' : '(max-width:900px) 100vw, 1120px';
-    const img = `<img class="img" src="/img/${name}.jpg"${rest}${isHero ? '' : ''}>`;
-    return has ? `<picture><source type="image/webp" srcset="/img/${name}-800.webp 800w, /img/${name}-1600.webp 1600w" sizes="${sizes}">${img}</picture>` : img;
+    const img = `<img class="img" src="/img/${name}.jpg"${rest}>`;
+    return found.length ? `<picture><source type="image/webp" srcset="${found.map((w) => `/img/${name}-${w}.webp ${w}w`).join(', ')}" sizes="${sizes}">${img}</picture>` : img;
   });
   // rented banner
   if (STATUS === 'rented') body = body.replace('<header', `<div class="rented">${esc(m.rented)}</div><header`);
   // cookie settings link in footer when analytics is on
-  if (GA_ID) body = body.replace(/(<a href="#datenschutz"[^>]*>[^<]*<\/a>)/, `$1<a href="#" id="consent-open" style="color:#f3f2ef;text-decoration:none">${esc(m.consentSettings)}</a>`);
+  body = body.replace(/(<a href="#datenschutz"[^>]*>[^<]*<\/a>)/, `$1<a href="#" class="consent-open" style="color:#f3f2ef;text-decoration:none">${esc(m.consentSettings)}</a>`);
 
-  const heroPreload = fs.existsSync(path.join(OUT, 'img', 'thirty-three-rueschlikon-haus-1600.webp'))
-    ? `<link rel="preload" as="image" imagesrcset="/img/thirty-three-rueschlikon-haus-800.webp 800w, /img/thirty-three-rueschlikon-haus-1600.webp 1600w" imagesizes="(max-width:900px) 100vw, 1120px" type="image/webp" fetchpriority="high">`
+  const hw = webpWidths('thirty-three-rueschlikon-haus');
+  const heroPreload = hw.length
+    ? `<link rel="preload" as="image" imagesrcset="${hw.map((w) => `/img/thirty-three-rueschlikon-haus-${w}.webp ${w}w`).join(', ')}" imagesizes="(max-width:900px) 100vw, 1120px" type="image/webp" fetchpriority="high">`
     : `<link rel="preload" as="image" href="/img/thirty-three-rueschlikon-haus.jpg" fetchpriority="high">`;
 
-  const consent = GA_ID ? `
+  const consent = `
 <div id="consent" class="consent" role="dialog" aria-live="polite" aria-label="Cookies" hidden>
 <p style="margin:0 0 12px">${esc(m.consentText)} <a href="#datenschutz" style="color:#fff">${esc(m.consentMore)}</a></p>
 <div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" id="consent-accept" class="btn" style="background:#f3f2ef;color:#22262a">${esc(m.consentAccept)}</button><button type="button" id="consent-decline" class="btn btn-ghost">${esc(m.consentDecline)}</button></div>
-</div>` : '';
+</div>`;
 
   const script = `
 <script>
 (function(){
+  var hc=document.querySelector('.hdr-cta');if(hc){hc.classList.remove('on');var onS=function(){hc.classList.toggle('on',window.scrollY>600);};window.addEventListener('scroll',onS,{passive:true});onS();}
   var b=document.getElementById('burger'),mn=document.getElementById('mob');
   function closeMenu(){if(mn){mn.classList.remove('open');}if(b){b.setAttribute('aria-expanded','false');}}
   if(b&&mn){b.addEventListener('click',function(){var o=mn.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});}
@@ -234,16 +240,15 @@ function page(lang) {
         if(d&&d.success){hint.textContent=${JSON.stringify(m.formDone)};hint.style.color='#f3f2ef';f.reset();if(btn)btn.disabled=false;}else{throw new Error('fail');}
       }).catch(function(){hint.textContent=${JSON.stringify(m.formError)};if(btn)btn.disabled=false;window.location.href=mailto;});});}
   function loadMap(){var mb=document.getElementById('map-box');if(!mb||mb.dataset.done)return;mb.dataset.done='1';var i=document.createElement('iframe');i.className='map-frame';i.title=${JSON.stringify(m.mapTitle)};i.src=mb.getAttribute('data-src');i.setAttribute('loading','lazy');i.setAttribute('referrerpolicy','no-referrer-when-downgrade');mb.replaceWith(i);}
-  var ml=document.getElementById('map-load');if(ml)ml.addEventListener('click',loadMap);
   var GA=${JSON.stringify(GA_ID)},KEY='tt-consent',box=document.getElementById('consent');
   function loadGA(){if(!GA||window.__ga)return;window.__ga=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config',GA);}
   function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
   function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
-  if(GA&&box){var c=get();if(c==='granted'){loadGA();}else if(c!=='denied'){box.hidden=false;}
-    var a=document.getElementById('consent-accept'),d=document.getElementById('consent-decline'),o=document.getElementById('consent-open');
-    if(a)a.addEventListener('click',function(){set('granted');box.hidden=true;loadGA();});
-    if(d)d.addEventListener('click',function(){var was=get()==='granted';set('denied');box.hidden=true;if(was){window['ga-disable-'+GA]=true;document.cookie.split(';').forEach(function(ck){var n=ck.split('=')[0].trim();if(/^_ga/.test(n)){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.${HOST}';document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';}});location.reload();}});
-    if(o)o.addEventListener('click',function(e){e.preventDefault();box.hidden=false;});}
+  if(box){var c=get();if(c==='granted'){loadGA();loadMap();}else if(c!=='denied'){box.hidden=false;}
+    var a=document.getElementById('consent-accept'),d=document.getElementById('consent-decline');
+    if(a)a.addEventListener('click',function(){set('granted');box.hidden=true;loadGA();loadMap();});
+    if(d)d.addEventListener('click',function(){var was=get()==='granted';set('denied');box.hidden=true;if(was){if(GA){window['ga-disable-'+GA]=true;document.cookie.split(';').forEach(function(ck){var n=ck.split('=')[0].trim();if(/^_ga/.test(n)){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.${HOST}';document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';}});}location.reload();}});
+    document.querySelectorAll('.consent-open').forEach(function(o){o.addEventListener('click',function(e){e.preventDefault();box.hidden=false;});});}
 })();
 </script>`;
 
@@ -252,7 +257,7 @@ function page(lang) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(m.title)}</title>
+<title>${esc((STATUS === 'rented' ? m.rentedPrefix : '') + m.title)}</title>
 <meta name="description" content="${esc(m.desc)}">
 <link rel="canonical" href="${url}">
 ${HREFLANGS.map(([h, d]) => `<link rel="alternate" hreflang="${h}" href="${DOMAIN}/${d}">`).join('\n')}
@@ -269,7 +274,7 @@ ${HREFLANGS.map(([h, d]) => `<link rel="alternate" hreflang="${h}" href="${DOMAI
 <meta property="og:locale" content="${L.ogLocale}">
 ${Object.values(LANGS).filter((v) => v.ogLocale !== L.ogLocale).map((v) => `<meta property="og:locale:alternate" content="${v.ogLocale}">`).join('\n')}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="robots" content="${LIVE ? 'index,follow,max-image-preview:large' : 'noindex,nofollow'}">
+<meta name="robots" content="${LIVE ? 'index,follow,max-image-preview:large' : 'noindex'}">
 <meta name="theme-color" content="#f3f2ef">
 <link rel="preload" href="/fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>

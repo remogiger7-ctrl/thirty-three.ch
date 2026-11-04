@@ -8,9 +8,11 @@ async function main() {
     if (!f.endsWith('.jpg')) continue;
     const base = f.replace(/\.jpg$/, ''); const src = path.join(dir, f);
     const meta = await sharp(src).metadata();
-    for (const w of [800, 1600]) {
+    const widths = [800, 1200, 1600].filter((w) => w < meta.width);
+    widths.push(Math.min(meta.width, 1600));
+    for (const w of [...new Set(widths)]) {
       const out = path.join(dir, `${base}-${w}.webp`);
-      await sharp(src).resize({ width: w, withoutEnlargement: true }).webp({ quality: 76 }).toFile(out);
+      await sharp(src).resize({ width: w, withoutEnlargement: true }).webp({ quality: 78 }).toFile(out);
       made++;
     }
     if (meta.width > 1600) {
