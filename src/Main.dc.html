@@ -176,6 +176,7 @@ textarea.input{min-height:144px;resize:vertical}
 .hero-img{order:-1;margin:0 calc(-1 * var(--edge))}
 .media{margin-left:calc(-1 * var(--edge));margin-right:calc(-1 * var(--edge))}
 .media .cap{padding:0 var(--edge)}
+.plan{margin-left:0;margin-right:0}.plan .cap{padding:0}
 .lake img{aspect-ratio:4/3;object-fit:cover;object-position:38% 60%}
 .facts{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s3)}
 .fields{grid-template-columns:minmax(0,1fr);row-gap:var(--s3)}
@@ -268,6 +269,7 @@ textarea.input{min-height:144px;resize:vertical}
 </div>
 </div>
 </div>
+<figure class="media plan"><a href="/grundriss-wohnung-201.pdf" target="_blank" rel="noopener"><img class="img" src="/_blob/7837749e22ecc1603c6fb2d596df48c2" alt="{{t.altPlan}}" width="960" height="705" loading="lazy"></a><figcaption class="cap">{{t.capPlan}} <a href="/grundriss-wohnung-201.pdf" target="_blank" rel="noopener">{{t.planPdf}}</a></figcaption></figure>
 </div>
 </section>
 
@@ -463,7 +465,7 @@ class Component extends DCLogic {
   texts() {
     return {
       de: {
-        navAria: 'Hauptnavigation', heroEyebrow: 'Schönenstrasse 33 · Rüschlikon', kitchenH: 'Küche', legalH: 'Rechtliches', navMenu: 'Menü', navApt: 'Wohnung', navFit: 'Ausbau', navLoc: 'Lage', navPrice: 'Konditionen', navBook: 'Interesse anmelden',
+        navAria: 'Hauptnavigation', altPlan: 'Grundriss Wohnung 201: Wohnen, Essen und Küche mit Balkon, zwei Zimmer, Dusche/WC, Bad/WC, Réduit, Korridor und Lift', capPlan: 'Grundriss Wohnung 201 – unverbindlich, Möblierung beispielhaft.', planPdf: 'Grundriss als PDF', heroEyebrow: 'Schönenstrasse 33 · Rüschlikon', kitchenH: 'Küche', legalH: 'Rechtliches', navMenu: 'Menü', navApt: 'Wohnung', navFit: 'Ausbau', navLoc: 'Lage', navPrice: 'Konditionen', navBook: 'Interesse anmelden',
         heroTitle1: '3.5-Zimmer-Wohnung in Rüschlikon', heroTitle2: 'Neubau in Eigentumsqualität, zur Miete',
         heroLead: 'Wohnung 201 im zweiten Stock des Neubaus THIRTY THREE an der Schönenstrasse 33: 100 m² mit offenem Wohn- und Essbereich, gedecktem Balkon zur Seeseite und zwei Bädern. Erstbezug ab 15. Januar oder 1. Februar 2027, unbefristet. Ab Bahnhof Rüschlikon in 15 Minuten zum Zürich HB, der Flughafen in rund 30 Minuten ohne Umsteigen, der See in zehn Gehminuten.',
         specs: [{n:'Zimmer',v:'3.5'},{n:'Fläche (brutto)',v:'100 m²'},{n:'Balkon, gedeckt',v:'13.5 m²'},{n:'Stockwerk',v:'2. Stock, Lift in die Wohnung'},{n:'Mietzins inkl. Garagenplatz, exkl. Nebenkosten',v:'CHF 5\'180 pro Monat'},{n:'Bezug',v:'15. Januar oder 1. Februar 2027'}],
@@ -541,7 +543,7 @@ class Component extends DCLogic {
         ]
       },
       en: {
-        navAria: 'Main navigation', heroEyebrow: 'Schönenstrasse 33 · Rüschlikon', kitchenH: 'Kitchen', legalH: 'Legal', navMenu: 'Menu', navApt: 'Apartment', navFit: 'Finishes', navLoc: 'Location', navPrice: 'Rent and terms', navBook: 'Enquire',
+        navAria: 'Main navigation', altPlan: 'Floor plan of apartment 201: living, dining and kitchen with balcony, two bedrooms, shower room, bathroom, storage room, hallway and lift', capPlan: 'Floor plan of apartment 201 – non-binding, furniture for illustration only; labels in German.', planPdf: 'Floor plan (PDF)', heroEyebrow: 'Schönenstrasse 33 · Rüschlikon', kitchenH: 'Kitchen', legalH: 'Legal', navMenu: 'Menu', navApt: 'Apartment', navFit: 'Finishes', navLoc: 'Location', navPrice: 'Rent and terms', navBook: 'Enquire',
         heroTitle1: '3.5-room apartment in Rüschlikon', heroTitle2: 'A new build finished to owner-occupier standard, available to rent',
         heroLead: 'Apartment 201 on the second floor of THIRTY THREE, a new building at Schönenstrasse 33: 100 m² with an open living and dining area, a covered balcony facing the lake side and two bathrooms. Move in from 15 January or 1 February 2027, open-ended lease. From Rüschlikon station it is 15 minutes to Zurich main station and around 30 minutes to the airport without changing; the lake is a ten-minute walk away.',
         specs: [{n:'Rooms',v:'3.5 (2 bedrooms + living/dining)'},{n:'Floor area (gross)',v:'100 m²'},{n:'Balcony, covered',v:'13.5 m²'},{n:'Floor',v:'2nd (two levels above ground), lift into the apartment'},{n:'Rent incl. garage space, excl. utilities',v:'CHF 5\'180 per month'},{n:'Move-in',v:'15 January or 1 February 2027'}],
@@ -619,7 +621,7 @@ class Component extends DCLogic {
         ]
       },
       it: {
-        navAria: 'Navigazione principale', heroEyebrow: 'Schönenstrasse 33 · Rüschlikon', kitchenH: 'Cucina', legalH: 'Note legali', navMenu: 'Menu', navApt: 'Appartamento', navFit: 'Finiture', navLoc: 'Posizione', navPrice: 'Canone e condizioni', navBook: 'Segnalare interesse',
+        navAria: 'Navigazione principale', altPlan: 'Pianta dell\'appartamento 201: soggiorno, pranzo e cucina con balcone, due camere, doccia/WC, bagno/WC, ripostiglio, corridoio e ascensore', capPlan: 'Pianta dell\'appartamento 201 – non vincolante, arredamento a titolo d\'esempio; didascalie in tedesco.', planPdf: 'Pianta in PDF', heroEyebrow: 'Schönenstrasse 33 · Rüschlikon', kitchenH: 'Cucina', legalH: 'Note legali', navMenu: 'Menu', navApt: 'Appartamento', navFit: 'Finiture', navLoc: 'Posizione', navPrice: 'Canone e condizioni', navBook: 'Segnalare interesse',
         heroTitle1: '3,5 locali a Rüschlikon', heroTitle2: 'Nuova costruzione con finiture da appartamento di proprietà, in affitto',
         heroLead: 'Appartamento 201 al secondo piano della nuova costruzione THIRTY THREE in Schönenstrasse 33: 100 m² con zona giorno aperta, balcone coperto sul lato del lago e due bagni. Disponibile dal 15 gennaio o dal 1° febbraio 2027, contratto a tempo indeterminato. Dalla stazione di Rüschlikon 15 minuti fino a Zurigo stazione centrale, l\'aeroporto in circa 30 minuti senza cambi, il lago a dieci minuti a piedi.',
         specs: [{n:'Locali',v:'3,5 (2 camere + soggiorno/pranzo)'},{n:'Superficie (lorda)',v:'100 m²'},{n:'Balcone coperto',v:'13,5 m²'},{n:'Piano',v:'2°, ascensore nell\'appartamento'},{n:'Canone incl. posto auto, spese escluse',v:'CHF 5\'180 al mese'},{n:'Disponibile',v:'15 gennaio o 1° febbraio 2027'}],

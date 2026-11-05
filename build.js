@@ -183,6 +183,7 @@ function page(lang) {
   // burger needs an id, mobile menu too
   body = body.replace('<button class="burger"', '<button class="burger" id="burger" type="button"').replace('<div class="mob ">', '<div class="mob" id="mob">').replace('<div class="mob">', '<div class="mob" id="mob">');
   // images -> site files
+  body = body.split('/_blob/7837749e22ecc1603c6fb2d596df48c2').join('/img/thirty-three-rueschlikon-grundriss-wohnung-201.svg');
   for (const [blob, name] of Object.entries(IMG)) body = body.split(blob).join('/img/' + name + '.jpg');
   // map: consent-gated iframe
   body = body.replace(/<div class="map"><span>([^<]*)<\/span>(<a class="(?:btn|txtlink)"[^>]*>[^<]*<\/a>)<\/div>/, (mm, label, link) =>
@@ -306,7 +307,7 @@ for (const [lang, v] of Object.entries(LANGS)) {
 }
 fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-${Object.values(LANGS).map((v) => `<url><loc>${DOMAIN}/${v.dir}</loc><lastmod>${LASTMOD}</lastmod>${HREFLANGS.map(([h, d]) => `<xhtml:link rel="alternate" hreflang="${h}" href="${DOMAIN}/${d}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${DOMAIN}/"/>${['haus', 'wohnbereich-balkon', 'kueche-eggersmann', 'zuerichsee'].map((n) => `<image:image><image:loc>${DOMAIN}/img/thirty-three-rueschlikon-${n}.jpg</image:loc></image:image>`).join('')}</url>`).join('\n')}
+${Object.values(LANGS).map((v) => `<url><loc>${DOMAIN}/${v.dir}</loc><lastmod>${LASTMOD}</lastmod>${HREFLANGS.map(([h, d]) => `<xhtml:link rel="alternate" hreflang="${h}" href="${DOMAIN}/${d}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${DOMAIN}/"/>${['haus', 'wohnbereich-balkon', 'kueche-eggersmann', 'zuerichsee'].map((n) => `<image:image><image:loc>${DOMAIN}/img/thirty-three-rueschlikon-${n}.jpg</image:loc></image:image>`).join('')}<image:image><image:loc>${DOMAIN}/img/thirty-three-rueschlikon-grundriss-wohnung-201.svg</image:loc></image:image></url>`).join('\n')}
 </urlset>
 `);
 fs.writeFileSync(path.join(OUT, 'robots.txt'), LIVE
