@@ -316,7 +316,7 @@ fs.writeFileSync(path.join(OUT, 'robots.txt'), LIVE
 const T = TEXTS.de;
 fs.writeFileSync(path.join(OUT, 'llms.txt'), `# THIRTY THREE – 3.5-Zimmer-Wohnung mieten in Rüschlikon
 
-> Wohnung 201 im Neubau THIRTY THREE, Schönenstrasse 33, 8803 Rüschlikon (Kanton Zürich, Schweiz): 3.5 Zimmer, 100.1 m² Fläche brutto, 2. Stock, Lift direkt in die Wohnung, gedeckter Balkon 13.5 m², Keller 13.1 m², Garagenplatz. Zwei Zimmer, Bad mit Wanne, separate Dusche, Réduit, eigener Waschturm, Glasfaser, elektrische Storen, Eichenparkett. Küche von eggersmann mit Naturstein-Arbeitsplatte, BORA Kochfeldabzug, Electrolux Kombi-Steamer, Miele Geschirrspüler. Erdsonden-Wärmepumpe mit Freecooling, Photovoltaik. Mehrfamilienhaus mit 5 Wohnungen, Fertigstellung Dezember 2026. Erstbezug ab 15. Januar oder 1. Februar 2027, unbefristet, unmöbliert. Mietzins CHF 5'050 pro Monat plus Garagenplatz CHF 200 = CHF 5'250 pro Monat (ohne Nebenkosten), Nebenkosten akonto, Kaution CHF 12'000. Kündigung drei Monate auf Ende März, Juni, September. Status: ${STATUS === 'rented' ? 'vermietet' : 'verfügbar'}. Kontakt: ${MAIL} (Leonardo Fasciati).
+> Wohnung 201 im Neubau THIRTY THREE, Schönenstrasse 33, 8803 Rüschlikon (Kanton Zürich, Schweiz): 3.5 Zimmer, 100.1 m² Fläche brutto, 2. Stock, Lift direkt in die Wohnung, gedeckter Balkon 13.5 m², Keller 13.1 m², Garagenplatz. Zwei Zimmer, Bad mit Wanne, separate Dusche, Réduit, eigener Waschturm, Glasfaser, elektrische Storen, Eichenparkett. Küche von eggersmann mit Naturstein-Arbeitsplatte, BORA Kochfeldabzug, Electrolux Kombi-Steamer, Miele Geschirrspüler. Erdsonden-Wärmepumpe mit Freecooling, Photovoltaik. Mehrfamilienhaus mit 5 Wohnungen, Fertigstellung Dezember 2026. Erstbezug ab 15. Januar oder 1. Februar 2027, unbefristet, unmöbliert. Mietzins CHF 5'050 pro Monat plus Garagenplatz CHF 200 = CHF 5'250 pro Monat (ohne Nebenkosten), Nebenkosten CHF 300 akonto, Kaution CHF 12'000. Kündigung drei Monate auf Ende März, Juni, September. Status: ${STATUS === 'rented' ? 'vermietet' : 'verfügbar'}. Kontakt: ${MAIL} (Leonardo Fasciati).
 
 ## Lage
 - Zu Fuss: Bushaltestelle 5 Min., Bahnhof Rüschlikon 9 Min., Zürichsee 10 Min., Coop 10 Min.
@@ -327,10 +327,10 @@ fs.writeFileSync(path.join(OUT, 'llms.txt'), `# THIRTY THREE – 3.5-Zimmer-Wohn
 ${T.faqs.map((q) => `- ${q.q} ${q.a}`).join('\n')}
 
 ## English
-${META.en.desc} Rent CHF 5'050 per month plus garage space CHF 200 = CHF 5'250 (excl. utilities), deposit CHF 12'000, open-ended lease, unfurnished, first occupancy from 15 January or 1 February 2027. Contact: ${MAIL} (Leonardo Fasciati). Page: ${DOMAIN}/en/
+${META.en.desc} Rent CHF 5'050 per month plus garage space CHF 200 = CHF 5'250 (excl. utilities), utilities CHF 300 per month on account, deposit CHF 12'000, open-ended lease, unfurnished, first occupancy from 15 January or 1 February 2027. Contact: ${MAIL} (Leonardo Fasciati). Page: ${DOMAIN}/en/
 
 ## Italiano
-${META.it.desc} Canone CHF 5'050 al mese più posto auto CHF 200 = CHF 5'250 (spese escluse), deposito CHF 12'000, contratto a tempo indeterminato, non arredato, disponibile dal 15 gennaio o dal 1° febbraio 2027. Contatto: ${MAIL} (Leonardo Fasciati). Pagina: ${DOMAIN}/it/
+${META.it.desc} Canone CHF 5'050 al mese più posto auto CHF 200 = CHF 5'250 (spese escluse), spese accessorie CHF 300 al mese in acconto, deposito CHF 12'000, contratto a tempo indeterminato, non arredato, disponibile dal 15 gennaio o dal 1° febbraio 2027. Contatto: ${MAIL} (Leonardo Fasciati). Pagina: ${DOMAIN}/it/
 
 ## Seiten
 - [Deutsch](${DOMAIN}/)
