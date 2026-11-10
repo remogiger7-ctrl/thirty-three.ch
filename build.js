@@ -53,9 +53,9 @@ const HREFLANGS = Object.values(LANGS).flatMap((v) => [v.hreflang, ...v.extra].m
 const META = {
   de: {
     title: '3.5-Zimmer-Wohnung mieten in Rüschlikon – THIRTY THREE',
-    desc: "Mietwohnung 3.5 Zimmer im Neubau, CHF 5'500 inkl. Garagenplatz, Erstbezug 15.1.2027: 100 m², gedeckter Balkon, Lift in die Wohnung. Schönenstrasse 33, Rüschlikon.",
+    desc: "Mietwohnung 3.5 Zimmer im Neubau, CHF 5'250 plus Garagenplatz CHF 250, Erstbezug 15.1.2027: 100 m², gedeckter Balkon, Lift in die Wohnung. Schönenstrasse 33, Rüschlikon.",
     ogTitle: '3.5-Zimmer-Wohnung in Rüschlikon, Erstbezug 2027 – THIRTY THREE',
-    ogDesc: "100 m², gedeckter Balkon, Lift direkt in die Wohnung, Garagenplatz. CHF 5'500 pro Monat inkl. Garagenplatz. Schönenstrasse 33, Rüschlikon.",
+    ogDesc: "100 m², gedeckter Balkon, Lift direkt in die Wohnung, Garagenplatz. Mietzins CHF 5'250, Garagenplatz CHF 250 pro Monat. Schönenstrasse 33, Rüschlikon.",
     ogAlt: 'Visualisierung des Neubaus THIRTY THREE, Schönenstrasse 33, Rüschlikon',
     mapTitle: 'Google Maps – Schönenstrasse 33, Rüschlikon', mapNote: 'Beim Laden werden Daten an Google übermittelt.',
     formSending: 'Wird gesendet …', formDone: 'Vielen Dank – Ihre Anmeldung ist eingegangen. Sie erhalten eine persönliche Antwort.', formError: 'Das Senden hat nicht geklappt. Ihr E-Mail-Programm öffnet sich mit der Nachricht.', formNeed: 'Bitte Name und eine gültige E-Mail-Adresse angeben.',
@@ -64,9 +64,9 @@ const META = {
   },
   en: {
     title: '3.5-Room Apartment for Rent in Rüschlikon, Zurich – THIRTY THREE',
-    desc: "3.5-room new-build apartment for rent in Rüschlikon near Zurich, CHF 5'500 incl. garage space, from 15 Jan 2027: 100 m², covered balcony, lift into the apartment.",
+    desc: "3.5-room new-build apartment for rent in Rüschlikon near Zurich, CHF 5'250 plus garage space CHF 250, from 15 Jan 2027: 100 m², covered balcony, lift into the apartment.",
     ogTitle: '3.5-room apartment in Rüschlikon, available 2027 – THIRTY THREE',
-    ogDesc: "100 m², covered balcony, lift directly into the apartment, garage space. CHF 5'500 per month incl. garage space. Schönenstrasse 33, Rüschlikon.",
+    ogDesc: "100 m², covered balcony, lift directly into the apartment, garage space. Rent CHF 5'250, garage space CHF 250 per month. Schönenstrasse 33, Rüschlikon.",
     ogAlt: 'Rendering of the new THIRTY THREE building, Schönenstrasse 33, Rüschlikon',
     mapTitle: 'Google Maps – Schönenstrasse 33, Rüschlikon', mapNote: 'Loading the map sends data to Google.',
     formSending: 'Sending …', formDone: 'Thank you – your enquiry has been received. You will get a personal reply.', formError: 'Sending did not work. Your e-mail program opens with the message.', formNeed: 'Please enter your name and a valid e-mail address.',
@@ -75,9 +75,9 @@ const META = {
   },
   it: {
     title: '3,5 locali in affitto a Rüschlikon, Zurigo – THIRTY THREE',
-    desc: "3,5 locali in affitto a Rüschlikon, vicino a Zurigo, CHF 5'500 incl. posto auto, dal 15.1.2027: nuova costruzione, 100 m², balcone coperto, ascensore nell'appartamento.",
+    desc: "3,5 locali in affitto a Rüschlikon, vicino a Zurigo, CHF 5'250 più posto auto CHF 250, dal 15.1.2027: nuova costruzione, 100 m², balcone coperto, ascensore nell'appartamento.",
     ogTitle: '3,5 locali a Rüschlikon, disponibile dal 2027 – THIRTY THREE',
-    ogDesc: "100 m², balcone coperto, ascensore direttamente nell'appartamento, posto auto. CHF 5'500 al mese, posto auto incluso. Schönenstrasse 33, Rüschlikon.",
+    ogDesc: "100 m², balcone coperto, ascensore direttamente nell'appartamento, posto auto. Canone CHF 5'250, posto auto CHF 250 al mese. Schönenstrasse 33, Rüschlikon.",
     ogAlt: 'Rendering della nuova costruzione THIRTY THREE, Schönenstrasse 33, Rüschlikon',
     mapTitle: 'Google Maps – Schönenstrasse 33, Rüschlikon', mapNote: 'Caricando la mappa vengono trasmessi dati a Google.',
     formSending: 'Invio in corso …', formDone: 'Grazie – la vostra richiesta è stata ricevuta. Riceverete una risposta personale.', formError: "L'invio non è riuscito. Si apre il vostro programma di posta con il messaggio.", formNeed: 'Indicate il nome e un indirizzo e-mail valido.',
@@ -145,7 +145,6 @@ function jsonLd(lang, t) {
       price: 5250, priceCurrency: 'CHF', priceSpecification: [
         { '@type': 'UnitPriceSpecification', name: META[lang].aptName, price: 5250, priceCurrency: 'CHF', unitCode: 'MON' },
         { '@type': 'UnitPriceSpecification', name: META[lang].garageName, price: 250, priceCurrency: 'CHF', unitCode: 'MON' },
-        { '@type': 'CompoundPriceSpecification', name: 'Total', price: 5500, priceCurrency: 'CHF', unitCode: 'MON' },
       ],
       availability: STATUS === 'rented' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock', availabilityStarts: '2027-01-15', validFrom: PUBLISHED,
       offeredBy: { '@id': DOMAIN + '/#contact' }, url: url + '#konditionen',
@@ -316,7 +315,7 @@ fs.writeFileSync(path.join(OUT, 'robots.txt'), LIVE
 const T = TEXTS.de;
 fs.writeFileSync(path.join(OUT, 'llms.txt'), `# THIRTY THREE – 3.5-Zimmer-Wohnung mieten in Rüschlikon
 
-> Wohnung 201 im Neubau THIRTY THREE, Schönenstrasse 33, 8803 Rüschlikon (Kanton Zürich, Schweiz): 3.5 Zimmer, 100.1 m² Fläche brutto, 2. Stock, Lift direkt in die Wohnung, gedeckter Balkon 13.5 m², Keller 13.1 m², Garagenplatz. Zwei Zimmer, Bad mit Wanne, separate Dusche, Réduit, eigener Waschturm, Glasfaser, elektrische Storen, Eichenparkett. Küche von eggersmann mit Naturstein-Arbeitsplatte, BORA Kochfeldabzug, Electrolux Kombi-Steamer, Miele Geschirrspüler. Erdsonden-Wärmepumpe mit Freecooling, Photovoltaik. Mehrfamilienhaus mit 5 Wohnungen, Fertigstellung Dezember 2026. Erstbezug ab 15. Januar oder 1. Februar 2027, unbefristet, unmöbliert. Mietzins CHF 5'250 pro Monat plus Garagenplatz CHF 250 = CHF 5'500 pro Monat (ohne Nebenkosten), Nebenkosten CHF 300 akonto, Kaution CHF 12'000. Kündigung drei Monate auf Ende März, Juni, September. Status: ${STATUS === 'rented' ? 'vermietet' : 'verfügbar'}. Kontakt: ${MAIL} (Leonardo Fasciati).
+> Wohnung 201 im Neubau THIRTY THREE, Schönenstrasse 33, 8803 Rüschlikon (Kanton Zürich, Schweiz): 3.5 Zimmer, 100.1 m² Fläche brutto, 2. Stock, Lift direkt in die Wohnung, gedeckter Balkon 13.5 m², Keller 13.1 m², Garagenplatz. Zwei Zimmer, Bad mit Wanne, separate Dusche, Réduit, eigener Waschturm, Glasfaser, elektrische Storen, Eichenparkett. Küche von eggersmann mit Naturstein-Arbeitsplatte, BORA Kochfeldabzug, Electrolux Kombi-Steamer, Miele Geschirrspüler. Erdsonden-Wärmepumpe mit Freecooling, Photovoltaik. Mehrfamilienhaus mit 5 Wohnungen, Fertigstellung Dezember 2026. Erstbezug ab 15. Januar oder 1. Februar 2027, unbefristet, unmöbliert. Mietzins CHF 5'250 pro Monat plus Garagenplatz CHF 250 pro Monat (ohne Nebenkosten), Nebenkosten CHF 300 akonto, Kaution CHF 12'000. Kündigung drei Monate auf Ende März, Juni, September. Status: ${STATUS === 'rented' ? 'vermietet' : 'verfügbar'}. Kontakt: ${MAIL} (Leonardo Fasciati).
 
 ## Lage
 - Zu Fuss: Bushaltestelle 5 Min., Bahnhof Rüschlikon 9 Min., Zürichsee 10 Min., Coop 10 Min.
@@ -327,10 +326,10 @@ fs.writeFileSync(path.join(OUT, 'llms.txt'), `# THIRTY THREE – 3.5-Zimmer-Wohn
 ${T.faqs.map((q) => `- ${q.q} ${q.a}`).join('\n')}
 
 ## English
-${META.en.desc} Rent CHF 5'250 per month plus garage space CHF 250 = CHF 5'500 (excl. utilities), utilities CHF 300 per month on account, deposit CHF 12'000, open-ended lease, unfurnished, first occupancy from 15 January or 1 February 2027. Contact: ${MAIL} (Leonardo Fasciati). Page: ${DOMAIN}/en/
+${META.en.desc} Rent CHF 5'250 per month plus garage space CHF 250 per month (excl. utilities), utilities CHF 300 per month on account, deposit CHF 12'000, open-ended lease, unfurnished, first occupancy from 15 January or 1 February 2027. Contact: ${MAIL} (Leonardo Fasciati). Page: ${DOMAIN}/en/
 
 ## Italiano
-${META.it.desc} Canone CHF 5'250 al mese più posto auto CHF 250 = CHF 5'500 (spese escluse), spese accessorie CHF 300 al mese in acconto, deposito CHF 12'000, contratto a tempo indeterminato, non arredato, disponibile dal 15 gennaio o dal 1° febbraio 2027. Contatto: ${MAIL} (Leonardo Fasciati). Pagina: ${DOMAIN}/it/
+${META.it.desc} Canone CHF 5'250 al mese più posto auto CHF 250 al mese (spese escluse), spese accessorie CHF 300 al mese in acconto, deposito CHF 12'000, contratto a tempo indeterminato, non arredato, disponibile dal 15 gennaio o dal 1° febbraio 2027. Contatto: ${MAIL} (Leonardo Fasciati). Pagina: ${DOMAIN}/it/
 
 ## Seiten
 - [Deutsch](${DOMAIN}/)
