@@ -86,7 +86,7 @@ section[id],details[id]{scroll-margin-top:var(--hdr)}
 .stack-l>*+*{margin-top:var(--s5)}
 .c-title .t-title{margin-top:-6px}
 /* components */
-.media img{width:100%;height:auto}
+.media img{width:100%;height:auto}.pair{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.799fr);column-gap:var(--gut);margin-top:var(--s6);align-items:start}.pair figure{margin:0}.pair img{width:100%;height:auto;display:block}
 .cap{margin-top:12px;font-size:var(--f-small);line-height:1.5;color:var(--ink3);text-wrap:pretty}
 .dark .cap{color:var(--d-ink3)}
 .btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 28px;font:500 var(--f-ui)/1 var(--sans);background:var(--dark);color:var(--d-ink);text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
@@ -195,7 +195,7 @@ textarea.input{min-height:144px;resize:vertical}
 .hero{padding-top:0}
 .hero-img{order:-1;margin:0 calc(-1 * var(--edge))}
 .media{margin-left:calc(-1 * var(--edge));margin-right:calc(-1 * var(--edge))}
-.media .cap{padding:0 var(--edge)}
+.media .cap{padding:0 var(--edge)}.pair{grid-template-columns:minmax(0,1fr);row-gap:var(--s4)}
 .plan{margin-left:0;margin-right:0}.plan .cap{padding:0}
 .lake img{aspect-ratio:4/3;object-fit:cover;object-position:38% 60%}
 .facts{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s3)}.facts.specs{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -330,6 +330,7 @@ picture{display:block}
 </div>
 </div>
 </div>
+<div class="pair"><figure class="pair-a"><img class="img" src="/img/thirty-three-rueschlikon-zimmer-einbauschrank.jpg" alt="Visualisierung: Zimmer mit Einbauschrank und Eichenparkett, 3.5-Zimmer-Wohnung THIRTY THREE in Rüschlikon" width="1536" height="1024" loading="lazy"><figcaption class="cap">Zimmer mit Einbauschrank – unverbindliche Visualisierung</figcaption></figure><figure class="pair-b"><img class="img" src="/img/thirty-three-rueschlikon-bad-wanne.jpg" alt="Visualisierung: Bad mit Wanne, WC und Waschtisch, 3.5-Zimmer-Wohnung THIRTY THREE in Rüschlikon" width="1121" height="1403" loading="lazy"><figcaption class="cap">Bad mit Wanne und WC – unverbindliche Visualisierung</figcaption></figure></div>
 <figure class="media plan"><a href="/grundriss-wohnung-201.pdf" target="_blank" rel="noopener"><img class="img" src="/img/thirty-three-rueschlikon-grundriss-wohnung-201.svg" alt="Grundriss Wohnung 201: Wohnen, Essen und Küche mit Balkon, zwei Zimmer, Dusche/WC, Bad/WC, Réduit, Korridor und Lift" width="960" height="705" loading="lazy"></a><figcaption class="cap">Grundriss Wohnung 201 – unverbindlich, Möblierung beispielhaft. <a href="/grundriss-wohnung-201.pdf" target="_blank" rel="noopener">Grundriss als PDF</a></figcaption></figure>
 </div>
 </section>

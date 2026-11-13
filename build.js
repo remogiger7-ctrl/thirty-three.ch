@@ -41,6 +41,8 @@ const IMG = {
   '/_blob/c2504cc65731c2a4e4e25c9343429c83': 'thirty-three-rueschlikon-wohnbereich-balkon',
   '/_blob/58f211a293dc771acb78a688d55c5e18': 'thirty-three-rueschlikon-kueche-eggersmann',
   '/_blob/12647b98cefabc7b8d4c0a84f92358b9': 'thirty-three-rueschlikon-zuerichsee',
+  '/_blob/6411546520bd88f11e6375294c8c1cbb': 'thirty-three-rueschlikon-zimmer-einbauschrank',
+  '/_blob/5c065262eda806ab60312125848537ad': 'thirty-three-rueschlikon-bad-wanne',
 };
 
 const LANGS = {
@@ -306,7 +308,7 @@ for (const [lang, v] of Object.entries(LANGS)) {
 }
 fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-${Object.values(LANGS).map((v) => `<url><loc>${DOMAIN}/${v.dir}</loc><lastmod>${LASTMOD}</lastmod>${HREFLANGS.map(([h, d]) => `<xhtml:link rel="alternate" hreflang="${h}" href="${DOMAIN}/${d}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${DOMAIN}/"/>${['haus', 'wohnbereich-balkon', 'kueche-eggersmann', 'zuerichsee'].map((n) => `<image:image><image:loc>${DOMAIN}/img/thirty-three-rueschlikon-${n}.jpg</image:loc></image:image>`).join('')}<image:image><image:loc>${DOMAIN}/img/thirty-three-rueschlikon-grundriss-wohnung-201.svg</image:loc></image:image></url>`).join('\n')}
+${Object.values(LANGS).map((v) => `<url><loc>${DOMAIN}/${v.dir}</loc><lastmod>${LASTMOD}</lastmod>${HREFLANGS.map(([h, d]) => `<xhtml:link rel="alternate" hreflang="${h}" href="${DOMAIN}/${d}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${DOMAIN}/"/>${['haus', 'wohnbereich-balkon', 'zimmer-einbauschrank', 'bad-wanne', 'kueche-eggersmann', 'zuerichsee'].map((n) => `<image:image><image:loc>${DOMAIN}/img/thirty-three-rueschlikon-${n}.jpg</image:loc></image:image>`).join('')}<image:image><image:loc>${DOMAIN}/img/thirty-three-rueschlikon-grundriss-wohnung-201.svg</image:loc></image:image></url>`).join('\n')}
 </urlset>
 `);
 fs.writeFileSync(path.join(OUT, 'robots.txt'), LIVE
