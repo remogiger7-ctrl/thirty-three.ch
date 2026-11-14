@@ -105,7 +105,7 @@ section[id],details[id]{scroll-margin-top:var(--hdr)}
 .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gut)}
 .fact{padding:var(--s3) 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column}
 .fact dt{font-size:var(--f-small);line-height:1.5;color:var(--ink3)}
-.fact dd{margin:0;padding-top:4px;font-size:var(--f-lead);line-height:1.4;font-weight:500}
+.fact dd{margin:0;padding-top:4px;overflow-wrap:break-word;hyphens:auto;font-size:var(--f-lead);line-height:1.4;font-weight:500}
 .tint{background:var(--tint)}
 .tint .fact,.tint .price{border-color:var(--tint-line)}
 .prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gut)}
@@ -205,7 +205,7 @@ textarea.input{min-height:144px;resize:vertical}
 .burger{display:block}
 .step{grid-template-columns:var(--s3) minmax(0,1fr)}.steps{grid-template-columns:minmax(0,1fr)}
 }
-@media (max-width:600px){.hdr-cta{display:none}.facts,.prices{grid-template-columns:minmax(0,1fr)}.price+.price{border-top:0}.rows-stack .row{grid-template-columns:minmax(0,1fr);row-gap:4px}.rows-stack .row>span:first-child{font-size:var(--f-small);color:var(--ink3)}.rows-stack .row>span:last-child{text-align:left}}
+@media (max-width:600px){.hdr-cta{display:none}.facts,.facts.specs,.prices{grid-template-columns:minmax(0,1fr)}.price+.price{border-top:0}.rows-stack .row{grid-template-columns:minmax(0,1fr);row-gap:4px}.rows-stack .row>span:first-child{font-size:var(--f-small);color:var(--ink3)}.rows-stack .row>span:last-child{text-align:left}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2")}
@@ -290,7 +290,7 @@ picture{display:block}
 
 <div class="fact"><dt>Piano</dt><dd>2°, ascensore nell'appartamento</dd></div>
 
-<div class="fact"><dt>Finiture</dt><dd>Di pregio, livello proprietà</dd></div>
+<div class="fact"><dt>Finiture</dt><dd>Nuova costruzione, finiture di pregio</dd></div>
 
 <div class="fact"><dt>Disponibile</dt><dd>15 gennaio o 1° febbraio 2027</dd></div>
 

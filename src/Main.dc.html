@@ -85,7 +85,7 @@ section[id],details[id]{scroll-margin-top:var(--hdr)}
 .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gut)}
 .fact{padding:var(--s3) 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column}
 .fact dt{font-size:var(--f-small);line-height:1.5;color:var(--ink3)}
-.fact dd{margin:0;padding-top:4px;font-size:var(--f-lead);line-height:1.4;font-weight:500}
+.fact dd{margin:0;padding-top:4px;overflow-wrap:break-word;hyphens:auto;font-size:var(--f-lead);line-height:1.4;font-weight:500}
 .tint{background:var(--tint)}
 .tint .fact,.tint .price{border-color:var(--tint-line)}
 .prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gut)}
@@ -185,7 +185,7 @@ textarea.input{min-height:144px;resize:vertical}
 .burger{display:block}
 .step{grid-template-columns:var(--s3) minmax(0,1fr)}.steps{grid-template-columns:minmax(0,1fr)}
 }
-@media (max-width:600px){.hdr-cta{display:none}.facts,.prices{grid-template-columns:minmax(0,1fr)}.price+.price{border-top:0}.rows-stack .row{grid-template-columns:minmax(0,1fr);row-gap:4px}.rows-stack .row>span:first-child{font-size:var(--f-small);color:var(--ink3)}.rows-stack .row>span:last-child{text-align:left}}
+@media (max-width:600px){.hdr-cta{display:none}.facts,.facts.specs,.prices{grid-template-columns:minmax(0,1fr)}.price+.price{border-top:0}.rows-stack .row{grid-template-columns:minmax(0,1fr);row-gap:4px}.rows-stack .row>span:first-child{font-size:var(--f-small);color:var(--ink3)}.rows-stack .row>span:last-child{text-align:left}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </helmet>
@@ -469,7 +469,7 @@ class Component extends DCLogic {
         navAria: 'Hauptnavigation', altPlan: 'Grundriss Wohnung 201: Wohnen, Essen und Küche mit Balkon, zwei Zimmer, Dusche/WC, Bad/WC, Réduit, Korridor und Lift', capPlan: 'Grundriss Wohnung 201 – unverbindlich, Möblierung beispielhaft.', planPdf: 'Grundriss als PDF', heroEyebrow: 'Schönenstrasse 33 · Rüschlikon', kitchenH: 'Küche', legalH: 'Rechtliches', navMenu: 'Menü', navApt: 'Wohnung', navFit: 'Ausbau', navLoc: 'Lage', navPrice: 'Konditionen', navBook: 'Interesse anmelden',
         heroTitle1: '3.5-Zimmer-Wohnung in Rüschlikon', heroTitle2: 'Neubau in Eigentumsqualität, zur Miete',
         heroLead: 'Die Wohnung wurde in einem hochwertigen Ausbaustandard auf Eigentumsniveau erstellt. Im Neubau THIRTY THREE an der Schönenstrasse 33 wird Wohnung 201 im zweiten Stock erstmals vermietet: 100 m² mit offenem Wohn- und Essbereich, gedecktem Balkon zur Seeseite und zwei Bädern. Bezug ab 15. Januar oder 1. Februar 2027, unbefristet. Ab Bahnhof Rüschlikon in 15 Minuten zum Zürich HB, der Flughafen in rund 30 Minuten ohne Umsteigen, der See in zehn Gehminuten.',
-        specs: [{n:'Zimmer',v:'3.5'},{n:'Fläche (brutto)',v:'100 m²'},{n:'Balkon, gedeckt',v:'13.5 m²'},{n:'Stockwerk',v:'2. Stock, Lift in die Wohnung'},{n:'Ausbau',v:'Hochwertig, auf Eigentumsniveau'},{n:'Bezug',v:'15. Januar oder 1. Februar 2027'},{n:'Mietzins pro Monat',v:'CHF 5\'250'},{n:'Garagenplatz pro Monat',v:'CHF 250'},{n:'Nebenkosten akonto pro Monat',v:'CHF 300'}],
+        specs: [{n:'Zimmer',v:'3.5'},{n:'Fläche (brutto)',v:'100 m²'},{n:'Balkon, gedeckt',v:'13.5 m²'},{n:'Stockwerk',v:'2. Stock, Lift in die Wohnung'},{n:'Ausbau',v:'Neubau, hochwertiger Ausbau'},{n:'Bezug',v:'15. Januar oder 1. Februar 2027'},{n:'Mietzins pro Monat',v:'CHF 5\'250'},{n:'Garagenplatz pro Monat',v:'CHF 250'},{n:'Nebenkosten akonto pro Monat',v:'CHF 300'}],
         altHero: 'Visualisierung des Neubaus THIRTY THREE an der Schönenstrasse 33 in Rüschlikon',
         capVis: 'Visualisierung des Hauses – unverbindlich, das Haus ist im Bau.',
         cta: 'Interesse anmelden',
@@ -548,7 +548,7 @@ class Component extends DCLogic {
         navAria: 'Main navigation', altPlan: 'Floor plan of apartment 201: living, dining and kitchen with balcony, two bedrooms, shower room, bathroom, storage room, hallway and lift', capPlan: 'Floor plan of apartment 201 – non-binding, furniture for illustration only; labels in German.', planPdf: 'Floor plan (PDF)', heroEyebrow: 'Schönenstrasse 33 · Rüschlikon', kitchenH: 'Kitchen', legalH: 'Legal', navMenu: 'Menu', navApt: 'Apartment', navFit: 'Finishes', navLoc: 'Location', navPrice: 'Rent and terms', navBook: 'Enquire',
         heroTitle1: '3.5-room apartment in Rüschlikon', heroTitle2: 'A new build finished to owner-occupier standard, available to rent',
         heroLead: 'The apartment has been finished to a high standard, on a par with an owner-occupied home. In THIRTY THREE, a new building at Schönenstrasse 33, apartment 201 on the second floor is being let for the first time: 100 m² with an open living and dining area, a covered balcony facing the lake side and two bathrooms. Move in from 15 January or 1 February 2027, open-ended lease. From Rüschlikon station it is 15 minutes to Zurich main station and around 30 minutes to the airport without changing; the lake is a ten-minute walk away.',
-        specs: [{n:'Rooms',v:'3.5 (2 bedrooms + living/dining)'},{n:'Floor area (gross)',v:'100 m²'},{n:'Balcony, covered',v:'13.5 m²'},{n:'Floor',v:'2nd floor, lift into the apartment'},{n:'Finish',v:'High-end, owner-occupier standard'},{n:'Move-in',v:'15 January or 1 February 2027'},{n:'Rent per month',v:'CHF 5\'250'},{n:'Garage space per month',v:'CHF 250'},{n:'Utilities on account per month',v:'CHF 300'}],
+        specs: [{n:'Rooms',v:'3.5 (2 bedrooms + living/dining)'},{n:'Floor area (gross)',v:'100 m²'},{n:'Balcony, covered',v:'13.5 m²'},{n:'Floor',v:'2nd floor, lift into the apartment'},{n:'Finish',v:'New build, high-end finish'},{n:'Move-in',v:'15 January or 1 February 2027'},{n:'Rent per month',v:'CHF 5\'250'},{n:'Garage space per month',v:'CHF 250'},{n:'Utilities on account per month',v:'CHF 300'}],
         altHero: 'Rendering of the new THIRTY THREE building at Schönenstrasse 33 in Rüschlikon',
         capVis: 'Artist\'s impression of the building, non-binding – the building is under construction.',
         cta: 'Enquire',
@@ -627,7 +627,7 @@ class Component extends DCLogic {
         navAria: 'Navigazione principale', altPlan: 'Pianta dell\'appartamento 201: soggiorno, pranzo e cucina con balcone, due camere, doccia/WC, bagno/WC, ripostiglio, corridoio e ascensore', capPlan: 'Pianta dell\'appartamento 201 – non vincolante, arredamento a titolo d\'esempio; didascalie in tedesco.', planPdf: 'Pianta in PDF', heroEyebrow: 'Schönenstrasse 33 · Rüschlikon', kitchenH: 'Cucina', legalH: 'Note legali', navMenu: 'Menu', navApt: 'Appartamento', navFit: 'Finiture', navLoc: 'Posizione', navPrice: 'Canone e condizioni', navBook: 'Segnalare interesse',
         heroTitle1: '3,5 locali a Rüschlikon', heroTitle2: 'Nuova costruzione con finiture da appartamento di proprietà, in affitto',
         heroLead: 'L\'appartamento è stato realizzato con finiture di pregio, al livello di un\'abitazione di proprietà. Nella nuova costruzione THIRTY THREE in Schönenstrasse 33 l\'appartamento 201 al secondo piano viene affittato per la prima volta: 100 m² con zona giorno aperta, balcone coperto sul lato del lago e due bagni. Disponibile dal 15 gennaio o dal 1° febbraio 2027, contratto a tempo indeterminato. Dalla stazione di Rüschlikon 15 minuti fino a Zurigo stazione centrale, l\'aeroporto in circa 30 minuti senza cambi, il lago a dieci minuti a piedi.',
-        specs: [{n:'Locali',v:'3,5 (2 camere + soggiorno/pranzo)'},{n:'Superficie (lorda)',v:'100 m²'},{n:'Balcone coperto',v:'13,5 m²'},{n:'Piano',v:'2°, ascensore nell\'appartamento'},{n:'Finiture',v:'Di pregio, livello proprietà'},{n:'Disponibile',v:'15 gennaio o 1° febbraio 2027'},{n:'Canone mensile',v:'CHF 5\'250'},{n:'Posto auto al mese',v:'CHF 250'},{n:'Spese accessorie in acconto, al mese',v:'CHF 300'}],
+        specs: [{n:'Locali',v:'3,5 (2 camere + soggiorno/pranzo)'},{n:'Superficie (lorda)',v:'100 m²'},{n:'Balcone coperto',v:'13,5 m²'},{n:'Piano',v:'2°, ascensore nell\'appartamento'},{n:'Finiture',v:'Nuova costruzione, finiture di pregio'},{n:'Disponibile',v:'15 gennaio o 1° febbraio 2027'},{n:'Canone mensile',v:'CHF 5\'250'},{n:'Posto auto al mese',v:'CHF 250'},{n:'Spese accessorie in acconto, al mese',v:'CHF 300'}],
         altHero: 'Rendering della nuova costruzione THIRTY THREE in Schönenstrasse 33 a Rüschlikon',
         capVis: 'Rendering dell\'edificio, non vincolante – l\'edificio è in costruzione.',
         cta: 'Segnalare interesse',
