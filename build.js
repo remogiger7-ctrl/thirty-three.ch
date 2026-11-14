@@ -39,7 +39,7 @@ let markup = main.slice(main.indexOf('</helmet>') + '</helmet>'.length, main.ind
 const IMG = {
   '/_blob/5fa2dc49f45751a1fb6ee638df78e13a': 'thirty-three-rueschlikon-haus',
   '/_blob/c2504cc65731c2a4e4e25c9343429c83': 'thirty-three-rueschlikon-wohnbereich-balkon',
-  '/_blob/58f211a293dc771acb78a688d55c5e18': 'thirty-three-rueschlikon-kueche-eggersmann',
+  '/_blob/58f211a293dc771acb78a688d55c5e18': 'thirty-three-rueschlikon-kueche',
   '/_blob/12647b98cefabc7b8d4c0a84f92358b9': 'thirty-three-rueschlikon-zuerichsee',
   '/_blob/6411546520bd88f11e6375294c8c1cbb': 'thirty-three-rueschlikon-zimmer-einbauschrank',
   '/_blob/5c065262eda806ab60312125848537ad': 'thirty-three-rueschlikon-bad-wanne',
@@ -139,7 +139,7 @@ function jsonLd(lang, t) {
       floorLevel: '2', numberOfRooms: 3.5, numberOfBedrooms: 2, numberOfBathroomsTotal: 2, numberOfFullBathrooms: 2, numberOfPartialBathrooms: 0,
       floorSize: { '@type': 'QuantitativeValue', value: 100.1, unitCode: 'MTK' }, yearBuilt: 2026,
       amenityFeature: META[lang].amen.map((name) => ({ '@type': 'LocationFeatureSpecification', name, value: true })),
-      image: [img('thirty-three-rueschlikon-haus'), img('thirty-three-rueschlikon-wohnbereich-balkon'), img('thirty-three-rueschlikon-kueche-eggersmann')],
+      image: [img('thirty-three-rueschlikon-haus'), img('thirty-three-rueschlikon-wohnbereich-balkon'), img('thirty-three-rueschlikon-kueche')],
       containedInPlace: { '@type': 'ApartmentComplex', name: 'THIRTY THREE', numberOfAccommodationUnits: { '@type': 'QuantitativeValue', value: 5 } },
     },
     {
@@ -308,7 +308,7 @@ for (const [lang, v] of Object.entries(LANGS)) {
 }
 fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-${Object.values(LANGS).map((v) => `<url><loc>${DOMAIN}/${v.dir}</loc><lastmod>${LASTMOD}</lastmod>${HREFLANGS.map(([h, d]) => `<xhtml:link rel="alternate" hreflang="${h}" href="${DOMAIN}/${d}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${DOMAIN}/"/>${['haus', 'wohnbereich-balkon', 'zimmer-einbauschrank', 'bad-wanne', 'kueche-eggersmann', 'zuerichsee'].map((n) => `<image:image><image:loc>${DOMAIN}/img/thirty-three-rueschlikon-${n}.jpg</image:loc></image:image>`).join('')}<image:image><image:loc>${DOMAIN}/img/thirty-three-rueschlikon-grundriss-wohnung-201.svg</image:loc></image:image></url>`).join('\n')}
+${Object.values(LANGS).map((v) => `<url><loc>${DOMAIN}/${v.dir}</loc><lastmod>${LASTMOD}</lastmod>${HREFLANGS.map(([h, d]) => `<xhtml:link rel="alternate" hreflang="${h}" href="${DOMAIN}/${d}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${DOMAIN}/"/>${['haus', 'wohnbereich-balkon', 'zimmer-einbauschrank', 'bad-wanne', 'kueche', 'zuerichsee'].map((n) => `<image:image><image:loc>${DOMAIN}/img/thirty-three-rueschlikon-${n}.jpg</image:loc></image:image>`).join('')}<image:image><image:loc>${DOMAIN}/img/thirty-three-rueschlikon-grundriss-wohnung-201.svg</image:loc></image:image></url>`).join('\n')}
 </urlset>
 `);
 fs.writeFileSync(path.join(OUT, 'robots.txt'), LIVE
@@ -317,7 +317,7 @@ fs.writeFileSync(path.join(OUT, 'robots.txt'), LIVE
 const T = TEXTS.de;
 fs.writeFileSync(path.join(OUT, 'llms.txt'), `# THIRTY THREE – 3.5-Zimmer-Wohnung mieten in Rüschlikon
 
-> Wohnung 201 im Neubau THIRTY THREE, Schönenstrasse 33, 8803 Rüschlikon (Kanton Zürich, Schweiz): 3.5 Zimmer, 100.1 m² Fläche brutto, 2. Stock, Lift direkt in die Wohnung, gedeckter Balkon 13.5 m², Keller 13.1 m², Garagenplatz. Zwei Zimmer, Bad mit Wanne, separate Dusche, Réduit, eigener Waschturm, Glasfaser, elektrische Storen, Eichenparkett. Küche von eggersmann mit Naturstein-Arbeitsplatte, BORA Kochfeldabzug, Electrolux Kombi-Steamer, Miele Geschirrspüler. Erdsonden-Wärmepumpe mit Freecooling, Photovoltaik. Mehrfamilienhaus mit 5 Wohnungen, Fertigstellung Dezember 2026. Erstbezug ab 15. Januar oder 1. Februar 2027, unbefristet, unmöbliert. Mietzins CHF 5'250 pro Monat plus Garagenplatz CHF 250 pro Monat (ohne Nebenkosten), Nebenkosten CHF 300 akonto, Kaution CHF 12'000. Kündigung drei Monate auf Ende März, Juni, September. Status: ${STATUS === 'rented' ? 'vermietet' : 'verfügbar'}. Kontakt: ${MAIL} (Leonardo Fasciati).
+> Wohnung 201 im Neubau THIRTY THREE, Schönenstrasse 33, 8803 Rüschlikon (Kanton Zürich, Schweiz): 3.5 Zimmer, 100.1 m² Fläche brutto, 2. Stock, Lift direkt in die Wohnung, gedeckter Balkon 13.5 m², Keller 13.1 m², Garagenplatz. Zwei Schlafzimmer mit hochwertigen Einbauschränken, Bad mit Wanne, separate Dusche, Réduit mit massgefertigten Schreinerarbeiten, eigener Waschturm, Glasfaser, elektrische Storen, Eichenparkett. Grifflose Küche mit Naturstein-Arbeitsplatte, BORA Kochfeldabzug, Electrolux Kombi-Steamer, Miele Geschirrspüler. Erdsonden-Wärmepumpe mit Freecooling, Photovoltaik. Mehrfamilienhaus mit 5 Wohnungen, Fertigstellung Dezember 2026. Erstbezug ab 15. Januar oder 1. Februar 2027, unbefristet, unmöbliert. Mietzins CHF 5'250 pro Monat plus Garagenplatz CHF 250 pro Monat (ohne Nebenkosten), Nebenkosten CHF 300 akonto, Kaution CHF 12'000. Kündigung drei Monate auf Ende März, Juni, September. Status: ${STATUS === 'rented' ? 'vermietet' : 'verfügbar'}. Kontakt: ${MAIL} (Leonardo Fasciati).
 
 ## Lage
 - Zu Fuss: Bushaltestelle 5 Min., Bahnhof Rüschlikon 9 Min., Zürichsee 10 Min., Coop 10 Min.
